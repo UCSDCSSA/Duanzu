@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="css/basic.css" />
+    </head>
+    <body>
+        <%- include("view/navbar.html") %>
+        <h1>SUBLEASE</h1>
+            <% if (communities.length == 0) { %>
+                <p>NO DATA</p>
+            <% } else { %>
+                <ol>
+                    <% for (var i = 0; i < communities.length; i++) { %>
+                        <li>
+                            <%= communities[i]["description"] %>
+                        </li>
+                    <% } %>
+                </ol>
+            <% } %>
+        <script src="js/basic.js"></script>
+    </body>
+</html>

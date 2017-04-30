@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/UCSDCSSA/Duanzu#readme",
   "dependencies": {
-    "keeling-js": "^1.2.2"
+    "keeling-js": "^1.2.2",
+    "mysql": "^2.13.0"
   }
 }
