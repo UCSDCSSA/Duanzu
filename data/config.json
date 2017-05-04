@@ -3,7 +3,7 @@
     "name": "Keeling Js Default",
     "port": 9005,
     "session_secret": "keeling-session",
-    "default_page": "index",
+    "default_page": "profile",
     "error_page": "error",
     "public_directory": "public",
     "ajax_directory": "ajax",
