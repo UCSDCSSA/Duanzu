@@ -1,28 +1,45 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="css/bootstrap.css" />
+      <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     </head>
     <body>
-      <!-- Standard button -->
-<button type="button" class="btn btn-default">Default</button>
-
-<!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
-<button type="button" class="btn btn-primary">Primary</button>
-
-<!-- Indicates a successful or positive action -->
-<button type="button" class="btn btn-success">Success</button>
-
-<!-- Contextual button for informational alert messages -->
-<button type="button" class="btn btn-info">Info</button>
-
-<!-- Indicates caution should be taken with this action -->
-<button type="button" class="btn btn-warning">Warning</button>
-
-<!-- Indicates a dangerous or potentially negative action -->
-<button type="button" class="btn btn-danger">Danger</button>
-
-<!-- Deemphasize a button by making it look like a link while maintaining button behavior -->
-<button type="button" class="btn btn-link">Link</button>
+      <form class="col-md-3 col-md-offset-5">
+        <div class="form-group" id="myOriginalPassword">
+          <label for="exampleInputPassword1">Original Password</label>
+          <input type="password" class="form-control" placeholder="Original Password">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">New Password</label>
+          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="New Password">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Confirm New Password</label>
+          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Confirm New Password">
+        </div>
+        <button type="button" class="btn btn-danger" id="myCancelButton">Cancel</button>
+        <button type="button" class="btn btn-info" id="mySubmitButton">Submit</button>
+         <input type="text" class="form-control" >
+<script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script>
+  $('#myCancelButton').on('click', function () {
+    if($(this).text() == "Cancel") {
+      $(this).text("Click again to confitm");
+    } else {
+      $(this).text("Already canceled+跳转");
+    }
+    //$btn.button('reset')
+  })
+</script>
+<script>
+  $('#mySubmitButton').on('click', function () {
+      $('#myOriginalPassword').attr('class',"form-group has-warning");
+  })
+</script>
+</div>
+      </form>
     </body>
 </html>
