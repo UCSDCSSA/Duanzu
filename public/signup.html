@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="css/basic.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" \integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/index.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="js/signup.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="jumbotron">
+        <h2 class="title">注册 (*´Д`)つ))´∀`)</h2>
+        <div class="alert alert-danger">
+          <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+          <strong>Wait a minute! </strong> Invalid user name.
+        </div>
+
+        <p class="field-name"> 用户名 </p>
+        <input id="usr" type="text" class="form-control" placeholder="Username">
+        <p class="field-name"> 邮箱 </p>
+        <input id="email" type="text" class="form-control" placeholder="@youareawsome.wow">
+        <p class="field-name"> 密码 </p>
+        <input id="pswd" type="text" class="form-control" placeholder="Bad Example: qwer">
+        <p class="field-name"> 确认密码 </p>
+        <input id="confirm" type="text" class="form-control" placeholder="Confirm Your Password">
+
+        <div class="button-group">
+          <a href="./sublease.html"> <button class="btn btn-lg btn-success" type="button" id="go" onclick="inputCheck()">
+            确认注册
+          </button> </a>
+          <button class="btn btn-lg btn-default" type="button" id="login">
+            用已有账号注册
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
