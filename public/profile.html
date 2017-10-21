@@ -1,45 +1,60 @@
 <!DOCTYPE html>
 <html>
-    <head>
-      <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    </head>
-    <body>
-      <form class="col-md-3 col-md-offset-5">
+
+<head>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+
+<body>
+    <form class="col-md-3 col-md-offset-5">
         <div class="form-group" id="myOriginalPassword">
-          <label for="exampleInputPassword1">Original Password</label>
-          <input type="password" class="form-control" placeholder="Original Password">
+            <label for="exampleInputPassword1">Original Password</label>
+            <input type="password" class="form-control" placeholder="Original Password">
         </div>
         <div class="form-group">
-          <label for="exampleInputPassword1">New Password</label>
-          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="New Password">
+            <label for="exampleInputPassword1">New Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="New Password">
         </div>
         <div class="form-group">
-          <label for="exampleInputPassword1">Confirm New Password</label>
-          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Confirm New Password">
+            <label for="exampleInputPassword1">Confirm New Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Confirm New Password">
         </div>
         <button type="button" class="btn btn-danger" id="myCancelButton">Cancel</button>
         <button type="button" class="btn btn-info" id="mySubmitButton">Submit</button>
-         <input type="text" class="form-control" >
-<script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
-<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-<script>
-  $('#myCancelButton').on('click', function () {
-    if($(this).text() == "Cancel") {
-      $(this).text("Click again to confitm");
-    } else {
-      $(this).text("Already canceled+跳转");
-    }
-    //$btn.button('reset')
-  })
-</script>
-<script>
-  $('#mySubmitButton').on('click', function () {
-      $('#myOriginalPassword').attr('class',"form-group has-warning");
-  })
-</script>
-</div>
-      </form>
-    </body>
+        <input type="text" class="form-control">
+
+        <p>
+            asdlfkjasl alsdfkjalsf alsk flja sdlkf als dflaksdf laks flas
+            asldjkfalskdfj dflaks alsdfkjalsdfjal sdfla sdflas dkflasdlf aksld
+            falsdf lasdkfl aalskdfjajsdfalk l lasdfk las flk
+            <a>
+                <span>
+                    <img alskdfjalksdfjalksdfjklasdfjkalsdfkjlasdkfjladkjfkajdsl />
+                </span>
+            </a>
+        </p>
+
+        <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+        <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <script>
+            $('#myCancelButton').on('click', function() {
+                if ($(this).text() == "Cancel") {
+                    $(this).text("Click again to confitm");
+                } else {
+                    $(this).text("Already canceled+跳转");
+                }
+                //$btn.button('reset')
+            })
+        </script>
+        <script>
+            $('#mySubmitButton').on('click', function() {
+                $('#myOriginalPassword').attr('class', "form-group has-warning");
+            })
+        </script>
+        </div>
+    </form>
+</body>
+
 </html>
