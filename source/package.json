@@ -1,0 +1,15 @@
+{
+  "name": "ucsdcssa-duanzu",
+  "version": "0.0.0",
+  "description": "UCSD CSSA Short Leasing Platform",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^16.1.0",
+    "react-dom": "^16.1.0"
+  }
+}
