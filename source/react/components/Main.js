@@ -14,16 +14,16 @@ import Login from './Login.js';
 import NotFound from './NotFound.js';
 
 import Register from './Register.js';
-
+import CheckInfo from './CheckInfo.js';
 //
 const Main = () => {
     return (
         <Switch>
             <Route exact path='/' component={Home} />
             <Route exact path='/login' component={Login} />
-            
+
             <Route exact path='/register' component={Register} />
-            
+            <Route exact path='/checkInfo' component={CheckInfo} />
             <Route path='*' component={NotFound} />
         </Switch>
     );

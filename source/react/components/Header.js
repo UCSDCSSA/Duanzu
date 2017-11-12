@@ -9,6 +9,7 @@ class Header extends React.Component {
             <Navbar brand='UCSD CSSA 短租平台' right>
                 <NavItem href='/#/login'>登陆</NavItem>
                 <NavItem href='/#/register'>注册</NavItem>
+                <NavItem href='/#/CheckInfo'>查看短租信息</NavItem>
             </Navbar>
         );
     }

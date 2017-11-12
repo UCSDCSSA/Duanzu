@@ -24,7 +24,7 @@ class LeasingCard extends React.Component {
 };
 
 const Home = () => {
-    
+
     var allLeasingData = [
         {
             id: "_aoidsjfa9iq90irj 0iajsf",
@@ -39,12 +39,12 @@ const Home = () => {
             name: "International Garden"
         }
     ]
-    
+
     var allLeasingElement = [];
     for (var i = 0; i < allLeasingData.length; i++) {
         allLeasingElement.push((<LeasingCard leasingId={allLeasingData[i].id} leasingName={allLeasingData[i].name}/>));
     }
-    
+
     return (
         <div>
             <Header />
