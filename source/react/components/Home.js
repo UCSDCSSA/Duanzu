@@ -4,13 +4,17 @@
  */
 
 import React from 'react';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+
+import Header from './Header';
 
 const Home = () => {
     return (
         <div>
-            <Link to="/login">Login</Link>
-            <Link to="/register">Register</Link>
+            <Header />
+            <div className="container">
+                
+            </div>
         </div>
     );
 };

@@ -6,14 +6,14 @@
 // First include all the react
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
 
 // Include the main router
 import Main from './components/Main.js';
 
 // Render the router
 ReactDOM.render((
-    <BrowserRouter>
+    <HashRouter>
         <Main />
-    </BrowserRouter>
+    </HashRouter>
 ), document.getElementById('root'));
