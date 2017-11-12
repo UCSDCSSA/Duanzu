@@ -5,7 +5,7 @@ module.exports = {
     output: {
         path: __dirname + '/dist',
         publicPath: '/',
-        filename: 'webpack.js'
+        filename: 'bundle.js'
     },
     devServer: {
         contentBase: path.resolve(__dirname, 'public')
