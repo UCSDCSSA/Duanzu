@@ -1,0 +1,11 @@
+{
+  "name": "ucsdcssa-duanzu-backend",
+  "version": "0.0.0",
+  "description": "UCSD CSSA Short Leasing Platform - BackEnd",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "UCSD CSSA Tech Department",
+  "license": "ISC"
+}
