@@ -18,7 +18,7 @@ $ npm start
 to start the WebPack server and you can now go to your browser and type in
 
 ```
-http://localhost:3000/
+http://localhost:8080/
 ```
 
 to access the pages.
@@ -57,3 +57,7 @@ add files and modify them in `components/`. If you have any need to modify
 `components/` will be in `.js` format and will be React Renderable JSX files.
 
 You also should not touch any file among the config files please notice.
+
+## `components/` File Organizing and Naming Instructions
+
+You are probably using
