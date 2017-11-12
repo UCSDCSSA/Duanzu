@@ -6,10 +6,19 @@
 // Import react related components
 import React from 'react';
 
-const Login = () => {
-    return (
-        <p>This is Login Page</p>
-    );
-};
+// Import UI Components
+import { Button, Card, Row, Col } from 'react-materialize';
+
+class Login extends React.Component {
+    render() {
+        return (
+            <div>
+                <Card>
+                    <p>adlfjasdlkfjalsdkfj</p>
+                </Card>
+            </div>
+        );
+    }
+}
 
 export default Login;
