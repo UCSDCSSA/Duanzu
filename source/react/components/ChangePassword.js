@@ -23,7 +23,7 @@ class ChangePassword extends React.Component {
                             </center>
                             <Input s={12} type="password" label="输入旧密码" />
                             <Input s={12} type="password" label="新密码" />
-                            <Input s={12} type="password" label="确认新密码" />
+                            <Input s={12} type="password" label="确认新密码"/>
 
                             <center>
                                 <Button waves='light' s={12}>确认</Button>
@@ -35,5 +35,7 @@ class ChangePassword extends React.Component {
         );
     }
 };
+
+
 
 export default ChangePassword;
