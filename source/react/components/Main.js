@@ -12,6 +12,7 @@ import { Switch, Route } from 'react-router-dom';
 import Home from './Home.js';
 import Login from './Login.js';
 import NotFound from './NotFound.js';
+import ChangePassword from './ChangePassword.js';
 
 import Register from './Register.js';
 import ChangeProfile from './ChangeProfile.js';
@@ -22,10 +23,9 @@ const Main = () => {
         <Switch>
             <Route exact path='/' component={Home} />
             <Route exact path='/login' component={Login} />
-
             <Route exact path='/register' component={Register} />
             <Route exact path='/ChangeProfile' component={ChangeProfile} />
-
+            <Route exact path='/ChangePassword' component={ChangePassword} />
             <Route path='*' component={NotFound} />
         </Switch>
     );
