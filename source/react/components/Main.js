@@ -12,7 +12,7 @@ import { Switch, Route } from 'react-router-dom';
 import Home from './Home.js';
 import Login from './Login.js';
 import NotFound from './NotFound.js';
-
+import Publish from './Publish.js';
 import Register from './Register.js';
 
 //
@@ -21,9 +21,9 @@ const Main = () => {
         <Switch>
             <Route exact path='/' component={Home} />
             <Route exact path='/login' component={Login} />
-            
+            <Route exact path='/publish' component={Publish} />
             <Route exact path='/register' component={Register} />
-            
+
             <Route path='*' component={NotFound} />
         </Switch>
     );
