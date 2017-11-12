@@ -14,6 +14,7 @@ import Login from './Login.js';
 import NotFound from './NotFound.js';
 
 import Register from './Register.js';
+import ChangeProfile from './ChangeProfile.js';
 
 //
 const Main = () => {
@@ -21,9 +22,10 @@ const Main = () => {
         <Switch>
             <Route exact path='/' component={Home} />
             <Route exact path='/login' component={Login} />
-            
+
             <Route exact path='/register' component={Register} />
-            
+            <Route exact path='/ChangeProfile' component={ChangeProfile} />
+
             <Route path='*' component={NotFound} />
         </Switch>
     );
