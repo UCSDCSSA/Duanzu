@@ -10,6 +10,7 @@ class Header extends React.Component {
                 <NavItem href='/#/login'>登陆</NavItem>
                 <NavItem href='/#/register'>注册</NavItem>
                 <NavItem href='/#/ChangePassword'>修改密码</NavItem>
+                <NavItem href='/#/ChangeProfile'>修改信息</NavItem>
             </Navbar>
         );
     }

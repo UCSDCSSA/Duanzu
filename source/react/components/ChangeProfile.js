@@ -6,7 +6,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import { Card, Collection, CollectionItem, Row, Col } from 'react-materialize';
+import { Card, Collection, CollectionItem, Row, Col, Input, Icon } from 'react-materialize';
 
 import Header from './Header';
 
@@ -17,61 +17,71 @@ class InfoCard extends React.Component {
         return (
 
             <div>
-                <CollectionItem href={this.props.infoSite}>
+                <CollectionItem>
                     <Row>
-                        <Col s={4} className='nameTag'> <h5> {this.props.infoName} </h5> </Col>
-                        <Col s={7} className='infoTag'>{this.props.infoID}</Col>
-                        <i className="material-icons">keyboard_arrow_right</i>
+                        <Col s={4}>
+                            <center>
+                                <h5>
+                                    <Icon small left>{this.props.icon}</Icon>
+                                    {this.props.infoName}
+                                </h5>
+                            </center>
+                        </Col>
+                        <Input s={7} label={this.props.infoID} />
                     </Row>
                 </CollectionItem>
             </div>
         );
     }
 };
-
+//<i className="material-icons">keyboard_arrow_right</i>
 const ChangeProfile = () => {
 
     var allProfileInfo = [
         {
             id: "1",
             name: "Name",
-            infoLink: "sdioafj"
+            icon: "person"
         },
         {
             id: "2",
             name: "Email",
-            infoLink: "sdioafj"
+            icon: "email"
         },
         {
             id: "3",
             name: "Phone",
-            infoLink: "sdioafj"
+            icon: "phone"
         },
         {
             id: "4",
             name: "WeChat",
-            infoLink: "sdioafj"
+            icon: "chat"
         }
     ]
 
     var allProfileElement = [];
+    //infoSite={allProfileInfo[i].infoLink}
     for (var i = 0; i < allProfileInfo.length; i++)
     {
         allProfileElement.push((<InfoCard key={allProfileInfo[i].id}
             infoID={allProfileInfo[i].id}
             infoName={allProfileInfo[i].name}
-            infoSite={allProfileInfo[i].infoLink}/>));
+            icon={allProfileInfo[i].icon}/>));
     }
 
     return(
         <div>
             <Header />
-            <div className="container">
-                <h4> Your Personal Info </h4>
-                <Collection>
-                    {allProfileElement}
-                </Collection>
-            </div>
+            <Row>
+                <Col offset="l1" s={10}>
+                    <div className="container">
+                        <Collection header="Your Personal Info">
+                            {allProfileElement}
+                        </Collection>
+                    </div>
+                </Col>
+            </Row>
         </div>
     );
 };
