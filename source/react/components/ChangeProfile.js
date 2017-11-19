@@ -22,23 +22,21 @@ class InfoCard extends React.Component {
     render() {
 
         // TODO need info from data base
-        return (
-            <div>
-                <CollectionItem>
-                    <Row>
-                        <Col s={4}>
-                            <center>
-                                <h5>
-                                    <Icon small="small" left="left">{this.props.icon}</Icon>
-                                    {this.props.infoName}
-                                </h5>
-                            </center>
-                        </Col>
-                        <Input s={7} label={this.props.infoID}/>
-                    </Row>
-                </CollectionItem>
-            </div>
-        );
+        return (<div>
+            <CollectionItem>
+                <Row>
+                    <Col s={4}>
+                        <center>
+                            <h5>
+                                <Icon small="small" left="left">{this.props.icon}</Icon>
+                                {this.props.infoName}
+                            </h5>
+                        </center>
+                    </Col>
+                    <Input s={7} label={this.props.infoID}/>
+                </Row>
+            </CollectionItem>
+        </div>);
     }
 };
 
