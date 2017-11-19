@@ -47,10 +47,10 @@ class Publish extends React.Component {
                                 </Input>
                             </Row>
                             <Row>
-                                <Input s={6} label="开始日期" name='on' type='date' onChange={function(e, value) {}}>
+                                <Input s={6} label="开始日期" name='on' type='text' id='startDate' className='datepicker' onClose={function(e, value) {}}>
                                     <Icon>date_range</Icon>
                                 </Input>
-                                <Input s={6} label="结束日期" name='on' type='date' onChange={function(e, value) {}}>
+                                <Input s={6} label="结束日期" name='on' type='text' id='endDate' className='datepicker' onChange={function(e, value) {}}>
                                     <Icon>date_range</Icon>
                                 </Input>
                             </Row>
@@ -59,6 +59,30 @@ class Publish extends React.Component {
                 </Row>
             </div>
         </div>);
+    }
+
+    componentDidMount() {
+
+
+        $('#startDate').pickadate({
+            selectMonths: true, // Creates a dropdown to control month
+            selectYears: 15, // Creates a dropdown of 15 years to control year,
+            today: 'Today',
+            clear: 'Clear',
+            close: 'Ok',
+            closeOnSelect: false, // Close upon selecting a date,
+            min: -1
+        });
+        $('#endDate').pickadate({
+            selectMonths: true, // Creates a dropdown to control month
+            selectYears: 15, // Creates a dropdown of 15 years to control year,
+            today: 'Today',
+            clear: 'Clear',
+            close: 'Ok',
+            closeOnSelect: false, // Close upon selecting a date,
+            min: new Date()
+        });
+
     }
 };
 
