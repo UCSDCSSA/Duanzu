@@ -17,6 +17,10 @@ class DeveloperCard extends React.Component {
             "height": "240px"
         };
 
+        var infoStyle = {
+            "padding": "0 15px"
+        };
+
         return (<div className="col s4">
             <div className="card">
                 <div className="card-image" style={cardStyle}></div>
