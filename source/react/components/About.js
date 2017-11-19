@@ -14,24 +14,42 @@ class DeveloperCard extends React.Component {
         var cardStyle = {
             "backgroundImage": "url('/img/developer.jpg')",
             "backgroundSize": "cover",
-            "height": "240px"
+            "backgroundPosition": "center",
+            "height": "400px"
         };
 
         var infoStyle = {
             "padding": "0 15px"
         };
 
+        var rowStyle = {
+            "paddingBottom": "10px"
+        };
+
         return (<div className="col s4">
             <div className="card">
                 <div className="card-image" style={cardStyle}></div>
-                <center>
+                <div style={infoStyle}>
                     <h5>{this.props.developerName}</h5>
-                </center>
+                    <Row style={rowStyle}>
+                        <Col s={4}>
+                            组长
+                        </Col>
+                        <Col className="center" s={4}>
+                            李子阳
+                        </Col>
+                    </Row>
+                </div>
             </div>
-        </div>)
+        </div>);
     }
 
-    componentDidMount
+    componentDidMount() {
+        $(".card-image").each(function() {
+            var width = $(this).width();
+            $(this).height(width);
+        })
+    }
 }
 
 class About extends React.Component {
