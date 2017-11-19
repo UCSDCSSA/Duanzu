@@ -71,7 +71,7 @@ class Publish extends React.Component {
             clear: 'Clear',
             close: 'Ok',
             closeOnSelect: false, // Close upon selecting a date,
-            min: -1
+            min: new Date()
         });
         $('#endDate').pickadate({
             selectMonths: true, // Creates a dropdown to control month
@@ -80,7 +80,7 @@ class Publish extends React.Component {
             clear: 'Clear',
             close: 'Ok',
             closeOnSelect: false, // Close upon selecting a date,
-            min: new Date()
+            min: 1
         });
 
     }
