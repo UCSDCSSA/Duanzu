@@ -17,7 +17,6 @@ import ChangePassword from './ChangePassword.js';
 import Register from './Register.js';
 import CheckInfo from './CheckInfo.js';
 import ChangeProfile from './ChangeProfile.js';
-import Register from './Register.js';
 import AboutUs from './AboutUs.js';
 
 //
