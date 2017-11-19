@@ -44,9 +44,9 @@ class AboutUs extends React.Component {
         //load all developer's data to array
         var allDeveloperElement = [];
         for (var i = 0; i < allDeveloperData.length; i++) {
-            allDeveloperElement.push(<DeveloperCard
-                developerId={allDeveloperData[i].id}
-                developerName={allDeveloperData[i].name}/>)
+            allDeveloperElement.push(
+                <DeveloperCard developerId={allDeveloperData[i].id} allDeveloperData[i].name}/>
+            )
         }
 
 
