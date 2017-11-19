@@ -15,7 +15,7 @@ class DeveloperCard extends React.Component {
             "backgroundImage": "url('/img/developer.jpg')",
             "backgroundSize": "cover",
             "backgroundPosition": "center",
-            "height": "400px"
+            "height": "200px"
         };
 
         var infoStyle = {
@@ -65,6 +65,21 @@ class About extends React.Component {
             }, {
                 id: "a00000003",
                 name: "Hougong 2"
+            }, {
+                id: "a00000004",
+                name: "Hougong 3"
+            }, {
+                id: "a00000005",
+                name: "Hougong 4"
+            }, {
+                id: "a00000006",
+                name: "Hougong 5"
+            }, {
+                id: "a00000007",
+                name: "Hougong 6"
+            }, {
+                id: "a00000008",
+                name: "Hougong 7"
             }
         ]
 
@@ -79,6 +94,7 @@ class About extends React.Component {
             <div className="container">
                 <h2>UCSD CSSA Tec Development Team</h2>
                 <h5>UCSD短租平台是由UCSD CSSA技术部开发与维护的网上租房信息发布平台。</h5>
+                <br></br>
                 <h5>部门成员</h5>
                 <div className="row">
                     {allDeveloperElement}
