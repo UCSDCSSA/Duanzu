@@ -14,12 +14,11 @@ import Login from './Login.js';
 import NotFound from './NotFound.js';
 import Publish from './Publish.js';
 import ChangePassword from './ChangePassword.js';
-import Register from './Register.js';
 import CheckInfo from './CheckInfo.js';
 import ChangeProfile from './ChangeProfile.js';
-import AboutUs from './AboutUs.js';
+import Register from './Register.js';
+import About from './About.js';
 
-//
 const Main = () => {
     return (<Switch>
         <Route exact path='/' component={Home}/>
