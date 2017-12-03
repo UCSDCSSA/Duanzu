@@ -5,7 +5,7 @@ import {Navbar, NavItem} from 'react-materialize';
 
 class Header extends React.Component {
     render() {
-        return (<Navbar brand='UCSD CSSA 短租平台' right="right">
+        return (<Navbar brand='UCSD CSSA 短租平台' right>
             <NavItem href='/#/login'>登陆</NavItem>
             <NavItem href='/#/register'>注册</NavItem>
             <NavItem href='/#/aboutus'>关于我们</NavItem>
