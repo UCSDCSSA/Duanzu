@@ -14,7 +14,9 @@ import {
     Col,
     Input,
     Icon,
-    CardTitle
+    CardTitle,
+    Tabs,
+    Tab
 } from 'react-materialize';
 
 import Header from './Header';
@@ -129,6 +131,8 @@ const ChangeProfile = () => {
             img: '/img/cv.jpg'
         }
     ]
+
+    // array contains all component of profile information
     var allProfileElement = [];
     //infoSite={allProfileInfo[i].infoLink}
     for (var i = 0; i < allProfileInfo.length; i++) {
@@ -141,6 +145,7 @@ const ChangeProfile = () => {
         ));
     }
 
+    // array contains all component of house information
     var allHouseElement = [];
 
     for (var i = 0; i < allHouseInfo.length; i++) {
@@ -151,6 +156,16 @@ const ChangeProfile = () => {
                 houseName={allHouseInfo[i].house}/>
         ));
     }
+
+/*    var allMarkElement = [];
+    for (var i = 0; i < allHouseInfo.length; i++) {
+        allMarkElement.push((
+            <MarkCard
+                key={allHouseInfo[i].id}
+                houseImage={allHouseInfo[i].img}
+                houseName={allHouseInfo[i].house}/>
+        ));
+    }*/
 
     var backgroundStyle = {
         "backgroundImage": "url('/img/cv.jpg')",
@@ -199,10 +214,18 @@ const ChangeProfile = () => {
             </div>
             <div style={sectionStyle}>
                 <div className="container">
-                    <Row>
-                        <h5> 我的房源 </h5>
-                        {allHouseElement}
-                    </Row>
+                    <Tabs>
+                        <Tab title="我的房源">
+                            <div>
+                                <Row> {allHouseElement} </Row>
+                            </div>
+                        </Tab>
+                        <Tab title="我的收藏">
+                            <div>
+                                <Row> {allHouseElement} </Row>
+                            </div>
+                        </Tab>
+                    </Tabs>
                 </div>
             </div>
         </div>
