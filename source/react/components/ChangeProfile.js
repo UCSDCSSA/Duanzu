@@ -13,7 +13,8 @@ import {
     Row,
     Col,
     Input,
-    Icon
+    Icon,
+    CardTitle
 } from 'react-materialize';
 
 import Header from './Header';
@@ -22,22 +23,64 @@ class InfoCard extends React.Component {
     render() {
 
         // TODO need info from data base
-        return (<div>
-            <CollectionItem>
-                <Row>
-                    <Col s={4}>
-                        <center>
-                            <h5>
-                                <Icon small="small" left="left">{this.props.icon}</Icon>
-                                {this.props.infoName}
-                            </h5>
-                        </center>
-                    </Col>
-                    <Input s={7} label={this.props.infoID}/>
-                </Row>
-            </CollectionItem>
-        </div>);
+        return (
+            <div>
+                <CollectionItem>
+                    <Row >
+                        <Col s={4}>
+                            <center>
+                                <h5>
+                                    <Icon small left>{this.props.icon}</Icon>
+                                    {this.props.infoName}
+                                </h5>
+                            </center>
+                        </Col>
+                        <Input s={7} label={this.props.infoID}/>
+                    </Row>
+                </CollectionItem>
+            </div>
+        );
     }
+};
+
+class HouseCard extends React.Component {
+    render() {
+
+        /*var houseCardStyle = {
+            "backgroundImage": this.props.houseImage,
+            "backgroundSize": "cover",
+            "backgroundPosition": "center",
+            "height": "500px",
+            "padding": "10px"
+        }*/
+
+        var rowStyle = {
+            "paddingBottom": "10px"
+        };
+
+        // TODO need info from data base
+        return (
+            <div>
+                <Col s={3}>
+                    <Card className="houseImage"
+                        header={<CardTitle image={this.props.houseImage}/>}>
+                        <Row style={rowStyle}>
+                            <center>
+                                <h5> {this.props.houseName} </h5>
+                            </center>
+                        </Row>
+                    </Card>
+                </Col>
+            </div>
+        );
+    }
+
+    componentDidMount() {
+        $(".houseImage").each(function () {
+            var width = $(this).width();
+            $(this).height(width);
+        })
+    };
 };
 
 const ChangeProfile = () => {
@@ -62,6 +105,30 @@ const ChangeProfile = () => {
         }
     ]
 
+    var allHouseInfo = [
+        {
+            id: "1",
+            house: "CV",
+            img: '/img/cv.jpg'
+        }, {
+            id: "2",
+            house: "Towers",
+            img: '/img/cv.jpg'
+        }, {
+            id: "3",
+            house: "La Regencia",
+            img: '/img/cv.jpg'
+        }, {
+            id: "4",
+            house: "ajdf",
+            img: '/img/cv.jpg'
+        },
+        {
+            id: "5",
+            house: "need database",
+            img: '/img/cv.jpg'
+        }
+    ]
     var allProfileElement = [];
     //infoSite={allProfileInfo[i].infoLink}
     for (var i = 0; i < allProfileInfo.length; i++) {
@@ -74,18 +141,70 @@ const ChangeProfile = () => {
         ));
     }
 
+    var allHouseElement = [];
+
+    for (var i = 0; i < allHouseInfo.length; i++) {
+        allHouseElement.push((
+            <HouseCard
+                key={allHouseInfo[i].id}
+                houseImage={allHouseInfo[i].img}
+                houseName={allHouseInfo[i].house}/>
+        ));
+    }
+
+    var backgroundStyle = {
+        "backgroundImage": "url('/img/cv.jpg')",
+        "backgroundSize": "cover",
+        "backgroundPosition": "center",
+        "padding": "70px 0"
+    }
+
+    var sectionStyle = {
+        "padding": "70px 0"
+    }
+    var flex = {
+        "display": "flex"
+    };
+    var flexLeft = {
+        "width": "33.3333%"
+    };
+    var avatar = {
+        "margin": "0 auto",
+        "width": "200px",
+        "height": "200px"
+    };
+
+    var flexRight = {
+        "width": "66.6667%"
+    };
+
     return (
         <div>
             <Header/>
-            <Row>
-                <Col offset="l1" s={10}>
-                    <div className="container">
-                        <Collection header="Your Personal Info">
-                            {allProfileElement}
-                        </Collection>
-                    </div>
-                </Col>
-            </Row>
+            <div style={backgroundStyle}>
+                <div className="container">
+                    <Card>
+                        <div style={flex}>
+                            <div style={flexLeft} className="valign-wrapper">
+                                <img src="/img/cv.jpg" className="circle" style={avatar}/>
+                            </div>
+                            <div style={flexRight}>
+                                <Collection header="Your Personal Info">
+                                    {allProfileElement}
+                                </Collection>
+                            </div>
+                        </div>
+                    </Card>
+                </div>
+            </div>
+            <div style={sectionStyle}>
+                <div className="container">
+                    <Row>
+                        <h5> 我的房源 </h5>
+                        {allHouseElement}
+                    </Row>
+                </div>
+            </div>
         </div>
     );
 };

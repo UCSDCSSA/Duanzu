@@ -24,11 +24,11 @@ const Main = () => {
         <Route exact path='/' component={Home}/>
         <Route exact path='/login' component={Login}/>
         <Route exact path='/register' component={Register}/>
-        <Route exact path='/about' component={About}/>
+        <Route exact path='/aboutus' component={AboutUs}/>
 
         <Route exact path='/publish' component={Publish}/>
         <Route exact path='/checkInfo' component={CheckInfo}/>
-        <Route exact path='/ChangeProfile' component={ChangeProfile}/>
+        <Route exact path='/profile/edit' component={ChangeProfile}/>
         <Route exact path='/ChangePassword' component={ChangePassword}/>
         <Route path='*' component={NotFound}/>
     </Switch>);

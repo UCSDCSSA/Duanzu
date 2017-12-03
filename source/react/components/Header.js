@@ -13,6 +13,7 @@ class Header extends React.Component {
                 <NavItem href='/#/publish'>发布</NavItem>
                 <NavItem href='/#/CheckInfo'>查看短租信息</NavItem>
                 <NavItem href='/#/ChangePassword'>修改密码</NavItem>
+                <NavItem href='/#/profile/edit'>修改信息</NavItem>
             </Navbar>
         );
     }
