@@ -29,7 +29,7 @@ const Main = () => {
         <Route exact path='/publish' component={Publish}/>
         <Route exact path='/checkInfo' component={CheckInfo}/>
         <Route exact path='/profile/edit' component={ChangeProfile}/>
-        <Route exact path='/ChangePassword' component={ChangePassword}/>
+        <Route exact path='/profile/change_password' component={ChangePassword}/>
         <Route path='*' component={NotFound}/>
     </Switch>);
 };
