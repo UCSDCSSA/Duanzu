@@ -1,5 +1,5 @@
 /**
-* @author: Wenlin Mao
+* @author: Wenlin Mao, Tianyang Lu
 * @date: 2017/11/12
 */
 
@@ -21,55 +21,47 @@ import {
 
 class LeasingCard extends React.Component {
     render () {
-        return {
-            <div>
-                <Col s={3}>
-                    <Card className="houseImage"
-                        header={<CardTitle image={this.props.houseImage}/>}>
-                        <Row style={rowStyle}>
-                            <center>
-                                <h5> {this.props.name} </h5>
-                            </center>
-                        </Row>
-                    </Card>
-                </Col>
+      // The default card component may not achieve the design graph
+      // Consider build our own "card" components
+        var imgStyle = {
+            "backgroundImg" : ""
+        };
+
+        return (
+
+
+            <div class = "leasingCard">
+                <div class = "backgroundImg">
+                    <img src={this.props.houseImage} />
+                    <span class="tile" >
+                        {this.props.houseTitle}
+                    </span>
+                    <div class = "row">
+                        <div>
+                            {this.props.houseSex}
+                        </div>
+                        <div>
+                            {this.props.houseName}
+                        </div>
+                        <div class = "Col s4">
+                            {this.props.rent}
+                        </div>
+                        <div class = "col s4">
+                            {this.props.duration}
+                        </div>
+                        <div class = "col s4">
+                            {this.props.houseType}
+                        </div>
+                    </div>
+
+
+                </div>
             </div>
-        }
+
+
+        );
     }
 
-    getName () {
-        return this.props.name;
-    }
+
 }
-
-
-
-
-
-
-// class LeasingCard extends React.Component {
-//
-//    var rowStyle = {
-//        "paddingBottom": "10px"
-//    };
-//
-//    // TODO need info from data base
-//    return (
-//                <Card className="houseImage"
-//                    header={<CardTitle image={this.props.houseImage}/>}>
-//                    <Row style={rowStyle}>
-//                        <center>
-//                            <h5> {this.props.houseName} </h5>
-//                        </center>
-//                    </Row>
-//                </Card>
-//    );
-// }
-//
-// componentDidMount() {
-//    $(".houseImage").each(function () {
-//        var width = $(this).width();
-//        $(this).height(width);
-//    })
-// }
-// }
+export default LeasingCard;
