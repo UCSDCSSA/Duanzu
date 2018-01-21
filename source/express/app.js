@@ -1,6 +1,8 @@
 var express = require("express");
 var bodyParser = require("body-parser");
 
+const fs = require('fs');
+
 var app = express();
 app.use(bodyParser.urlencoded({
     extended: true
@@ -8,6 +10,7 @@ app.use(bodyParser.urlencoded({
 
 
 app.use(function (req, res, next) {
+  var errorCode = JSON.parse(fs.readFileSync('error-code.json'));
   res.formattedResponse = function (code,msg,content){
     res.send({"code":code,"msg": msg,"content":content});
   }
@@ -15,10 +18,11 @@ app.use(function (req, res, next) {
   res.success = function (content) {
     res.formattedResponse(0,"",content);
   }
-  res.error = function (code, msg) {
-    console.log("aaa");
-    res.formattedResponse(code,msg,{});
+
+  res.error = function (code) {
+    res.formattedResponse(code,errorCode[code],{});
   }
+
   next();
 })
 
