@@ -8,6 +8,7 @@ import {Link} from 'react-router-dom';
 
 import {
     Card,
+    CardPanel,
     Collection,
     CollectionItem,
     Row,
@@ -27,7 +28,7 @@ class InfoCard extends React.Component {
         // TODO need info from data base
         return (
             <div>
-                <CollectionItem>
+                <div>
                     <Row >
                         <Col s={4}>
                             <center>
@@ -37,9 +38,13 @@ class InfoCard extends React.Component {
                                 </h5>
                             </center>
                         </Col>
-                        <Input s={7} label={this.props.infoID}/>
+                        <Col s={7}>
+                            <h5>
+                                {this.props.infoID}
+                            </h5>
+                        </Col>
                     </Row>
-                </CollectionItem>
+                </div>
             </div>
         );
     }
@@ -89,20 +94,16 @@ const ChangeProfile = () => {
 
     var allProfileInfo = [
         {
-            id: "1",
-            name: "Name",
-            icon: "person"
-        }, {
             id: "2",
-            name: "Email",
+            name: "邮箱",
             icon: "email"
         }, {
             id: "3",
-            name: "Phone",
+            name: "电话",
             icon: "phone"
         }, {
             id: "4",
-            name: "WeChat",
+            name: "微信",
             icon: "chat"
         }
     ]
@@ -168,7 +169,7 @@ const ChangeProfile = () => {
     }*/
 
     var backgroundStyle = {
-        "backgroundImage": "url('/img/cv.jpg')",
+        //"backgroundImage": "url('/img/cv.jpg')",
         "backgroundSize": "cover",
         "backgroundPosition": "center",
         "padding": "70px 0"
@@ -183,14 +184,19 @@ const ChangeProfile = () => {
     var flexLeft = {
         "width": "33.3333%"
     };
+
     var avatar = {
-        "margin": "0 auto",
-        "width": "200px",
-        "height": "200px"
+        "position": "absolute",
+        "margin": "-40px -70px",
+        "width": "330px",
+        "height": "330px",
+        "box-shadow": "0 2px 10px 4px rgba(0, 0, 0, 0.5)"
     };
 
+
     var flexRight = {
-        "width": "66.6667%"
+        "margin": "20px 0px",
+        "width": "100%"
     };
 
     return (
@@ -198,18 +204,23 @@ const ChangeProfile = () => {
             <Header/>
             <div style={backgroundStyle}>
                 <div className="container">
-                    <Card>
-                        <div style={flex}>
-                            <div style={flexLeft} className="valign-wrapper">
-                                <img src="/img/cv.jpg" className="circle" style={avatar}/>
-                            </div>
-                            <div style={flexRight}>
-                                <Collection header="Your Personal Info">
-                                    {allProfileElement}
-                                </Collection>
-                            </div>
-                        </div>
-                    </Card>
+                    <h3> 欢迎回来, </h3>
+                    <Row>
+                        <Col s={12} m={8}>
+                            <Card>
+                                <Row>
+                                    <Col s={12} m={5}>
+                                        <img src="/img/cv.jpg" style={avatar}/>
+                                    </Col>
+                                    <Col s={12} m={7}>
+                                        <div style={flexRight}>
+                                            {allProfileElement}
+                                        </div>
+                                    </Col>
+                                </Row>
+                            </Card>
+                        </Col>
+                    </Row>
                 </div>
             </div>
             <div style={sectionStyle}>
