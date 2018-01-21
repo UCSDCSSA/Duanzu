@@ -14,6 +14,8 @@ class Header extends React.Component {
                 <NavItem href='/#/leasing/view'>查看短租信息</NavItem>
                 <NavItem href='/#/profile/change_password'>修改密码</NavItem>
                 <NavItem href='/#/profile/edit'>修改信息</NavItem>
+                <NavItem href='/#/searchpage'>搜索</NavItem>
+
             </Navbar>
         );
     }

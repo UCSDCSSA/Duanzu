@@ -19,6 +19,9 @@ import Header from './Header';
 
 class Publish extends React.Component {
 
+    handleClick (){
+        window.location.href = '/#/display'
+    }
     render() {
         return (<div>
             <Header/>
@@ -69,8 +72,18 @@ class Publish extends React.Component {
                     </Col>
                 </Row>
             </div>
-        </div>);
+
+            <button className='btn waves-effect waves-light' type="submit" name="action" onClick={this.handleClick}>
+            Submit
+            <i className="material-icons right">send</i>
+            </button>
+        </div>
+
+        // <a href='/#/leasing/view'> change </a>
+
+    );
     }
+
 
     componentDidMount() {
 
