@@ -37,15 +37,16 @@ class LeasingCard extends React.Component {
                          backgroundImage: 'url(' + imgName + ')',
                          backgroundSize: 'cover',
                          overflow: 'hidden',
-                         width: '250px',
-                         height: '250px',
+                         height: '200px',
                          position: 'relative'
             }}>
 
 
                 <div className="container" style= {{
                         marginTop:'10px',
-                        color:'white'
+                        color:'white',
+                        fontSize:'14px'
+
                 }}>
                         {this.props.houseTitle}
                 </div>
@@ -57,7 +58,7 @@ class LeasingCard extends React.Component {
                 }}>
                     <div className = "col s12" style = {{
                         backgroundColor: 'lightblue',
-                        width:'100px',
+                        width:'50%',
                         marginLeft:'15px',
                         color:'white'
                     }}>
@@ -66,7 +67,9 @@ class LeasingCard extends React.Component {
 
                     <h4 className = "col s12" style = {{
                         marginTop: '-2px',
-                        color:'white'
+                        color:'white',
+                        fontSize:'18px'
+
                     }}>
                         {houseName}
                     </h4>
@@ -74,13 +77,17 @@ class LeasingCard extends React.Component {
 
                     <div className = "col s4" style = {{
                         marginTop: '-14px',
-                        color:'white'
+                        color:'white',
+                        fontSize:'12px'
+
                     }}>
                         {this.props.rent}
                     </div>
                     <div className = "col s4" style = {{
                         marginTop: '-14px',
-                        color:'white'
+                        color:'white',
+                        fontSize:'12px'
+
                     }}>
                         {this.props.duration}
                     </div>

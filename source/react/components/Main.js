@@ -18,6 +18,7 @@ import ViewLeasing from './ViewLeasing.js';
 import ChangeProfile from './ChangeProfile.js';
 import Register from './Register.js';
 import About from './About.js';
+import SearchPage from './SearchPage.js';
 
 const Main = () => {
     return (<Switch>
@@ -30,6 +31,7 @@ const Main = () => {
         <Route exact path='/leasing/view' component={ViewLeasing}/>
         <Route exact path='/profile/edit' component={ChangeProfile}/>
         <Route exact path='/profile/change_password' component={ChangePassword}/>
+        <Route exact path='/searchpage' component={SearchPage}/>
         <Route path='*' component={NotFound}/>
     </Switch>);
 };
