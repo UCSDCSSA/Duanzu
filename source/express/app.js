@@ -7,7 +7,7 @@ app.use(bodyParser.urlencoded({
 }));
 
 // respond with "hello world" when a GET request is made to the homepage
-app.post('/api/change_password', require("./change_password"));
-app.post('/api/login', require("./login"));
+app.post('/api/change_password', require("./routes/change_password"));
+app.post('/api/login', require("./routes/login"));
 
 app.listen(3000);
