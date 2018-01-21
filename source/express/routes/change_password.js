@@ -1,4 +1,3 @@
 module.exports = function (req, res) {
-    console.log(req.body);
-    res.send('hello ' + req.body.username);
+    res.error(1,"aaa");
 }

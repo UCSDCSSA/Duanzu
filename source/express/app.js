@@ -6,6 +6,22 @@ app.use(bodyParser.urlencoded({
     extended: true
 }));
 
+
+app.use(function (req, res, next) {
+  res.formattedResponse = function (code,msg,content){
+    res.send({"code":code,"msg": msg,"content":content});
+  }
+
+  res.success = function (content) {
+    res.formattedResponse(0,"",content);
+  }
+  res.error = function (code, msg) {
+    console.log("aaa");
+    res.formattedResponse(code,msg,{});
+  }
+  next();
+})
+
 // respond with "hello world" when a GET request is made to the homepage
 app.post('/api/change_password', require("./routes/change_password"));
 app.post('/api/login', require("./routes/login"));
