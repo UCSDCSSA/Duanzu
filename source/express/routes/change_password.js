@@ -1,3 +1,8 @@
+//requiare oldPassword
 module.exports = function (req, res) {
-    res.error(1);
+  if(req.body.oldPassword = NULL){
+    res.error(2);
+  }else if(req.body.password = NULL){
+    
+  }
 }
