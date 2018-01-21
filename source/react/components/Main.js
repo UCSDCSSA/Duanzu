@@ -18,6 +18,7 @@ import ViewLeasing from './ViewLeasing.js';
 import ChangeProfile from './ChangeProfile.js';
 import Register from './Register.js';
 import About from './About.js';
+import Display from './Display.js';
 
 const Main = () => {
     return (<Switch>
@@ -25,7 +26,7 @@ const Main = () => {
         <Route exact path='/login' component={Login}/>
         <Route exact path='/register' component={Register}/>
         <Route exact path='/about' component={About}/>
-
+        <Route exact path='/display' component={Display}/>
         <Route exact path='/publish' component={Publish}/>
         <Route exact path='/leasing/view' component={ViewLeasing}/>
         <Route exact path='/profile/edit' component={ChangeProfile}/>
