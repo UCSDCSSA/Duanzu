@@ -10,6 +10,8 @@ import React from 'react';
 import {Input, Button, Card, Row, Col} from 'react-materialize';
 import Header from './Header';
 
+import Facility from './Facility';
+
 class ViewLeasing extends React.Component {
   render() {
 
@@ -39,6 +41,36 @@ class ViewLeasing extends React.Component {
         "paddingBottom": "9px",
         "paddingTop": "9px"
     }
+
+    var allIconName = [
+        {
+            id: "wifi",
+            name: "Wifi"
+        }, {
+            id: "local_dining",
+            name: "local_dining"
+        }, {
+            id: "local_mall",
+            name: "local_mall"
+        }, {
+            id: "local_car_wash",
+            name: "local_car_wash"
+        }, {
+            id: "rss_feed",
+            name: "rss_feed"
+        }
+    ]
+
+    var allAvailIconElement = [];
+    for (var i = 0; i < allIconName.length; i++) {
+        allAvailIconElement.push((<Facility icon_id={allIconName[i].id} text={allIconName[i].id} avail/>));
+    }
+
+    var allUnavailIconElement = [];
+    for (var i = 0; i < allIconName.length; i++) {
+        allUnavailIconElement.push((<Facility icon_id={allIconName[i].id} text={allIconName[i].id}/>));
+    }
+
 
     return (<div>
       <Header/>
@@ -75,20 +107,10 @@ class ViewLeasing extends React.Component {
                     <Row>
                         <Col s={2} className="cyan-text text-darken-3 right-align">房屋设施</Col>
                         <Col s={5}>可用
-                            <br />
-                            <i className="material-icons">wifi</i>  Wifi
-                            <br />
-                            <i className="material-icons">wifi</i>  Wifi
-                            <br />
-                            <i className="material-icons">wifi</i>  Wifi
+                            {allAvailIconElement}
                         </Col>
                         <Col s={5} className="grey-text text-lighten-1">不可用
-                            <br />
-                            <i className="material-icons">wifi</i>  Wifi
-                            <br />
-                            <i className="material-icons">wifi</i>  Wifi
-                            <br />
-                            <i className="material-icons">wifi</i>  Wifi
+                            {allUnavailIconElement}
                         </Col>
                     </Row>
                     <Row>
@@ -110,18 +132,10 @@ class ViewLeasing extends React.Component {
                     <Row>
                         <Col s={2} className="cyan-text text-darken-3 right-align">附近设施</Col>
                         <Col s={5}>
-                            <i className="material-icons">local_dining</i>  Dining
-                            <br />
-                            <i className="material-icons">local_car_wash</i>  Car Wash
-                            <br />
-                            <i className="material-icons">local_mall</i>  Mall
+                            {allAvailIconElement}
                         </Col>
                         <Col s={5}>
-                            <i className="material-icons">local_dining</i>  Dining
-                            <br />
-                            <i className="material-icons">local_car_wash</i>  Car Wash
-                            <br />
-                            <i className="material-icons">local_mall</i>  Mall
+                            {allAvailIconElement}
                         </Col>
                     </Row>
                     <Row>
@@ -146,10 +160,10 @@ class ViewLeasing extends React.Component {
             <Col s={4}>
                 <Card>
                     <Row>
-                        <Col className="center" s={4}>7月13日</Col>
-                        <Col s={2}>起</Col>
-                        <Col className="center" s={4}>7月13日</Col>
-                        <Col s={2}>止</Col>
+                        <Col className="center" s={5}><h5>7月13日</h5></Col>
+                        <Col s={1} className="left-align" style={{fontSize:'10px', paddingTop: '20px'}}>起</Col>
+                        <Col className="center" s={5}><h5>7月13日</h5></Col>
+                        <Col s={1} className="left-align" style={{fontSize:'10px', paddingTop: '20px'}}>止</Col>
                     </Row>
 
                     <Row>
@@ -162,6 +176,31 @@ class ViewLeasing extends React.Component {
                         <Col className="center" s={4}>$1000</Col>
                         <Col className="center" s={4}>$1000</Col>
                         <Col className="center" s={4}>$1000</Col>
+                    </Row>
+                    <hr/>
+                    <Row>
+                        <h5>联系方式</h5>
+                    </Row>
+
+                    <Row>
+                        <Col s={5}>
+                            <Row>张三</Row>
+                            <a className="waves-effect waves-light btn-large red" style={{marginBottom: '-240px', marginLeft: '-15px', paddingBottom: '100px'}}>
+                                <i class="material-icons">add</i><br/>
+                                收藏房源
+                            </a>
+                        </Col>
+                        <Col s={7}>
+                            <Row>
+                                8581234567
+                            </Row>
+                            <Row>
+                                微信名称
+                            </Row>
+                            <Row>
+                                abcd@ucsd.edu
+                            </Row>
+                        </Col>
                     </Row>
                 </Card>
             </Col>
