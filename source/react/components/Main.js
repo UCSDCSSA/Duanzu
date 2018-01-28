@@ -18,11 +18,8 @@ import ViewLeasing from './ViewLeasing.js';
 import ChangeProfile from './ChangeProfile.js';
 import Register from './Register.js';
 import About from './About.js';
-<<<<<<< HEAD
 import SearchPage from './SearchPage.js';
-=======
 import Display from './Display.js';
->>>>>>> 2467bf1d108ea0e4f6a5bd3c8c7b81a74b4ace90
 
 const Main = () => {
     return (<Switch>
