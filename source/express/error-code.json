@@ -1,4 +1,7 @@
 {
   "1" : "username is null",
-  "2" : "password is null" 
+  "2" : "password is null",
+  "3" : "new password is null",
+  "4" : "confirmed new password is null",
+  "5" : "new password does not match"
 }
