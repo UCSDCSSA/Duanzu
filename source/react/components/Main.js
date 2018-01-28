@@ -20,6 +20,7 @@ import Register from './Register.js';
 import About from './About.js';
 import SearchPage from './SearchPage.js';
 import Display from './Display.js';
+import GoogleMapTest from './GoogleMapTest.js';
 
 const Main = () => {
     return (<Switch>
@@ -33,6 +34,7 @@ const Main = () => {
         <Route exact path='/profile/edit' component={ChangeProfile}/>
         <Route exact path='/profile/change_password' component={ChangePassword}/>
         <Route exact path='/searchpage' component={SearchPage}/>
+        <Route exact path='/map' component={GoogleMapTest}/>
         <Route path='*' component={NotFound}/>
     </Switch>);
 };
