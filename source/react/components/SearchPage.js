@@ -20,17 +20,37 @@ class SearchPage extends React.Component {
     <div className="row">
       <div className="col l7 s12">
         <div id="SearchBar" className="input-field col s12">
-          <Card>
-          <Row>
-          <i className="material-icons" style={{fontSize:'0.9rem'}}>home</i>
-          <div className="input-field inline" >
-          <input id="email" type="email" className="validate" />
-          <label for="email" data-error="wrong" data-success="right">Email</label>
-          </div>
 
+          <Row>
+          <div className="col l2">
+              <Input placeholder="搜索房源" id="apartmentName" type="text" className="validate" >
+                <Icon style={{fontSize:'0.1 px'}}>insert_chart </Icon>
+              </Input>
+          </div>
+          <div className="col l4">
+              <Input placeholder="搜索房源" id="apartmentName" type="text" className="validate" >
+                <Icon style={{fontSize:'0.1 px'}}>insert_chart </Icon>
+              </Input>
+          </div>
+          <div className="col l2">
+              <Input placeholder="搜索房源" id="apartmentName" type="text" className="validate" >
+                <Icon style={{fontSize:'0.1 px'}}>insert_chart </Icon>
+              </Input>
+          </div>
+          <div className="col l2">
+              <Input placeholder="搜索房源" id="apartmentName" type="text" className="validate" >
+                <Icon style={{fontSize:'0.1 px'}}>insert_chart </Icon>
+              </Input>
+          </div>
+          <div className="col l2">
+              <Input placeholder="搜索房源" id="apartmentName" type="text" className="validate" >
+                <Icon style={{fontSize:'0.1 px'}}>insert_chart </Icon>
+              </Input>
+          </div>
           </Row>
-          </Card>
         </div>
+
+
 
         <div id="Tag">
 
@@ -47,7 +67,7 @@ class SearchPage extends React.Component {
                        duration = "1月/3月"
                        houseTitle = "CV village 2b/2b 男女不限" />
           </div>
-          <div className= "col l4 s12 m6" >
+          <div className = "col l4 s12 m6" >
             <LeasingCard houseImage = "/img/cv.jpg"
                                     houseSex = "男女不限"
                                     houseType = "2B2B"
