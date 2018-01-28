@@ -58,6 +58,33 @@ add files and modify them in `components/`. If you have any need to modify
 
 You also should not touch any file among the config files please notice.
 
-## `components/` File Organizing and Naming Instructions
+## File Organizing, Naming Instructions and Formatting
 
-You are probably using
+### JSX Naming Instructions
+
+For every file under `./components/`, please name the file using 'Capitalize
+the first character for every word'. For example `AboutUs.js`, `Main.js` and so
+on. In every `.JSX` file, you should have an `export`. Please make sure that
+*the item you export* has exactly the same name as the file name. For example,
+in `Main.js` you must have the last line `export default Main;`.
+
+### Router Naming Instructions
+
+In `./components/Main.js` we define a bunch of routes for the application. Here
+for every route that you create, we must keep the route has naming style 'all
+lower-case words concatenated by `_`'. For example `/about_us`,
+`/profile/change_password` and so on. Please note that you should not hesitate
+to add extra path to group the routes.
+
+### Formatting
+
+To make things easy and consistent, in all JSX files in `./components`, we use
+the *default setting* of *Atom Beautifier* to format your code. If you are
+using Atom, please go to [here](https://atom.io/packages/atom-beautify)
+to install this plugin to Atom. If not, then *at least* follow the following
+rules:
+
+- All white-space using space (` `). No Tab (`\t`).
+- All indentation are 4 spaces.
+- All the JavaScript part of the code must not exceed 80 chars per line.
+- Add semi-colon (`;`) to everywhere you need to.
