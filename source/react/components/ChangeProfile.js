@@ -29,19 +29,17 @@ class InfoCard extends React.Component {
         return (
             <div>
                 <div>
-                    <Row >
+                    <Row>
                         <Col s={4}>
                             <center>
-                                <h5>
+                                <h7>
                                     <Icon small left>{this.props.icon}</Icon>
                                     {this.props.infoName}
-                                </h5>
+                                </h7>
                             </center>
                         </Col>
                         <Col s={7}>
-                            <h5>
-                                {this.props.infoID}
-                            </h5>
+                            <h6>{this.props.infoID}</h6>
                         </Col>
                     </Row>
                 </div>
@@ -92,6 +90,8 @@ class HouseCard extends React.Component {
 
 const ChangeProfile = () => {
 
+    var username = "CSSA";
+
     var allProfileInfo = [
         {
             id: "2",
@@ -106,7 +106,7 @@ const ChangeProfile = () => {
             name: "微信",
             icon: "chat"
         }
-    ]
+    ];
 
     var allHouseInfo = [
         {
@@ -131,7 +131,7 @@ const ChangeProfile = () => {
             house: "need database",
             img: '/img/cv.jpg'
         }
-    ]
+    ];
 
     // array contains all component of profile information
     var allProfileElement = [];
@@ -169,7 +169,7 @@ const ChangeProfile = () => {
     }*/
 
     var backgroundStyle = {
-        //"backgroundImage": "url('/img/cv.jpg')",
+        "backgroundColor": "rgba(42, 107, 147, 0.07)",
         "backgroundSize": "cover",
         "backgroundPosition": "center",
         "padding": "70px 0"
@@ -188,15 +188,16 @@ const ChangeProfile = () => {
     var avatar = {
         "position": "absolute",
         "margin": "-40px -70px",
-        "width": "330px",
-        "height": "330px",
+        "width": "250px",
+        "height": "250px",
         "box-shadow": "0 2px 10px 4px rgba(0, 0, 0, 0.5)"
     };
 
 
     var flexRight = {
-        "margin": "20px 0px",
-        "width": "100%"
+        "margin": "20px 0px -20px 0px",
+        "width": "100%",
+        "lineHeight": "28px"
     };
 
     return (
@@ -204,7 +205,7 @@ const ChangeProfile = () => {
             <Header/>
             <div style={backgroundStyle}>
                 <div className="container">
-                    <h3> 欢迎回来, </h3>
+                    <h5 style={{"margin-bottom": 60}}> 欢迎回来,<span style={{"fontSize": "40px"}}> {username}</span></h5>
                     <Row>
                         <Col s={12} m={8}>
                             <Card>
@@ -220,6 +221,24 @@ const ChangeProfile = () => {
                                 </Row>
                             </Card>
                         </Col>
+                        <Col s={12} m={1}></Col>
+                        <Col s={12} m={3}>
+                            <div style={{
+                                "margin": "56px 50px 0px 0px",
+                                "border-left": "6px solid #2a6b93",
+                                "padding": "0px 0px 0px 40px"
+                            }}>
+                                <h6 style={{"color": "#2a6b93"}}>
+                                    修改个人信息
+                                </h6>
+                                <h6 style={{"margin-top": 36, "color": "#2a6b93"}}>
+                                    修改密码
+                                </h6>
+                                <h6 style={{"margin-top": 36, "color": "#2a6b93"}}>
+                                    注销账号
+                                </h6>
+                            </div>
+                        </Col>
                     </Row>
                 </div>
             </div>
@@ -228,12 +247,16 @@ const ChangeProfile = () => {
                     <Tabs>
                         <Tab title="我的房源">
                             <div>
-                                <Row> {allHouseElement} </Row>
+                                <Col s={12}>
+                                    <Row> {allHouseElement} </Row>
+                                </Col>
                             </div>
                         </Tab>
                         <Tab title="我的收藏">
                             <div>
-                                <Row> {allHouseElement} </Row>
+                                <Col s={12}>
+                                    <Row> {allHouseElement} </Row>
+                                </Col>
                             </div>
                         </Tab>
                     </Tabs>
