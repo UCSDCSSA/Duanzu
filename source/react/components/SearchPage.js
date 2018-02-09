@@ -1,5 +1,5 @@
 /**
- * @author: Yuhan Wang, Zixin Shen
+ * @author: Tianyang Lu Xuran Liu
  * @date: 2017/11/12
  */
 
@@ -27,8 +27,10 @@ class Tag extends React.Component {
                     "backgroundColor": "rgba(0, 0, 255, 1)"
                 } : {}
             } onClick={(e) => this.click(e)}>
-                <i className="material-icons">{this.props.icon}</i>
-                {this.props.text}
+                <span>
+                <Icon tiny>{this.props.icon}</Icon>
+                <span style={{margin:'3px'}}> {this.props.text} </span>
+                </span>
             </span>
         );
     }
@@ -66,7 +68,7 @@ class Tags extends React.Component {
             tagElements.push(<Tag key={i} icon={tags[i].icon} text={tags[i].text} />)
         }
         return (
-            <div>
+            <div style = {{marginLeft: '10px'}}>
                 {tagElements}
             </div>
         );
@@ -78,53 +80,34 @@ class SearchPage extends React.Component {
     return(
       <div className="search-page">
       <Header/>
-      <Tags />
+
+
     <div className="row">
       <div className="col l7 s12">
-        <div id="SearchBar" className="input-field col s12">
+
+
+
+          <div style={{width:'40%', float:'left'}}>
+              <input placeholder="搜索房源" id="apartmentName" type="text" className="validate" />
+          </div>
+          <div style={{width:'15%', float:'left'}}>
+              <input placeholder="搜索房源" id="apartmentName" type="text" className="validate" />
+          </div>
+          <div style={{width:'15%', float:'left'}}>
+              <input placeholder="搜索房源" id="apartmentName" type="text" className="validate" />
+          </div>
+          <div style={{width:'15%', float:'left'}}>
+              <input placeholder="搜索房源" id="apartmentName" type="text" className="validate" />
+          </div>
+          <div style={{width:'15%', float:'left'}}>
+              <input placeholder="搜索房源" id="apartmentName" type="text" className="validate" />
+          </div>
+
 
           <Row>
-          <div className="col l2 searchItem" >
-
-              <Input placeholder="搜索房源" id="apartmentName" type="text" className="validate">
-                  <Icon>account_circle</Icon>
-              </Input>
-          </div>
-          <div className="col l4">
-              <Input placeholder="搜索房源" id="apartmentName" type="text" className="validate" >
-                <Icon style={{fontSize:'0.1 px'}}>insert_chart </Icon>
-              </Input>
-          </div>
-          <div className="col l2">
-              <Input placeholder="搜索房源" id="apartmentName" type="text" className="validate" >
-                <Icon style={{fontSize:'0.1 px'}}>insert_chart </Icon>
-              </Input>
-          </div>
-          <div className="col l2">
-              <Input placeholder="搜索房源" id="apartmentName" type="text" className="validate" >
-                <Icon style={{fontSize:'0.1 px'}}>insert_chart </Icon>
-              </Input>
-          </div>
-          <div className="col l2">
-              <Input placeholder="搜索房源" id="apartmentName" type="text" className="validate" >
-                <Icon style={{fontSize:'0.1 px'}}>insert_chart </Icon>
-              </Input>
-          </div>
+            <Tags />
           </Row>
 
-          <Row>
-            <div className="">
-
-            </div>
-
-          </Row>
-        </div>
-
-
-
-        <div id="Tag">
-
-        </div>
 
         <div id="profile">
           <div className="row">
@@ -155,6 +138,7 @@ class SearchPage extends React.Component {
                                                  duration = "1月/3月"
                                                  houseTitle = "CV village 2b/2b 男女不限" />
           </div>
+
           </div>
         </div>
       </div>

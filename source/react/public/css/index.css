@@ -20,5 +20,9 @@ body {
 
 .search-page .col .input-field .searchItem{
   height : 50px;
+}
+
+.search-page  #apartmentName{
+  width : 92%;
 
 }

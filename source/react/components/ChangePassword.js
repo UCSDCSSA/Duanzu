@@ -46,8 +46,6 @@ class ChangePassword extends React.Component {
 
 
         );
-
-
     }
 };
 
