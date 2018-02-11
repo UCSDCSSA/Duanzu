@@ -28,7 +28,7 @@ app.use(function (req, res, next) {
 
 // respond with "hello world" when a GET request is made to the homepage
 app.get('/api/change_password', require("./routes/change_password"));
-
+app.post('/api/change_profile', require("./routes/change_profile"));
 app.post('/api/change_password', require("./routes/change_password"));
 app.post('/api/login', require("./routes/login"));
 
