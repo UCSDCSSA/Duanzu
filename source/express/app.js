@@ -16,7 +16,7 @@ app.use(function (req, res, next) {
   }
 
   res.success = function (content) {
-    res.formattedResponse(0,"",content);
+    res.formattedResponse(0,"success",content);
   }
 
   res.error = function (code) {
