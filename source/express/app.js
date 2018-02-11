@@ -1,6 +1,5 @@
 var express = require("express");
 var bodyParser = require("body-parser");
-
 const fs = require('fs');
 
 var app = express();
@@ -16,7 +15,7 @@ app.use(function (req, res, next) {
   }
 
   res.success = function (content) {
-    res.formattedResponse(0,"",content);
+    res.formattedResponse(0,"success",content);
   }
 
   res.error = function (code) {
@@ -31,6 +30,10 @@ app.get('/api/change_password', require("./routes/change_password"));
 app.post('/api/change_profile', require("./routes/change_profile"));
 app.post('/api/change_password', require("./routes/change_password"));
 app.post('/api/login', require("./routes/login"));
+<<<<<<< HEAD
+app.post('/api/register', require("./routes/register"));
+=======
+>>>>>>> 97d66ce9c9b8d2d62bb60cdc241d1a1c49f8a139
 app.post('/api/logout', require("./routes/logout"));
 
 app.listen(3000);
