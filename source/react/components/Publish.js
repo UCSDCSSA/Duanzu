@@ -44,7 +44,7 @@ class Publish extends React.Component {
                                 <Input s={6} type='select' label="租客性别" icon='wc' defaultValue='3'>
                                     <option value='1'>男</option>
                                     <option value='2'>女</option>
-                                    <option value='3'>男女不限</option>
+                                    <option value='3'>男/女</option>
                                 </Input>
                                 <Input s={6} label="电话号码" validate="validate" type='tel'>
                                     <Icon>phone</Icon>

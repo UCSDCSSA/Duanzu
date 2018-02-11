@@ -11,15 +11,44 @@ import {Input, Button, Card, Row, Col} from 'react-materialize';
 import Header from './Header';
 
 import Facility from './Facility';
+import GoogleMapTest from './GoogleMapTest'
 
 class ViewLeasing extends React.Component {
-  render() {
+    constructor(props) {
+        super(props);
+        this.state = {like: false};
+    }
+    handleClick () {
+        this.setState((prev) => {
+            var next = {
+                like: !prev.like
+            }
+            return next;
+        });
+    }
+    render() {
+
+      function buttonDisplay(like) {
+          if(!like) {
+              return(
+                  <div>
+                        <i className="material-icons">favorite_border</i><br/>
+                  </div>
+              );
+          } else {
+              return(
+                  <div>
+                        <i className="material-icons">favorite</i><br/>
+                  </div>
+              );
+          }
+      }
 
     var cardStyle = {
       "backgroundImage": "url('/img/cv1.jpg')",
       "backgroundSize": "cover",
       "backgroundPosition": "center",
-      "height": "300px"
+      "height": "400px"
     };
 
     var border = {
@@ -34,12 +63,13 @@ class ViewLeasing extends React.Component {
 
     var label = {
         "backgroundColor": "#00838f",
-        "fontSize": "30px",
+        "fontSize": "25px",
         "color": "white",
         "paddingLeft": "14px",
         "paddingRight": "14px",
         "paddingBottom": "9px",
-        "paddingTop": "9px"
+        "paddingTop": "9px",
+
     }
 
     var allIconName = [
@@ -79,14 +109,17 @@ class ViewLeasing extends React.Component {
         <div className={vlContainer}>
           <Row>
             <Col s={8}>
-                <Row>
-                    <Col>
-                        <span style={label}>男女不限</span>
-                    </Col>
-                    <Col><h4>CV Village</h4></Col>
-                </Row>
 
                 <div className="container">
+                <Row>
+                    <Col s={2}>
+                        <h6 style={label} className = "center">男/女</h6>
+                    </Col>
+                    <Col s={10}>
+                        <h4>CV Village</h4>
+                    </Col>
+                </Row>
+
                     <Row>
                     <Col s={2}></Col>
                     <Col s={3}><a href="#house"><h5>房屋信息</h5></a></Col>
@@ -139,7 +172,7 @@ class ViewLeasing extends React.Component {
                         </Col>
                     </Row>
                     <Row>
-                        <Card style={cardStyle}></Card>
+                        <GoogleMapTest style={cardStyle}></GoogleMapTest>
                     </Row>
                     <Row>
                         <Col s={2} className="cyan-text text-darken-3 right-align">如何到达</Col>
@@ -185,8 +218,16 @@ class ViewLeasing extends React.Component {
                     <Row>
                         <Col s={5}>
                             <Row>张三</Row>
-                            <a className="waves-effect waves-light btn-large red" style={{marginBottom: '-240px', marginLeft: '-15px', paddingBottom: '100px'}}>
-                                <i class="material-icons">add</i><br/>
+                            <a className="waves-effect waves-light btn-large red" style={{marginBottom: '-240px', marginLeft: '-15px', paddingBottom: '100px'}}
+                                onClick={ () => {
+                                    this.setState((prev) => {
+                                        var next = {
+                                            like: !prev.like
+                                        }
+                                        return next;
+                                    });
+                                } }>
+                                { buttonDisplay(this.state.like) }
                                 收藏房源
                             </a>
                         </Col>
