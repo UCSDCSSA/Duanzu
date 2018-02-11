@@ -30,10 +30,7 @@ app.get('/api/change_password', require("./routes/change_password"));
 
 app.post('/api/change_password', require("./routes/change_password"));
 app.post('/api/login', require("./routes/login"));
-<<<<<<< HEAD
 app.post('/api/register', require("./routes/register"));
-=======
->>>>>>> 97d66ce9c9b8d2d62bb60cdc241d1a1c49f8a139
 app.post('/api/logout', require("./routes/logout"));
 
 app.listen(3000);
