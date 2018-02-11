@@ -1,6 +1,5 @@
 var express = require("express");
 var bodyParser = require("body-parser");
-
 const fs = require('fs');
 
 var app = express();
@@ -31,5 +30,6 @@ app.get('/api/change_password', require("./routes/change_password"));
 
 app.post('/api/change_password', require("./routes/change_password"));
 app.post('/api/login', require("./routes/login"));
+app.post('/api/register', require("./routes/register"));
 
 app.listen(3000);
