@@ -18,11 +18,30 @@ body {
   height: 20px;
 }
 
-.search-page .col .input-field .searchItem{
-  height : 50px;
+.search-page .search-bar{
+  width: 100%;
+  border: 3px solid;
+  border-style: outset;
+  height: 100px;
+  margin-right: 0.75rem;
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+  position: relative;
+  
 }
+
+.search-page .search-bar-top{
+  margin-top: 10px;
+
+}
+
+.search-page .search-bar-bottom{
+  position: absolute;
+  top: 60px;
+}
+
 
 .search-page  #apartmentName{
   width : 92%;
-
+  margin-left: 5px;
 }

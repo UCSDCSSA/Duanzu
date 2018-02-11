@@ -10,6 +10,10 @@ import React from 'react';
 import {Input, Button, Card, Row, Col, Icon} from 'react-materialize';
 import Header from './Header';
 import LeasingCard from './LeasingCard';
+import GoogleMapTest from './GoogleMapTest';
+//map
+import { compose, withProps } from "recompose"
+import { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-maps"
 
 class Tag extends React.Component {
     constructor(props) {
@@ -24,12 +28,15 @@ class Tag extends React.Component {
         return (
             <span style={
                 this.state.active ? {
-                    "backgroundColor": "rgba(0, 0, 255, 1)"
+                    "backgroundColor": "#2a6b93",
+                    "border": "1px solid",
+                    "borderColor": "#2a6b93",
+                    "color" : "white"
                 } : {}
             } onClick={(e) => this.click(e)}>
                 <span>
-                <Icon tiny>{this.props.icon}</Icon>
-                <span style={{margin:'3px'}}> {this.props.text} </span>
+                  <Icon tiny>{this.props.icon}</Icon>
+                  <span style={{margin:'3px'}}> {this.props.text} </span>
                 </span>
             </span>
         );
@@ -68,7 +75,7 @@ class Tags extends React.Component {
             tagElements.push(<Tag key={i} icon={tags[i].icon} text={tags[i].text} />)
         }
         return (
-            <div style = {{marginLeft: '10px'}}>
+            <div style = {{marginLeft: '10px', float:'left'}}>
                 {tagElements}
             </div>
         );
@@ -76,6 +83,9 @@ class Tags extends React.Component {
 }
 
 class SearchPage extends React.Component {
+  handleClick (){
+      window.location.href = '/#/display'
+  }
   render(){
     return(
       <div className="search-page">
@@ -85,28 +95,29 @@ class SearchPage extends React.Component {
     <div className="row">
       <div className="col l7 s12">
 
+          <div className="search-bar" >
+            <div className="search-bar-top">
+            <div style={{width:'20%', float:'left'}}>
+              <input placeholder="搜索房源" id="apartmentName" type="text" className="validate" />
+            </div>
+            <div style={{width:'20%', float:'left'}}>
+              <input placeholder="Placeholder" id="first_name" type="text" className="validate" style = {{height:'1.5rem'}}/>
+            </div>
+            <div style={{width:'20%', float:'left'}}>
+            <input s={6} label="开始日期" name='on' type='text' id='startDate' className='datepicker' style = {{height:'1.5rem'}} onClose={function(e, value) {}} />
+            </div>
+            <div style={{width:'20%', float:'left'}}>
+              <input placeholder="搜索房源" id="apartmentName" type="text" className="validate" />
+            </div>
+            <div style={{width:'20%', float:'left'}}>
+              <input placeholder="搜索房源" id="apartmentName" type="text" className="validate" />
+            </div>
+            </div>
 
-
-          <div style={{width:'40%', float:'left'}}>
-              <input placeholder="搜索房源" id="apartmentName" type="text" className="validate" />
+            <div className="search-bar-bottom">
+              <Tags />
+            </div>
           </div>
-          <div style={{width:'15%', float:'left'}}>
-              <input placeholder="搜索房源" id="apartmentName" type="text" className="validate" />
-          </div>
-          <div style={{width:'15%', float:'left'}}>
-              <input placeholder="搜索房源" id="apartmentName" type="text" className="validate" />
-          </div>
-          <div style={{width:'15%', float:'left'}}>
-              <input placeholder="搜索房源" id="apartmentName" type="text" className="validate" />
-          </div>
-          <div style={{width:'15%', float:'left'}}>
-              <input placeholder="搜索房源" id="apartmentName" type="text" className="validate" />
-          </div>
-
-
-          <Row>
-            <Tags />
-          </Row>
 
 
         <div id="profile">
@@ -143,14 +154,34 @@ class SearchPage extends React.Component {
         </div>
       </div>
 
-      <div className="col l5">
-
+      <div className="col l5" style = {{height:'550px'}}>
+        <GoogleMapTest />
       </div>
     </div>
     </div>
     );
   }
   componentDidMount() {
+
+
+      $('#startDate').pickadate({
+          selectMonths: true, // Creates a dropdown to control month
+          selectYears: 15, // Creates a dropdown of 15 years to control year,
+          today: 'Today',
+          clear: 'Clear',
+          close: 'Ok',
+          closeOnSelect: false, // Close upon selecting a date,
+          min: new Date()
+      });
+      $('#endDate').pickadate({
+          selectMonths: true, // Creates a dropdown to control month
+          selectYears: 15, // Creates a dropdown of 15 years to control year,
+          today: 'Today',
+          clear: 'Clear',
+          close: 'Ok',
+          closeOnSelect: false, // Close upon selecting a date,
+          min: 1
+      });
 
   }
 };
