@@ -4,5 +4,6 @@
   "3" : "new password is null",
   "4" : "confirmed new password is null",
   "5" : "new password does not match",
+  "101" : "Email does not exist",
   "1000" : "hahaha"
 }
