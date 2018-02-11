@@ -1,6 +1,7 @@
 //oldPassword,password
 module.exports = function (req, res) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< current
   //res.success("aaa");
   if(req.body.oldPassword == null){
@@ -26,6 +27,8 @@ module.exports = function (req, res) {
   // }
 >>>>>>> before discard
 =======
+=======
+>>>>>>> 97d66ce9c9b8d2d62bb60cdc241d1a1c49f8a139
 
 
 
@@ -51,5 +54,8 @@ module.exports = function (req, res) {
           }
       });
   })
+<<<<<<< HEAD
+>>>>>>> 97d66ce9c9b8d2d62bb60cdc241d1a1c49f8a139
+=======
 >>>>>>> 97d66ce9c9b8d2d62bb60cdc241d1a1c49f8a139
 }
