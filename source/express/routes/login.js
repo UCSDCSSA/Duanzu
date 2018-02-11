@@ -9,6 +9,7 @@ module.exports = function (req, res) {
     res.error(1);
   }else if(req.body.password = null){
 >>>>>>> 513a7015918bb06243d24613781fff818ad82afb
+}else if(req.body.password == undefined){
     res.error(2);
   }
 }

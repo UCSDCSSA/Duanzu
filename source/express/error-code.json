@@ -5,5 +5,11 @@
   "4" : "confirmed new password is null",
   "5" : "new password does not match",
   "101" : "Email does not exist",
+  "102" : "Incorrect Password",
+  "103" : "Old password invalid",
+  "104" : "New password/Confirm password do not match",
+  "105" : "Password Invalid",
+  "106" : "Email has already been used",
+  "107" : "Password is null",
   "1000" : "hahaha"
 }

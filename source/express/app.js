@@ -17,6 +17,7 @@ app.use(function (req, res, next) {
 
   res.success = function (content) {
     res.formattedResponse(0,"",content);
+    res.formattedResponse(0,"success",content);
   }
 
   res.error = function (code) {
@@ -31,5 +32,6 @@ app.get('/api/change_password', require("./routes/change_password"));
 
 app.post('/api/change_password', require("./routes/change_password"));
 app.post('/api/login', require("./routes/login"));
+app.post('/api/logout', require("./routes/logout"));
 
 app.listen(3000);

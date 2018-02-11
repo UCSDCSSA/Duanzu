@@ -13,5 +13,6 @@ module.exports = function (req, res) {
   }else{
     res.success({
     /*我也不知道写什么*/
+    /*存入数据库*/
   })
 }
