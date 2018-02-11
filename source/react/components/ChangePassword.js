@@ -40,6 +40,10 @@ class ChangePassword extends React.Component {
                          rent = "1000$"
                          duration = "1月/3月"
                          houseTitle = "CV village 2b/2b 男女不限" />
+<<<<<<< HEAD
+          </div>
+        );
+=======
 
           </div>
 
@@ -48,6 +52,7 @@ class ChangePassword extends React.Component {
         );
 
 
+>>>>>>> front-end
     }
 };
 
