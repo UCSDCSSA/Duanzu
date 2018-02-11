@@ -6,5 +6,6 @@
   "105" : "Password Invalid",
   "106" : "Email has already been used",
   "107" : "Password is null",
+  "108" : "Username invalid",
   "1000" : "hahaha"
 }
