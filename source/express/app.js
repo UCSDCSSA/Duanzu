@@ -33,6 +33,5 @@ app.post('/api/change_password', require("./routes/change_password"));
 app.post('/api/login', require("./routes/login"));
 app.post('/api/register', require("./routes/register"));
 app.post('/api/logout', require("./routes/logout"));
-app.post('/api/forget_password', require("./routes/forget_password"))
 
 app.listen(3000);
