@@ -7,7 +7,7 @@ class Header extends React.Component {
     render() {
         return (
             <Navbar brand='UCSD CSSA 短租平台' right>
-                <NavItem href='/#/login'>登陆</NavItem>
+                <NavItem href='/#/login'>登录</NavItem>
                 <NavItem href='/#/register'>注册</NavItem>
                 <NavItem href='/#/about'>关于我们</NavItem>
                 <NavItem href='/#/publish'>发布</NavItem>
