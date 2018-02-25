@@ -1,6 +1,5 @@
 var express = require("express");
 var bodyParser = require("body-parser");
-
 const fs = require('fs');
 
 var app = express();
@@ -16,7 +15,7 @@ app.use(function (req, res, next) {
   }
 
   res.success = function (content) {
-    res.formattedResponse(0,"",content);
+    res.formattedResponse(0,"success",content);
   }
 
   res.error = function (code) {
@@ -28,8 +27,10 @@ app.use(function (req, res, next) {
 
 // respond with "hello world" when a GET request is made to the homepage
 app.get('/api/change_password', require("./routes/change_password"));
-
+app.post('/api/change_profile', require("./routes/change_profile"));
 app.post('/api/change_password', require("./routes/change_password"));
 app.post('/api/login', require("./routes/login"));
+app.post('/api/register', require("./routes/register"));
+app.post('/api/logout', require("./routes/logout"));
 
 app.listen(3000);
