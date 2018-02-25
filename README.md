@@ -19,6 +19,7 @@ To assist your development, recommend have the following development tools:
 - Chrome: [https://chrome.com](https://chrome.com) For front-end debugging
 - Atom: [https://atom.io](https://atom.io) For text editing
     - Atom JSX Plugin: [https://github.com/subtlegradient/language-javascript-jsx](https://github.com/subtlegradient/language-javascript-jsx) For JSX Syntax Highlighting and beautify
+- Postman: [https://getpostman.com](https://getpostman.com) For back end development
 - Robo3T: [https://robomongo.org](https://robomongo.org) For Mongo DB Management
 
 ## Platforms
@@ -39,4 +40,5 @@ server and view the website in your computer in `http://localhost:8080/`.
 
 ### Back-end
 
-Under Construction
+The back-end is backing by Express, directly using the basic to write the 
+system. All the back-end documentations is in `documentation/API.md`.
