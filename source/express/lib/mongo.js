@@ -41,7 +41,7 @@ module.exports = {
             }
             else {
                 debug.log("Successfully Connected to MongoDB with Database " + self.config.database);
-                self.db = db;
+                self.db = db.db(self.config.database);
                 
                 if (callback) {
                     callback();

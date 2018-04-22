@@ -13,5 +13,7 @@
   "107" : "Password is null",
   "108" : "Username invalid",
   "109" : "Email illegal",
+  "200" : "Database error",
+  "201" : "Parameter not sufficient",
   "1000" : "hahaha"
 }

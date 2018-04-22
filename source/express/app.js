@@ -27,7 +27,7 @@ function initBodyParser (app, callback) {
 function initAjaxRequest (app, callback) {
   debug.log("Initiating Ajax Request");
   app.use(function (req, res, next) {
-    var errorCode = JSON.parse(fs.readFileSync('error-code.json'));
+    var errorCode = JSON.parse(fs.readFileSync('./data/error-code.json'));
     res.formattedResponse = function (code,msg,content){
       res.send({"code":code,"msg": msg,"content":content});
     }
@@ -67,6 +67,10 @@ function initRouter (app, callback) {
   app.post('/api/register', require("./routes/register"));
   app.post('/api/logout', require("./routes/logout"));
   app.post('/api/change_password', require("./routes/forget_password"));
+  
+  // TEST
+  app.get('/api/db_test_insert', require("./routes/db_test_insert"));
+  
   callback();
 }
 
