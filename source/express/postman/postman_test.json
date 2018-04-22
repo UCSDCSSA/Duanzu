@@ -1,53 +1,53 @@
 {
-	"info": {
-		"name": "CSSA Duanzu",
-		"_postman_id": "13f2e455-80ad-fa1c-01d9-19acd516eafb",
-		"description": "",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
-	},
-	"item": [
-		{
-			"name": "localhost:3000/api/change_password",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/x-www-form-urlencoded"
-					}
-				],
-				"body": {
-					"mode": "urlencoded",
-					"urlencoded": [
-						{
-							"key": "username",
-							"value": "1",
-							"description": "",
-							"type": "text",
-							"disabled": true
-						},
-						{
-							"key": "newPassword",
-							"value": "3a5745a05f87ddee1db68b217dc043bfa206d1c7aaa1dd0a7dd76b852a733597",
-							"description": "",
-							"type": "text"
-						}
-					]
-				},
-				"url": {
-					"raw": "localhost:3000/api/change_password",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"api",
-						"change_password"
-					]
-				},
-				"description": ""
-			},
-			"response": []
-		}
-	]
+    "info": {
+        "name": "CSSA Duanzu",
+        "_postman_id": "13f2e455-80ad-fa1c-01d9-19acd516eafb",
+        "description": "",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "localhost:3000/api/change_password",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/x-www-form-urlencoded"
+                    }
+                ],
+                "body": {
+                    "mode": "urlencoded",
+                    "urlencoded": [
+                        {
+                            "key": "username",
+                            "value": "1",
+                            "description": "",
+                            "type": "text",
+                            "disabled": true
+                        },
+                        {
+                            "key": "newPassword",
+                            "value": "3a5745a05f87ddee1db68b217dc043bfa206d1c7aaa1dd0a7dd76b852a733597",
+                            "description": "",
+                            "type": "text"
+                        }
+                    ]
+                },
+                "url": {
+                    "raw": "localhost:3000/api/change_password",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3000",
+                    "path": [
+                        "api",
+                        "change_password"
+                    ]
+                },
+                "description": ""
+            },
+            "response": []
+        }
+    ]
 }
