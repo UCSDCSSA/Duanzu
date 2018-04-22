@@ -1,7 +1,7 @@
 //oldPassword,password
-import { is_email_legal } from "../check_email";
-import { is_email_used } from "../check_email";
-import { is_username_legal } from "../check_email";
+const { is_email_legal } = require("../check_email");
+const { is_email_used } = require("../check_email");
+const { is_username_legal } = require("../check_email");
 
 
 module.exports = function(req, res) {

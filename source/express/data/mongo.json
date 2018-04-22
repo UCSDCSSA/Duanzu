@@ -1,0 +1,7 @@
+{
+    "host": "localhost",
+    "port": 27017,
+    "username": "",
+    "password": "",
+    "database": "cssa_duanzu"
+}
