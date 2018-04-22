@@ -1,8 +1,4 @@
-//oldPassword,password
-const { is_email_legal } = require("../check_email");
-const { is_email_used } = require("../check_email");
-const { is_username_legal } = require("../check_email");
-
+const { is_email_legal, is_email_used, is_username_legal } = require("../app/check_email");
 
 module.exports = function(req, res) {
     //res.success("aaa");

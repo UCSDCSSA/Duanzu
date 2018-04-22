@@ -1,4 +1,4 @@
-module.exports = function(req, res){
+module.exports = function(req, res) {
     res.success({
         cookie: "" //TODO: return cookie
     });
