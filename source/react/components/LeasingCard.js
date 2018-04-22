@@ -37,7 +37,8 @@ class LeasingCard extends React.Component {
                          backgroundImage: 'url(' + imgName + ')',
                          backgroundSize: 'cover',
                          overflow: 'hidden',
-                         height: '200px',
+                         height: '250px',
+                         width: '250px',
                          position: 'relative'
             }}>
 
@@ -57,7 +58,7 @@ class LeasingCard extends React.Component {
                         bottom: '0px'
                 }}>
                     <div className = "col s12" style = {{
-                        backgroundColor: 'lightblue',
+                        backgroundColor: '#2a6b93',
                         width:'50%',
                         marginLeft:'15px',
                         color:'white'

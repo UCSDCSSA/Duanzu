@@ -7,7 +7,7 @@ const GoogleMapTest = compose(
     withProps({
         googleMapURL: "https://maps.googleapis.com/maps/api/js?key=AIzaSyCmglnfVoCJ5roESG_1ZdbbebdBnO5h3EY",
         loadingElement: <div style={{ height: `100%`, width: `100%` }} />,
-        containerElement: <div style={{ height: `185px` }} />,
+        containerElement: <div style={{ height: `100%` }} />,
         mapElement: <div style={{ height: `100%`, width: `100%` }} />,
     }),
     withScriptjs,
