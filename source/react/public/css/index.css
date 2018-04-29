@@ -95,3 +95,8 @@ body {
     z-index: 1;
     background-color: white;
 }
+
+.leasing-col {
+  padding: 0 !important;
+  padding-right: 20px !important;
+}

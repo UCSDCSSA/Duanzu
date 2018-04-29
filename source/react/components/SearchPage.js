@@ -115,13 +115,12 @@ class SearchPage extends React.Component {
   }
   render(){
     return(
-      <div className="search-page">
+      <div className="search-page" style={{position: "fixed", height: "calc(100%)", width: "100%"}}>
       <Header/>
 
 
-    <div className="row">
+    <div className="row" style={{height: 'calc(100% - 60px)'}}>
       <div className="col l7 s12">
-        <Sticky stickyClassName="stickBar">
           <div className="search-bar" >
             <div className="search-bar-top">
                 <div className="search_icon">
@@ -171,12 +170,11 @@ class SearchPage extends React.Component {
                 <Tags />
             </div>
         </div>
-      </Sticky>
 
 
-        <div id="profile">
+        <div id="profile" style={{overflowY: "scroll", maxHeight: "calc(100% - 246px)",  width: "58.33333%", paddingRight: 0, position: "absolute" }}>
           <div className="row">
-          <div className= "col l4 s12 m6" >
+          <div className= "col l4 s12 m6 leasing-col" >
             <p class="no-margin">
             <LeasingCard houseImage = "/img/cv.jpg"
                        houseSex = "男女不限"
@@ -187,7 +185,7 @@ class SearchPage extends React.Component {
                        houseTitle = "CV village 2b/2b 男女不限" />
             </p>
           </div>
-          <div className = "col l4 s12 m6" >
+          <div className = "col l4 s12 m6 leasing-col" >
             <p class="no-margin">
             <LeasingCard houseImage = "/img/cv.jpg"
                                     houseSex = "男女不限"
@@ -198,7 +196,7 @@ class SearchPage extends React.Component {
                                     houseTitle = "CV village 2b/2b 男女不限" />
             </p>
           </div>
-          <div className= "col l4 s12" >
+          <div className= "col l4 s12 m6 leasing-col" >
             <p class="no-margin">
             <LeasingCard houseImage = "/img/cv.jpg"
                                                  houseSex = "男女不限"
@@ -209,7 +207,7 @@ class SearchPage extends React.Component {
                                                  houseTitle = "CV village 2b/2b 男女不限" />
             </p>
           </div>
-          <div style={{marginTop:'15px'}} className = "col l4 s12 m6" >
+          <div style={{marginTop:'15px'}} className = "col l4 s12 m6 leasing-col" >
             <p class="no-margin">
             <LeasingCard houseImage = "/img/cv.jpg"
                                     houseSex = "男女不限"
@@ -221,7 +219,7 @@ class SearchPage extends React.Component {
             </p>
           </div>
 
-          <div style={{marginTop:'15px'}} className = "col l4 s12 m6" >
+          <div style={{marginTop:'15px'}} className = "col l4 s12 m6 leasing-col" >
             <p class="no-margin">
             <LeasingCard houseImage = "/img/cv.jpg"
                                     houseSex = "男女不限"
@@ -233,7 +231,67 @@ class SearchPage extends React.Component {
             </p>
           </div>
 
-          <div style={{marginTop:'15px'}} className = "col l4 s12 m6" >
+          <div style={{marginTop:'15px'}} className = "col l4 s12 m6 leasing-col" >
+            <p class="no-margin">
+            <LeasingCard houseImage = "/img/cv.jpg"
+                                    houseSex = "男女不限"
+                                    houseType = "2B2B"
+                                    houseName = "Costa Verde"
+                                    rent = "1000$"
+                                    duration = "1月/3月"
+                                    houseTitle = "CV village 2b/2b 男女不限" />
+            </p>
+          </div>
+
+          <div style={{marginTop:'15px'}} className = "col l4 s12 m6 leasing-col" >
+            <p class="no-margin">
+            <LeasingCard houseImage = "/img/cv.jpg"
+                                    houseSex = "男女不限"
+                                    houseType = "2B2B"
+                                    houseName = "Costa Verde"
+                                    rent = "1000$"
+                                    duration = "1月/3月"
+                                    houseTitle = "CV village 2b/2b 男女不限" />
+            </p>
+          </div>
+
+          <div style={{marginTop:'15px'}} className = "col l4 s12 m6 leasing-col" >
+            <p class="no-margin">
+            <LeasingCard houseImage = "/img/cv.jpg"
+                                    houseSex = "男女不限"
+                                    houseType = "2B2B"
+                                    houseName = "Costa Verde"
+                                    rent = "1000$"
+                                    duration = "1月/3月"
+                                    houseTitle = "CV village 2b/2b 男女不限" />
+            </p>
+          </div>
+
+          <div style={{marginTop:'15px'}} className = "col l4 s12 m6 leasing-col" >
+            <p class="no-margin">
+            <LeasingCard houseImage = "/img/cv.jpg"
+                                    houseSex = "男女不限"
+                                    houseType = "2B2B"
+                                    houseName = "Costa Verde"
+                                    rent = "1000$"
+                                    duration = "1月/3月"
+                                    houseTitle = "CV village 2b/2b 男女不限" />
+            </p>
+          </div>
+
+          <div style={{marginTop:'15px'}} className = "col l4 s12 m6 leasing-col" >
+            <p class="no-margin">
+            <LeasingCard houseImage = "/img/cv.jpg"
+                                    houseSex = "男女不限"
+                                    houseType = "2B2B"
+                                    houseName = "Costa Verde"
+                                    rent = "1000$"
+                                    duration = "1月/3月"
+                                    houseTitle = "CV village 2b/2b 男女不限" />
+            </p>
+          </div>
+
+          <div style={{marginTop:'15px'}} className = "col l4 s12 m6 leasing-col"  >
             <p class="no-margin">
             <LeasingCard houseImage = "/img/cv.jpg"
                                     houseSex = "男女不限"
@@ -249,7 +307,7 @@ class SearchPage extends React.Component {
         </div>
       </div>
 
-      <div className="col l5" style = {{height:'1000px'}}>
+      <div className="col l5" style = {{height:'calc(100%)'}}>
         <GoogleMapTest />
       </div>
 
