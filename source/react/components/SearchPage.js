@@ -191,6 +191,7 @@ class SearchPage extends React.Component {
                                     duration = "1月/3月"
                                     houseTitle = "CV village 2b/2b 男女不限" />
           </div>
+
           <div className= "col l4 s12" >
             <LeasingCard houseImage = "/img/cv.jpg"
                                                  houseSex = "男女不限"
@@ -200,6 +201,7 @@ class SearchPage extends React.Component {
                                                  duration = "1月/3月"
                                                  houseTitle = "CV village 2b/2b 男女不限" />
           </div>
+
           <div style={{marginTop:'15px'}} className = "col l4 s12 m6" >
             <LeasingCard houseImage = "/img/cv.jpg"
                                     houseSex = "男女不限"
@@ -241,9 +243,9 @@ class SearchPage extends React.Component {
     </div>
     );
   }
+
+
   componentDidMount() {
-
-
       $('#startDate').pickadate({
           selectMonths: true, // Creates a dropdown to control month
           selectYears: 15, // Creates a dropdown of 15 years to control year,
@@ -262,7 +264,6 @@ class SearchPage extends React.Component {
           closeOnSelect: false, // Close upon selecting a date,
           min: 1
       });
-
   }
 };
 

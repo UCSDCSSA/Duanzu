@@ -8,7 +8,7 @@ body {
     background-color: rgba(245, 245, 245, 1);
 }
 
-.home-page .search-input {
+.home-page .row .search-input {
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
     height: 60px;
     margin-left: 10rem;
@@ -16,9 +16,8 @@ body {
     margin-top: 15rem;
     border-color: black;
     background-color: rgba(255,255,255,1);
-    position: relative;
+    position: absolute;
     display: flex;
-    vertical-align: top;
 }
 
 .home-page .material-icons {
@@ -34,6 +33,7 @@ body {
     right: 0.5rem;
     top: 0.8rem;
     color: rgba(255,255,255,1);
+    font-size: 18px;
 }
 
 .home-page .container{
@@ -41,6 +41,19 @@ body {
     width: 80%;
     padding-top: 2rem;
 }
+
+
+/* label focus color */
+ .home-page .row .search-input .user-input input:focus + label {
+   color: rgba(255, 255, 255, 0) !important;
+ }
+
+ /* label underline focus color */
+ .home-page .row .search-input .user-input input {
+   border-bottom: 1px solid rgba(255, 255, 255, 0) !important;
+   box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0) !important;
+   font-size: 19px;
+ }
 
 .search-page .material-icons.prefix {
     font-size: 20px;
