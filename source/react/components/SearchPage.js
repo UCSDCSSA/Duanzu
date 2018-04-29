@@ -12,6 +12,8 @@ import Header from './Header';
 import LeasingCard from './LeasingCard';
 import GoogleMapTest from './GoogleMapTest';
 //map
+import Sticky from 'react-sticky-el';
+
 import { compose, withProps } from "recompose"
 import { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-maps"
 
@@ -119,7 +121,7 @@ class SearchPage extends React.Component {
 
     <div className="row">
       <div className="col l7 s12">
-
+        <Sticky stickyClassName="stickBar">
           <div className="search-bar" >
             <div className="search-bar-top">
                 <div className="search_icon">
@@ -169,6 +171,7 @@ class SearchPage extends React.Component {
                 <Tags />
             </div>
         </div>
+      </Sticky>
 
 
         <div id="profile">
@@ -237,6 +240,7 @@ class SearchPage extends React.Component {
       <div className="col l5" style = {{height:'1000px'}}>
         <GoogleMapTest />
       </div>
+
     </div>
     </div>
     );

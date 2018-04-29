@@ -48,7 +48,7 @@ body {
 }
 
 .search-page .search-bar .search-bar-top .search_separated_div{
-    border-right: 1px solid;
+
     border-right-color: #DCDCDC;
 
 }
@@ -56,4 +56,8 @@ body {
 .search-page .search-bar .search-bar-top .search_icon{
     float: left;
     margin-top: 20px;
+}
+.stickBar{
+    z-index: 1;
+    background-color: white;
 }
