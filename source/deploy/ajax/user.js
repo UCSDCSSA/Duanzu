@@ -2,7 +2,7 @@ const Mongo = require("keeling-js/lib/mongo");
 const ObjectId = require("mongodb").ObjectId;
 const Crypto = require("keeling-js/lib/crypto");
 const User = Mongo.db.collection("user");
-
+const ObjectId = require("mongodb").ObjectId;
 module.exports = {
 
     /**
@@ -10,30 +10,35 @@ module.exports = {
      * req.body.password
      */
     login: function (req, res) {
-        if (req.body.username && req.body.password) {
-            User.find({"username": req.body.username}).toArray(function (err, result) {
-                if (err) {
-                    res.error(1, err);
-                }
-                else {
-                    if (result.length == 0) {
-                        res.error(3, "user not found");
-                    }
-                    else {
-                        var user = result[0];
-                        res.success(user);
-                    }
-                }
-            });
-        }
-        else {
-            res.error(2, "No username or password");
-        }
+        User.find({"username":req.body.username}).toArray(function (err, result) {
+            if (err) {
+                res.error(1, err);
+            }
+            else {
+              if(Crypto.match(req.body.password,result[0]['password'])){
+                var session_id = ObjectId();
+                User.update({
+                  "_id":ObjectId("5ae61784896911a33b81d3bd")
+                }, {
+                  $set: {
+                    "session_id" : session_id
+                  }
+                }, function(updateError,updateResult) {
+                  if(err){
+                    res.error(1,updateError);
+                  }else{
+                    res.success({"session_id" : session_id});
+                  }
+                });
+              }else{
+                res.error(102);
+              }
+            }
+        });
     },
     forgetPassword: function(req, res) {
         var currentPassword = req.body.password;
         var newPassword = req.body.newPassword;
-
         if (req.body.username && currentPassword && newPassword){
             User.find({"username": req.body.username}).toArray(function(err, result)){
                 if (err) {
