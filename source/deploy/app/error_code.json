@@ -1,0 +1,18 @@
+{
+  "1" : "username is null",
+  "2" : "password is null",
+  "3" : "new password is null",
+  "4" : "confirmed new password is null",
+  "5" : "new password does not match",
+  "101" : "Email does not exist",
+  "102" : "Incorrect Password",
+  "103" : "Old password invalid",
+  "104" : "New password/Confirm password do not match",
+  "105" : "Password Invalid",
+  "106" : "Email has already been used",
+  "107" : "Password is null",
+  "108" : "Username invalid",
+  "109" : "Email illegal",
+  "200" : "Database error",
+  "201" : "Parameter not sufficient",
+}
