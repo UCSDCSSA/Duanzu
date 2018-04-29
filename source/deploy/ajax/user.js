@@ -1,6 +1,5 @@
 const Mongo = require("keeling-js/lib/mongo");
 const Crypto = require("keeling-js/lib/crypto");
-const keygen = require('keygenerator');
 const User = Mongo.db.collection("user");
 const ObjectId = require("mongodb").ObjectId;
 module.exports = {
@@ -11,18 +10,18 @@ module.exports = {
             }
             else {
               if(Crypto.match(req.body.password,result[0]['password'])){
+                var session_id = ObjectId();
                 User.update({
                   "_id":ObjectId("5ae61784896911a33b81d3bd")
                 }, {
                   $set: {
-                    "session_id" : keygen.session_id()
+                    "session_id" : session_id
                   }
                 }, function(updateError,updateResult) {
                   if(err){
                     res.error(1,updateError);
                   }else{
-                    res.success(keygen.session_id());
-                    console.log(updateResult);
+                    res.success({"session_id" : session_id});
                   }
                 });
               }else{
