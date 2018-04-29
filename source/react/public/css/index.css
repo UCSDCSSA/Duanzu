@@ -8,6 +8,40 @@ body {
     background-color: rgba(245, 245, 245, 1);
 }
 
+.home-page .search-input {
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+    height: 60px;
+    margin-left: 10rem;
+    margin-right: 10rem;
+    margin-top: 15rem;
+    border-color: black;
+    background-color: rgba(255,255,255,1);
+    position: relative;
+    display: flex;
+    vertical-align: top;
+}
+
+.home-page .material-icons {
+    vertical-align: middle;
+    display: inline-flex;
+    top: 1rem;
+
+}
+
+.home-page .btn{
+    position: absolute;
+    vertical-align: middle;
+    right: 0.5rem;
+    top: 0.8rem;
+    color: rgba(255,255,255,1);
+}
+
+.home-page .container{
+    margin: auto;
+    width: 80%;
+    padding-top: 2rem;
+}
+
 .search-page .material-icons.prefix {
     font-size: 20px;
     width : 1px;
