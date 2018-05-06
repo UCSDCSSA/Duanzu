@@ -62,6 +62,12 @@ class Tag extends React.Component {
 
 class Tags extends React.Component {
     render() {
+        // <Card style={cardStyle1}>
+        //    <a className="carousel-item" href="#one!">{cardGallery}</a>
+        // <a className="carousel-item" href="#two!"><Card style={cardStyle2}></Card></a>
+        // <a className="carousel-item" href="#three!"><Card style={cardStyle1}></Card></a>
+        // <a className="carousel-item" href="#four!"><Card style={cardStyle2}></Card></a>
+        // <a className="carousel-item" href="#five!"><Card style={cardStyle1}></Card></a>
         var tags = [
             {
                 "icon": "fitness_center",
@@ -347,6 +353,7 @@ class SearchPage extends React.Component {
           closeOnSelect: false, // Close upon selecting a date,
           min: new Date()
       });
+
       $('#endDate').pickadate({
           selectMonths: true, // Creates a dropdown to control month
           selectYears: 15, // Creates a dropdown of 15 years to control year,

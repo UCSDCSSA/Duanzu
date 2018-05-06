@@ -11,44 +11,51 @@ import LeasingCard from './LeasingCard';
 
 
 const Home = () => {
-    //render() {
-    var cardStyle = {
-      "backgroundImage": "url('/img/cover_image.jpg')",
-      "backgroundPosition": "center",
-      "height": "600px"
-    };
 
     $(document).ready(function(){
-    $('.carousel').carousel();
+        $('.carousel').carousel({
+            fullWidth: true,
+            numVisible:1,
+            duration:250,
+        });
     });
+
+    autoplay()
+    function autoplay() {
+        $('.carousel').carousel('next');
+        setTimeout(autoplay, 4500);
+    }
 
 
     return (
-        <div className= "home-page">
-            <Header/>
-            <div className="carousel">
-                <a className="carousel-item" href="#one!"><img src="/img/cover_image.jpg"/></a>
-                <a className="carousel-item" href="#two!"><img src="https://lorempixel.com/250/250/nature/2"/></a>
-                <a className="carousel-item" href="#three!"><img src="https://lorempixel.com/250/250/nature/3"/></a>
-                <a className="carousel-item" href="#four!"><img src="https://lorempixel.com/250/250/nature/4"/></a>
-                <a className="carousel-item" href="#five!"><img src="https://lorempixel.com/250/250/nature/5"/></a>
-            </div>
+        <div className="home-page">
+        <Header/>
 
-            <Card style={cardStyle}>
-                <div className="row" style={{position:'relative'}}>
-                    <div className = "search-input center-aligned col l10">
-                        <Icon className="medium material-icons grey-text lighten-1"> search </Icon>
-                        <div className="user-input" style={{marginTop:'-0.5rem', width:'85%'}}>
-                            <Input placeholder="请输入小区" id="user_input" type="text"/>
-                            <a className="waves-effect waves-light btn red">搜索</a>
-                        </div>
+
+        <div className="image-container" style={{width:"100%", height:"600px"}}>
+            <div className= "col l12 m12 s12">
+
+                <div className="carousel">
+                    <a className="carousel-item"><img src="/img/cover_image1.jpg" style={{height:'600px', width:'100%',filter:'brightness(70%)'}}/></a>
+                    <a className="carousel-item"><img src="/img/cover_image2.jpg" style={{height:'600px', width:'100%',filter:'brightness(70%)'}}/></a>
+                    <a className="carousel-item"><img src="/img/cover_image3.jpg" style={{height:'600px', width:'100%',filter:'brightness(70%)'}}/></a>
+                    <a className="carousel-item"><img src="/img/cover_image4.jpg" style={{height:'600px', width:'100%',filter:'brightness(70%)'}}/></a>
+
+                    <div className = "search-input col l10">
+                            <Icon className="medium material-icons grey-text lighten-1"> search </Icon>
+                            <div className="user-input" style={{width:'60%',display:'inline-flex', height:'75px'}}>
+                                <Input placeholder="请输入小区" id="user_input" type="text"/>
+                            </div>
+                                <a className="waves-effect waves-light btn red">搜索</a>
+
                     </div>
                 </div>
-            </Card>
+            </div>
+        </div>
 
             <div className="container">
                 <div className="row">
-                    <div style={{marginTop:'20px'}} className= "col l3 s12 m4" >
+                    <div style={{marginTop:'40px'}} className= "col l3 s12 m4" >
                         <LeasingCard houseImage = "/img/cv.jpg"
                              houseSex = "男女不限"
                              houseType = "2B2B"
@@ -58,7 +65,7 @@ const Home = () => {
                              houseTitle = "CV village 2b/2b 男女不限" />
                     </div>
 
-                    <div style={{marginTop:'20px'}} className= "col l3 s12 m4" >
+                    <div style={{marginTop:'40px'}} className= "col l3 s12 m4" >
                         <LeasingCard houseImage = "/img/cv.jpg"
                              houseSex = "男女不限"
                              houseType = "2B2B"
@@ -68,7 +75,7 @@ const Home = () => {
                              houseTitle = "CV village 2b/2b 男女不限" />
                     </div>
 
-                    <div style={{marginTop:'20px'}} className= "col l3 s12 m4" >
+                    <div style={{marginTop:'40px'}} className= "col l3 s12 m4" >
                         <LeasingCard houseImage = "/img/cv.jpg"
                              houseSex = "男女不限"
                              houseType = "2B2B"
@@ -78,7 +85,7 @@ const Home = () => {
                              houseTitle = "CV village 2b/2b 男女不限" />
                     </div>
 
-                    <div style={{marginTop:'20px'}} className= "col l3 s12 m4" >
+                    <div style={{marginTop:'40px'}} className= "col l3 s12 m4" >
                         <LeasingCard houseImage = "/img/cv.jpg"
                              houseSex = "男女不限"
                              houseType = "2B2B"
@@ -88,7 +95,7 @@ const Home = () => {
                              houseTitle = "CV village 2b/2b 男女不限" />
                     </div>
 
-                    <div style={{marginTop:'20px'}} className= "col l3 s12 m4" >
+                    <div style={{marginTop:'40px'}} className= "col l3 s12 m4" >
                         <LeasingCard houseImage = "/img/cv.jpg"
                              houseSex = "男女不限"
                              houseType = "2B2B"
@@ -98,7 +105,7 @@ const Home = () => {
                              houseTitle = "CV village 2b/2b 男女不限" />
                     </div>
 
-                    <div style={{marginTop:'20px'}} className= "col l3 s12 m4" >
+                    <div style={{marginTop:'40px'}} className= "col l3 s12 m4" >
                         <LeasingCard houseImage = "/img/cv.jpg"
                              houseSex = "男女不限"
                              houseType = "2B2B"
@@ -108,7 +115,7 @@ const Home = () => {
                              houseTitle = "CV village 2b/2b 男女不限" />
                     </div>
 
-                    <div style={{marginTop:'20px'}} className= "col l3 s12 m4" >
+                    <div style={{marginTop:'40px'}} className= "col l3 s12 m4" >
                         <LeasingCard houseImage = "/img/cv.jpg"
                              houseSex = "男女不限"
                              houseType = "2B2B"
@@ -118,7 +125,7 @@ const Home = () => {
                              houseTitle = "CV village 2b/2b 男女不限" />
                     </div>
 
-                    <div style={{marginTop:'20px'}} className= "col l3 s12 m4" >
+                    <div style={{marginTop:'40px'}} className= "col l3 s12 m4" >
                         <LeasingCard houseImage = "/img/cv.jpg"
                              houseSex = "男女不限"
                              houseType = "2B2B"
