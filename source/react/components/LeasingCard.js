@@ -38,7 +38,7 @@ class LeasingCard extends React.Component {
                          backgroundSize: 'cover',
                          overflow: 'hidden',
                          height: '250px',
-                         width: '250px',
+                         width: '100%',
                          position: 'relative'
             }}>
 
