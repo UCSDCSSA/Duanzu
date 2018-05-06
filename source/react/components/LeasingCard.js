@@ -28,86 +28,84 @@ class LeasingCard extends React.Component {
 
         var imgName = this.props.houseImage;
         var houseName = this.props.houseName;
+        var gender = this.props.houseSex;
+
+        var genderColor;
+
+        checkGender(gender)
+        function checkGender(gender) {
+            if (gender == "男女不限") {
+                genderColor = '#26a69a';
+            } else if (gender == '只限女生') {
+                genderColor = 'red';
+            } else if (gender == '只限男生'){
+                genderColor = 'blue';
+            }
+        }
 
         return (
-
-
             <div className = "leasingCard" style={{
-                         borderRadius: '5px',
-                         backgroundImage: 'url(' + imgName + ')',
-                         backgroundSize: 'cover',
-                         overflow: 'hidden',
-                         height: '250px',
-                         width: '100%',
-                         position: 'relative'
-            }}>
+                overflow: 'hidden',
+                height: '300px',
+                width: '100%',
+                position: 'relative' }}>
 
 
-                <div className="container" style= {{
-                        marginTop:'10px',
-                        color:'white',
-                        fontSize:'14px'
-
-                }}>
-                        {this.props.houseTitle}
-                </div>
-
-
-                <div className = "row" style = {{
-                        position: 'absolute',
-                        bottom: '0px'
-                }}>
-                    <div className = "col s12" style = {{
-                        backgroundColor: '#2a6b93',
-                        width:'50%',
-                        marginLeft:'15px',
-                        color:'white'
-                    }}>
-                        {this.props.houseSex}
-                    </div>
+                <div className = "row" style = {{position:'relative',bottom:'0px',marginTop:'0px'}}>
+                    <img src={imgName} style= {{height:'180px', width:'100%'}}/>
 
                     <h4 className = "col s12" style = {{
-                        marginTop: '-2px',
-                        color:'white',
-                        fontSize:'18px'
-
-                    }}>
+                        marginTop: '3px',
+                        marginBottom:'0px',
+                        color:'black',
+                        fontSize:'14px'}}>
                         {houseName}
                     </h4>
 
 
-                    <div className = "col s4" style = {{
-                        marginTop: '-14px',
-                        color:'white',
-                        fontSize:'12px'
+                    <div className="col s12" style= {{
+                            //marginTop:'-10px',
+                            color:'black',
+                            fontSize:'18px',
+                            fontWeight:'bold' }}>
+                        {this.props.houseTitle}
+                    </div>
 
-                    }}>
-                        {this.props.rent}
+                    <div className = "col s12" style = {{
+                            //backgroundColor: genderColor,
+                            width:'30%',
+                            marginLeft:'0px',
+                            color:genderColor }}>
+                        {gender}
                     </div>
-                    <div className = "col s4" style = {{
-                        marginTop: '-14px',
-                        color:'white',
-                        fontSize:'12px'
 
-                    }}>
-                        {this.props.duration}
+                    <div className = "detailInfo" style={{width:'100%',marginTop:'80px',position:'relative'}}>
+                        <div className = "col s4" style = {{
+                                marginTop: '-10px',
+                                color:'black',
+                                fontSize:'13px'
+                            }}>
+                            {this.props.rent}
+                        </div>
+
+                        <div className = "col s4" style = {{
+                                marginTop: '-10px',
+                                color:'black',
+                                fontSize:'13px' }}>
+                            {this.props.duration}
+                        </div>
+
+                        <div className = "col s4" style = {{
+                            marginTop: '-10px',
+                            color:'black',
+                            fontSize:'13px' }}>
+                            {this.props.houseType}
+                        </div>
                     </div>
-                    <div className = "col s4" style = {{
-                        marginTop: '-14px',
-                        color:'white'
-                    }}>
-                        {this.props.houseType}
-                    </div>
+
                 </div>
-
-
             </div>
-
-
-
         );
     }
-
-
 }
 export default LeasingCard;
