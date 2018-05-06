@@ -103,10 +103,10 @@ module.exports = {
         var password = req.body["password"];
         if(username && email && password){
             if(!isValidEmail(email)) {
-                res.error(6, "email invalid");
+                res.error(5, "email invalid");
             }
             else if(!isValidPassword(password)){
-                res.error(7, "Minimum eight characters, at least one letter and one number");
+                res.error(6, "Minimum eight characters, at least one letter and one number");
             }
             else{
                 User.find({"username": username}).toArray(function (err, result) {
@@ -115,7 +115,7 @@ module.exports = {
                     }
                     else{
                         if (result.length != 0){
-                            res.error(5, "Username has been used");
+                            res.error(7, "Username has been used");
                         }
                         else{
                             User.find({"email": email}).toArray(function (err, result) {
@@ -124,7 +124,7 @@ module.exports = {
                                 }
                                 else{
                                     if (result.length != 0){
-                                        res.error(5, "Email has been used");
+                                        res.error(8, "Email has been used");
                                     }
                                     else{
                                         User.insertOne({
