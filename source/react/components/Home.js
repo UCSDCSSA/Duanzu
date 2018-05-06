@@ -43,7 +43,7 @@ const Home = () => {
 
                     <div className = "search-input col l10">
                             <Icon className="medium material-icons grey-text lighten-1"> search </Icon>
-                            <div className="user-input" style={{width:'60%',display:'inline-flex', height:'75px'}}>
+                            <div className="user-input" style={{width:'60%',display:'inline-flex', height:'65px'}}>
                                 <Input placeholder="请输入小区" id="user_input" type="text"/>
                             </div>
                                 <a className="waves-effect waves-light btn red">搜索</a>
@@ -57,9 +57,9 @@ const Home = () => {
                 <div className="row">
                     <div style={{marginTop:'40px'}} className= "col l3 s12 m4" >
                         <LeasingCard houseImage = "/img/cv.jpg"
-                             houseSex = "男女不限"
+                             houseSex = "只限女生"
                              houseType = "2B2B"
-                             houseName = "Costa Verde"
+                             houseName = "Towers"
                              rent = "1000$"
                              duration = "1月/3月"
                              houseTitle = "CV village 2b/2b 男女不限" />
@@ -68,21 +68,21 @@ const Home = () => {
                     <div style={{marginTop:'40px'}} className= "col l3 s12 m4" >
                         <LeasingCard houseImage = "/img/cv.jpg"
                              houseSex = "男女不限"
-                             houseType = "2B2B"
+                             houseType = "3B1B"
                              houseName = "Costa Verde"
                              rent = "1000$"
                              duration = "1月/3月"
-                             houseTitle = "CV village 2b/2b 男女不限" />
+                             houseTitle = "暑假主卧招租 男女不限" />
                     </div>
 
                     <div style={{marginTop:'40px'}} className= "col l3 s12 m4" >
-                        <LeasingCard houseImage = "/img/cv.jpg"
-                             houseSex = "男女不限"
+                        <LeasingCard houseImage = "/img/international_garden.jpg"
+                             houseSex = "只限男生"
                              houseType = "2B2B"
-                             houseName = "Costa Verde"
+                             houseName = "International Garden"
                              rent = "1000$"
                              duration = "1月/3月"
-                             houseTitle = "CV village 2b/2b 男女不限" />
+                             houseTitle = "ss1副卧招租" />
                     </div>
 
                     <div style={{marginTop:'40px'}} className= "col l3 s12 m4" >
