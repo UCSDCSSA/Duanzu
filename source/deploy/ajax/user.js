@@ -58,7 +58,7 @@ module.exports = {
                         }
                         else {
                             var user = result[0];
-                            if (Crypto.match(currentPassword, user["password"])) {
+                            if (!Crypto.match(currentPassword, user["password"])) {
                                 res.error(6, "Password not match");
                             }
                             else {
@@ -95,7 +95,6 @@ module.exports = {
         else if (!confirmPassword){
             res.error(7, "No confirm password");
         }
-
     },
     register: function (req, res) {
         var username = req.body["username"];
@@ -114,20 +113,11 @@ module.exports = {
         });
     },
     removeAllUsers: function (req, res) {
-        if (User.drop())
-        {
+        if (User.drop()){
             res.success("drop success");
         }
-        {
+        else {
             res.error(1, "collection does not exist");
         }
-        // User.remove({}, false).toArray(function(err, result){
-        //     if (err){
-        //         res.error(1, err);
-        //     }
-        //     else {
-        //         res.success(result);
-        //     }
-        // });
     },
 }
