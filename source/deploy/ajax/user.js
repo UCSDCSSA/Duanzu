@@ -3,8 +3,8 @@ const ObjectId = require("mongodb").ObjectId;
 const Crypto = require("keeling-js/lib/crypto");
 const User = Mongo.db.collection("user");
 const ObjectId = require("mongodb").ObjectId;
-module.exports = {
 
+module.exports = {
     /**
      * req.body.username,
      * req.body.password
