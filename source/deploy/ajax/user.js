@@ -72,21 +72,26 @@ module.exports = {
                                 res.error(6, "Password not match");
                             }
                             else {
-                                var hashNewPassword = Crypto.genEncrypted(newPassword);
-                                User.update({
-                                    "_id": ObjectId(user["_id"])
-                                }, {
-                                    "$set": {
-                                        "password": hashNewPassword
-                                    }
-                                }, function (err, result) {
-                                    if (err) {
-                                        res.error(7, err);
-                                    }
-                                    else {
-                                        res.success(result);
-                                    }
-                                });
+                                if (!isValidPassword(newPassword)){
+                                    res.error(9, "Minimum eight characters, at least one letter and one number");
+                                }
+                                else {
+                                    var hashNewPassword = Crypto.genEncrypted(newPassword);
+                                    User.update({
+                                        "_id": ObjectId(user["_id"])
+                                    }, {
+                                        "$set": {
+                                            "password": hashNewPassword
+                                        }
+                                    }, function (err, result) {
+                                        if (err) {
+                                            res.error(7, err);
+                                        }
+                                        else {
+                                            res.success(result);
+                                        }
+                                    });
+                                }
                             }
                         }
                     }
