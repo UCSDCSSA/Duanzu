@@ -1,5 +1,5 @@
 module.exports = {
-    getMembers (req, res) {
+    get_members (req, res) {
         res.success([
             {
                 "name": "李子阳"

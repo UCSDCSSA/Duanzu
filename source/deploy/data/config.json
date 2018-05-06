@@ -9,5 +9,6 @@
     "public_directory": "public",
     "ajax_directory": "ajax",
     "router_directory": "router",
-    "schedule_directory": "schedule"
+    "schedule_directory": "schedule",
+    "allow_cross_origin": true
 }

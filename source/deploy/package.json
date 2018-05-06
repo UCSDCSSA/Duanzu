@@ -5,12 +5,13 @@
     "main": "index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "node node_modules/keeling-js/entry.js",
+        "start": "nodemon ./app.js",
         "create-entry": "cp node_modules/keeling-js/entry.js ./app.js"
     },
     "author": "",
     "license": "ISC",
     "dependencies": {
-        "keeling-js": "^1.3.21"
+        "keeling-js": "^1.3.22",
+        "nodemon": "^1.14.11"
     }
 }
