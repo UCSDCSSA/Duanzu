@@ -8,7 +8,14 @@ import {Link} from 'react-router-dom';
 import {Row, Col} from 'react-materialize'
 import Header from './Header';
 
+import Axios from 'axios';
+
 class DeveloperCard extends React.Component {
+    
+    componentDidMount() {
+        Axios.get("localhost:21023/ajax/")
+    }
+    
     render() {
 
         var cardStyle = {
