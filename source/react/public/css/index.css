@@ -8,6 +8,9 @@ body {
     background-color: rgba(245, 245, 245, 1);
 }
 
+.leasingCard {
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+}
 .home-page .image-container .carousel .carousel-item {
     height:100% !important;
     width:100%

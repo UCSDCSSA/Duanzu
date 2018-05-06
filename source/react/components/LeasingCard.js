@@ -35,47 +35,52 @@ class LeasingCard extends React.Component {
         checkGender(gender)
         function checkGender(gender) {
             if (gender == "男女不限") {
-                genderColor = '#26a69a';
+                genderColor = '#00897b';
             } else if (gender == '只限女生') {
-                genderColor = 'red';
+                genderColor = '#e53935';
             } else if (gender == '只限男生'){
-                genderColor = 'blue';
+                genderColor = '#01579b';
             }
         }
 
         return (
             <div className = "leasingCard" style={{
                 overflow: 'hidden',
-                height: '300px',
+                height: '280px',
                 width: '100%',
-                position: 'relative' }}>
+                position: 'relative',
+               }}>
 
 
                 <div className = "row" style = {{position:'relative',bottom:'0px',marginTop:'0px'}}>
-                    <img src={imgName} style= {{height:'180px', width:'100%'}}/>
+                    <img src={imgName} style= {{height:'180px', width:'100%',marginBottom:'0px'}}/>
 
                     <h4 className = "col s12" style = {{
-                        marginTop: '3px',
+                        marginTop: '-2px',
                         marginBottom:'0px',
                         color:'black',
+                        marginLeft:'5px',
                         fontSize:'14px'}}>
                         {houseName}
                     </h4>
 
 
                     <div className="col s12" style= {{
-                            //marginTop:'-10px',
+                            //marginTop:'1px',
                             color:'black',
                             fontSize:'18px',
+                            marginLeft:'5px',
                             fontWeight:'bold' }}>
                         {this.props.houseTitle}
                     </div>
 
-                    <div className = "col s12" style = {{
-                            //backgroundColor: genderColor,
-                            width:'30%',
-                            marginLeft:'0px',
-                            color:genderColor }}>
+                    <div className = "col" style = {{
+                            backgroundColor: genderColor,
+                            width:'27%',
+                            marginLeft:'5px',
+                            marginTop:'3px',
+                            fontSize:'14px',
+                            color:'white' }}>
                         {gender}
                     </div>
 
@@ -83,7 +88,8 @@ class LeasingCard extends React.Component {
                         <div className = "col s4" style = {{
                                 marginTop: '-10px',
                                 color:'black',
-                                fontSize:'13px'
+                                //marginLeft:'5px',
+                                fontSize:'14px'
                             }}>
                             {this.props.rent}
                         </div>
@@ -91,14 +97,16 @@ class LeasingCard extends React.Component {
                         <div className = "col s4" style = {{
                                 marginTop: '-10px',
                                 color:'black',
-                                fontSize:'13px' }}>
+                                //marginLeft:'5px',
+                                fontSize:'14px' }}>
                             {this.props.duration}
                         </div>
 
                         <div className = "col s4" style = {{
-                            marginTop: '-10px',
+                            //marginLeft:'0px',
                             color:'black',
-                            fontSize:'13px' }}>
+                            marginTop: '-10px',
+                            fontSize:'14px' }}>
                             {this.props.houseType}
                         </div>
                     </div>
