@@ -86,7 +86,20 @@ module.exports = {
         }
 
     }
+
+    register: function (req, res) {
+        User.insertOne({"username": req.body.username,
+                        "email": req.body.email,
+                        "password": Crypto.genEncrypted(req.body.password) });
+
+        User.find({"username":req.body.username}).toArray(function (err, result) {
+            if (err) {
+                res.error(1, err);
+            }
+            else {
+                res.success(result);
+            }
+        });
+
+    }
 }
-//
-// Crypto.genEncrypted("12345678");
-// Crypto.match("12345677", "183u54428u50ytugw90ejr9sgij");
