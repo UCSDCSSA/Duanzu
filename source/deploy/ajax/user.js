@@ -3,6 +3,16 @@ const ObjectId = require("mongodb").ObjectId;
 const Crypto = require("keeling-js/lib/crypto");
 const User = Mongo.db.collection("user");
 
+function isValidPassword(pwd) {
+    var re = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+    return re.test(String(pwd));
+}
+
+function isValidEmail(email) {
+    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+}
+
 module.exports = {
     /**
      * req.body.username,
@@ -88,17 +98,63 @@ module.exports = {
 
     },
     register: function (req, res) {
-        User.insertOne({
-            "username": req.body.username,
-            "email": req.body.email,
-            "password": Crypto.genEncrypted(req.body.password)
-        }, function (err, response) {
-            if (err) {
-                res.error(1, err);
+        var username = req.body["username"];
+        var email = req.body["email"];
+        var password = req.body["password"];
+        if(username && email && password){
+            if(!isValidEmail(email)) {
+                res.error(6, "email invalid");
             }
-            else {
-                res.success(response.ops[0]);
+            else if(!isValidPassword(password)){
+                res.error(7, "Minimum eight characters, at least one letter and one number");
             }
-        });
+            else{
+                User.find({"username": username}).toArray(function (err, result) {
+                    if (err) {
+                        res.error(1, err);
+                    }
+                    else{
+                        if (result.length != 0){
+                            res.error(5, "Username has been used");
+                        }
+                        else{
+                            User.find({"email": email}).toArray(function (err, result) {
+                                if (err) {
+                                    res.error(1, err);
+                                }
+                                else{
+                                    if (result.length != 0){
+                                        res.error(5, "Email has been used");
+                                    }
+                                    else{
+                                        User.insertOne({
+                                            "username": username,
+                                            "email": email,
+                                            "password": Crypto.genEncrypted(password)
+                                        }, function (err, response) {
+                                            if (err) {
+                                                res.error(1, err);
+                                            }
+                                            else {
+                                                res.success(response.ops[0]);
+                                            }
+                                        });
+                                    }
+                                }
+                            });
+                        }
+                    }
+                });
+            }
+        }
+        else if(!username){
+            res.error(2, "No username");
+        }
+        else if (!email){
+            res.error(3, "No email");
+        }
+        else if (!password){
+            res.error(4, "No password");
+        }
     }
 }
