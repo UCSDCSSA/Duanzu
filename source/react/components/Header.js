@@ -2,7 +2,7 @@ import React from 'react';
 
 import {Link} from 'react-router-dom';
 import {Navbar, NavItem} from 'react-materialize';
-import {Login} from './Login';
+import Login from './Login';
 
 class Header extends React.Component {
 
@@ -13,7 +13,6 @@ class Header extends React.Component {
     render() {
 
         var navStyle = {
-            position: "fixed",
             width: "100%",
             height: "45px",
             backgroundColor: "rgba(120, 120, 120, 1)",
@@ -31,6 +30,11 @@ class Header extends React.Component {
             display: "flex"
         };
 
+        var buttonStyle = {
+          "color": "black",
+          "cursor": "pointer"
+      };
+
         return (
             <div>
                 <nav style={navStyle}>
@@ -38,10 +42,11 @@ class Header extends React.Component {
 
                     </div>
                     <div style={navRightStyle}>
-                        <a onClick={this.toggleLogin}>Login</a>
+                        <Login/>
                     </div>
                 </nav>
             </div>
+
         );
     }
 };

@@ -9,15 +9,19 @@ import React from 'react';
 // Import UI Components
 import {Input, Button, Card, Row, Col} from 'react-materialize';
 import ReactDOM from 'react-dom';
-import Modal from 'react-modal';
+import ReactModal from 'react-modal';
 
+//Modal.setAppElement(document.getElementById('login'))
 class Login extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             login: true,
-            modalIsOpen: true
+            modalIsOpen: false
         };
+
+        this.openModal = this.openModal.bind(this);
+        this.closeModal = this.closeModal.bind(this);
     }
 
     openModal() {
@@ -32,11 +36,11 @@ class Login extends React.Component {
         var buttonStyle = {
           "color": "black",
           "cursor": "pointer"
-        }
+        };
 
         var loginStyle= {
             "textDecorationLine": "underline"
-        }
+        };
 
         function loginDisplay(login) {
             if(!login) {
@@ -64,9 +68,19 @@ class Login extends React.Component {
             }
         }
 
+        function modalDisplay(modalIsOpen) {
+            if(modalIsOpen) {
+                return(
+                    <div>
+                    </div>
+                )
+            }
+        }
+
         return (
-            <div>
-             <Modal open={this.state.modalIsOpen} onClose={this.closeModal} center>
+            <div id="login">
+            <a style={buttonStyle} onClick={this.openModal}>Login</a>
+             <ReactModal isOpen={this.state.modalIsOpen} onRequestClose={this.closeModal} center>
                 <Row style={{marginTop: '5%'}}>
                     <Col offset="l4" s={4}>
                         <Card>
@@ -104,11 +118,10 @@ class Login extends React.Component {
                         </Card>
                     </Col>
                 </Row>
-            </Modal>
+            </ReactModal>
             </div>
         );
     }
 };
 
 export default Login;
-//ReactDOM.render(<Login />, document.getElementById('login'));
