@@ -8,8 +8,6 @@ import React from 'react';
 
 // Import UI Components
 import {Input, Button, Card, Row, Col} from 'react-materialize';
-import ReactDOM from 'react-dom';
-import ReactModal from 'react-modal';
 
 //Modal.setAppElement(document.getElementById('login'))
 class Login extends React.Component {
@@ -17,19 +15,18 @@ class Login extends React.Component {
         super(props);
         this.state = {
             login: true,
-            modalIsOpen: false
+            opened: false
         };
-
-        this.openModal = this.openModal.bind(this);
-        this.closeModal = this.closeModal.bind(this);
     }
 
-    openModal() {
-        this.setState({modalIsOpen: true});
-    }
-
-    closeModal() {
-        this.setState({modalIsOpen: false});
+    toggle() {
+        if(this.state.opened) {
+            console.log("close");
+            this.setState({opened: false});
+        } else {
+            console.log("open");
+            this.setState({opened: true});
+        }
     }
 
     render() {
@@ -39,8 +36,23 @@ class Login extends React.Component {
         };
 
         var loginStyle= {
-            "textDecorationLine": "underline"
+            "width": "50%",
+            "height": "60%",
+            "backgroundColor": "white"
         };
+
+        var maskStyle = {
+            "position": "fixed",
+            "width": "100%",
+            "height": "100%",
+            "left": "0",
+            "top": "0",
+            "backgroundColor": "rgb(0,0,0,0.3)",
+            "alignItems": "center",
+            "justifyContent": "center",
+            "display": this.state.opened ? "flex" : "none",
+            "zIndex": "1"
+        }
 
         function loginDisplay(login) {
             if(!login) {
@@ -51,7 +63,7 @@ class Login extends React.Component {
                         <Input s={12} type="password" label="密码"/>
                         <Input s={12} type="password" label="确认密码"/>
                         <center>
-                            <Button waves='light' s={12}>注册账号</Button>
+                        <Button waves='light' s={12}>注册账号</Button>
                         </center>
                     </div>
                 );
@@ -78,11 +90,11 @@ class Login extends React.Component {
         }
 
         return (
-            <div id="login">
-            <a style={buttonStyle} onClick={this.openModal}>Login</a>
-             <ReactModal isOpen={this.state.modalIsOpen} onRequestClose={this.closeModal} center>
-                <Row style={{marginTop: '5%'}}>
-                    <Col offset="l4" s={4}>
+            <div >
+            <a style={buttonStyle} onClick={()=> this.toggle()}>Login</a>
+             <div style={maskStyle} onClick={()=> this.toggle()}>
+                <div style={loginStyle} onClick={(e) => e.stopPropagation()} >
+                    <center>
                         <Card>
                             <Row >
                                 <Col style={{width:'50%'}}>
@@ -109,16 +121,13 @@ class Login extends React.Component {
                                     </center>
                                 </Col>
                             </Row>
-
-                            <hr/>
-
                             <Row>
                                 { loginDisplay(this.state.login) }
                             </Row>
-                        </Card>
-                    </Col>
-                </Row>
-            </ReactModal>
+                            </Card>
+                        </center>
+                    </div>
+                </div>
             </div>
         );
     }

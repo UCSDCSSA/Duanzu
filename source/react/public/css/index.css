@@ -6,6 +6,9 @@ body {
     margin: 0;
     padding: 0;
     background-color: rgba(245, 245, 245, 1);
+
+    align-items: center;
+    justify-content: center;
 }
 
 .home-page .row .search-input {
@@ -111,4 +114,18 @@ body {
 .leasing-col {
   padding: 0 !important;
   padding-right: 20px !important;
+}
+
+
+
+.login {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    border: 1px solid rgb(204, 204, 204);
+    background: rgb(255, 255, 255);
+    overflow: auto;
+    border-radius: 4px;
+    outline: none;
+    padding: 20px;
 }
