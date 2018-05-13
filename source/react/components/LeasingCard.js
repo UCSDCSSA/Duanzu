@@ -46,17 +46,17 @@ class LeasingCard extends React.Component {
         return (
             <div className = "leasingCard" style={{
                 overflow: 'hidden',
-                height: '280px',
+                height: '290px',
                 width: '100%',
                 position: 'relative',
                }}>
 
 
-                <div className = "row" style = {{position:'relative',bottom:'0px',marginTop:'0px'}}>
-                    <img src={imgName} style= {{height:'180px', width:'100%',marginBottom:'0px'}}/>
+                <div className = "row" style = {{position:'absolute',bottom:'0px',marginTop:'0px'}}>
+                    <img src={imgName} style= {{height:'195px', width:'100%',marginBottom:'0px'}}/>
 
                     <h4 className = "col s12" style = {{
-                        marginTop: '-2px',
+                        marginTop: '0px',
                         marginBottom:'0px',
                         color:'black',
                         marginLeft:'5px',
@@ -66,7 +66,7 @@ class LeasingCard extends React.Component {
 
 
                     <div className="col s12" style= {{
-                            //marginTop:'1px',
+                            marginTop:'2px',
                             color:'black',
                             fontSize:'18px',
                             marginLeft:'5px',
@@ -74,36 +74,36 @@ class LeasingCard extends React.Component {
                         {this.props.houseTitle}
                     </div>
 
-                    <div className = "col" style = {{
-                            backgroundColor: genderColor,
-                            width:'27%',
+                    <div className = "col s12" style = {{
+                            //backgroundColor: genderColor,
+                            //width:'27%',
                             marginLeft:'5px',
-                            marginTop:'3px',
+                            marginTop:'5px',
                             fontSize:'14px',
                             color:'white' }}>
+                        <div style={{backgroundColor: genderColor, width:'25%',height:'20px', marginLeft:'0px'}}>
                         {gender}
+                        </div>
                     </div>
 
-                    <div className = "detailInfo" style={{width:'100%',marginTop:'80px',position:'relative'}}>
+                    <div className = "detailInfo" style={{width:'100%',marginTop:'80px',position:'relative',marginLeft:'5px'}}>
                         <div className = "col s4" style = {{
                                 marginTop: '-10px',
                                 color:'black',
-                                //marginLeft:'5px',
                                 fontSize:'14px'
                             }}>
+
                             {this.props.rent}
                         </div>
 
                         <div className = "col s4" style = {{
                                 marginTop: '-10px',
                                 color:'black',
-                                //marginLeft:'5px',
                                 fontSize:'14px' }}>
                             {this.props.duration}
                         </div>
 
                         <div className = "col s4" style = {{
-                            //marginLeft:'0px',
                             color:'black',
                             marginTop: '-10px',
                             fontSize:'14px' }}>

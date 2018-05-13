@@ -191,8 +191,39 @@ class SearchPage extends React.Component {
 
             <Tags />
         </div>
+
             <div id="profile" style={{overflowY: "scroll", maxHeight: "calc(100% - 246px)",  width: "58.33333%", paddingRight: 0, position: "absolute" }}>
-              <div className="row">
+              <div className="row" style={{margin:'auto'}}>
+              <div style={{marginTop:'20px',marginLeft:'0px'}} className= "col l4 s12 m4" >
+                  <LeasingCard houseImage = "/img/towers.jpg"
+                       houseSex = "只限女生"
+                       houseType = "2B2B"
+                       houseName = "Towers"
+                       rent = "1000$"
+                       duration = "8-9月"
+                       houseTitle = "SS2 CV主卧招租" />
+              </div>
+
+              <div style={{marginTop:'20px'}} className= "col l4 s12 m4 leasing-col" >
+                  <LeasingCard houseImage = "/img/towers.jpg"
+                       houseSex = "只限女生"
+                       houseType = "2B2B"
+                       houseName = "Towers"
+                       rent = "1000$"
+                       duration = "8-9月"
+                       houseTitle = "SS2 CV主卧招租" />
+              </div>
+
+              <div style={{marginTop:'20px'}} className= "col l4 s12 m4 leasing-col" >
+                  <LeasingCard houseImage = "/img/towers.jpg"
+                       houseSex = "只限女生"
+                       houseType = "2B2B"
+                       houseName = "Towers"
+                       rent = "1000$"
+                       duration = "8-9月"
+                       houseTitle = "SS2 CV主卧招租" />
+              </div>
+
                 <div className= "col l4 s12 m6 leasing-col" >
                   <p className="no-margin">
                     <LeasingCard houseImage = "/img/cv.jpg"

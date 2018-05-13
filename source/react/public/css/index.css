@@ -9,8 +9,10 @@ body {
 }
 
 .leasingCard {
-    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
+
+/***************  home page   *******************/
 .home-page .image-container .carousel .carousel-item {
     height:100% !important;
     width:100%
@@ -61,6 +63,8 @@ body {
    font-size: 19px;
  }
 
+
+/************** search page  *************/
 .search-page .material-icons.prefix {
     font-size: 20px;
     width : 1px;
@@ -110,12 +114,13 @@ body {
     float: left;
     margin-top: 20px;
 }
+
 .stickBar{
     z-index: 1;
     background-color: white;
 }
 
-.leasing-col {
+.search-page .row .leasing-col {
   padding: 0 !important;
   padding-right: 20px !important;
 }
