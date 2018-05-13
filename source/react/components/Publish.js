@@ -16,7 +16,7 @@ import {
     Icon
 } from 'react-materialize';
 import Header from './Header';
-
+import ImageUploader from './ImageUploader'
 class Publish extends React.Component {
 
     handleClick (){
@@ -195,7 +195,7 @@ class Publish extends React.Component {
                                 </div>
                             </div>**/}
 
-                    {/**         <div style={{marginLeft: '20px'}}>
+                        {/**<div style={{marginLeft: '20px'}}>
                                 <Row>
                                     <i class="small material-icons" style={{float: 'left', marginRight: '15px'}}>insert_photo</i>
                                     <p style={{fontSize: '20px'}}>添加照片</p>
@@ -215,9 +215,11 @@ class Publish extends React.Component {
                                   </div>
                                 </div>
                                 </Row>
-                            </div> **/}
+                            </div>**/}
 
-                      {/**     <Row>
+                            <ImageUploader />
+
+                          {/**<Row>
                               <div className="file-field input-field col s8">
                                 <div className="btn-large grey" style={photoButton}>
                                 <p style={{fontSize: '20px'}}>
@@ -230,7 +232,7 @@ class Publish extends React.Component {
                                   <input class="file-path validate" type="text"/>
                                 </div>
                               </div>
-                            </Row>  **/}
+                            </Row>**/}  
 
                         </Card>
                         <Row>
