@@ -5,6 +5,9 @@ const User = Mongo.db.collection("user");
 
 function isValidPassword(pwd) {
     var re = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+    // var re = /^.{8,}$/;
+    // console.log(re);
+    // console.log(re.test(String(pwd))); // this is false
     return re.test(String(pwd));
 }
 
@@ -115,6 +118,8 @@ module.exports = {
         var username = req.body["username"];
         var email = req.body["email"];
         var password = req.body["password"];
+        //test output
+        // console.log("username: " + username + "\n email: " + email + "\n password: " + password );
         if(username && email && password){
             if(!isValidEmail(email)) {
                 res.error(5, "email invalid");
