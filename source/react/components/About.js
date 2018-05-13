@@ -54,9 +54,7 @@ class About extends React.Component {
         var allDeveloperElement = [];
         for (var i = 0; i < this.state.members.length; i++) {
             allDeveloperElement.push(
-                <DeveloperCard
-                    developerId={i}
-                    developerName={this.state.members[i].name} />
+                <DeveloperCard developerId={i} developerName={this.state.members[i].name} />
             )
         }
 
