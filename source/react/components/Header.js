@@ -2,22 +2,51 @@ import React from 'react';
 
 import {Link} from 'react-router-dom';
 import {Navbar, NavItem} from 'react-materialize';
+import Login from './Login';
 
 class Header extends React.Component {
-    render() {
-        return (
-            <Navbar brand='UCSD CSSA 短租平台' right>
-                <NavItem href='/#/login'>登录</NavItem>
-                <NavItem href='/#/register'>注册</NavItem>
-                <NavItem href='/#/about'>关于我们</NavItem>
-                <NavItem href='/#/publish'>发布</NavItem>
-                <NavItem href='/#/leasing/view'>查看短租信息</NavItem>
-                <NavItem href='/#/profile/change_password'>修改密码</NavItem>
-                <NavItem href='/#/profile/edit'>修改信息</NavItem>
-                <NavItem href='/#/searchpage'>搜索</NavItem>
-                <NavItem href='/#/map'>地图测试</NavItem>
 
-            </Navbar>
+    toggleLogin() {
+        console.log("toggle login");
+    }
+
+    render() {
+
+        var navStyle = {
+            width: "100%",
+            height: "45px",
+            backgroundColor: "rgba(120, 120, 120, 1)",
+            display: "flex",
+            zIndex: "1000000"
+        };
+
+        var navLeftStyle = {
+            display: "flex"
+        };
+
+        var navRightStyle = {
+            flexGrow: "1000000",
+            flexFlow: "row-reverse",
+            display: "flex"
+        };
+
+        var buttonStyle = {
+          "color": "black",
+          "cursor": "pointer"
+      };
+
+        return (
+            <div>
+                <nav style={navStyle}>
+                    <div style={navLeftStyle}>
+
+                    </div>
+                    <div style={navRightStyle}>
+                        <Login/>
+                    </div>
+                </nav>
+            </div>
+
         );
     }
 };
