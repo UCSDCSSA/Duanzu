@@ -41,7 +41,7 @@ class Publish extends React.Component {
 
         return (<div>
             <Header/>
-            <div className="container">
+            <div>
                 <Row>
                 <Col s={4}>
                 <Sticky>
@@ -131,7 +131,7 @@ class Publish extends React.Component {
                                      <label for="icon_prefix2">注意事项</label>
                                 </div>
                             </Row>
-                            {/**<div style={{marginLeft: '10px'}}>
+                            <div style={{marginLeft: '10px'}}>
                                 <Row>
                                     <i class="small material-icons" style={{float: 'left', marginRight: '15px'}}>event_available</i>
                                     <h5>可用设施（室内&周边）</h5>
@@ -193,7 +193,7 @@ class Publish extends React.Component {
                                         </Input>
                                     </Row>
                                 </div>
-                            </div>**/}
+                            </div>
 
                         {/**<div style={{marginLeft: '20px'}}>
                                 <Row>
@@ -216,8 +216,13 @@ class Publish extends React.Component {
                                 </div>
                                 </Row>
                             </div>**/}
-
-                            <ImageUploader />
+                            <div style={{marginLeft: '20px'}}>
+                              <Row>
+                                  <i class="small material-icons" style={{float: 'left', marginRight: '15px'}}>insert_photo</i>
+                                  <h5>添加照片</h5>
+                              </Row>
+                              <ImageUploader />
+                            </div>
 
                           {/**<Row>
                               <div className="file-field input-field col s8">
@@ -232,7 +237,7 @@ class Publish extends React.Component {
                                   <input class="file-path validate" type="text"/>
                                 </div>
                               </div>
-                            </Row>**/}  
+                            </Row>**/}
 
                         </Card>
                         <Row>
