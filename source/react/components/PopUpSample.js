@@ -13,6 +13,7 @@ class PopUpSample extends React.Component {
     
     constructor () {
         super();
+        this.toggle = this.toggle().bind(this);
         this.state = {
             opened: false
         };
@@ -50,13 +51,13 @@ class PopUpSample extends React.Component {
         
         return (
             <div>
-                <button onClick={() => this.toggle()}>Toggle Popup</button>
-                <div style={maskStyle} onClick={() => this.toggle()}>
+                <button onClick={this.toggle}>Toggle Popup</button>
+                <div style={maskStyle} onClick={this.toggle}>
                     <div style={loginStyle} onClick={(e) => e.stopPropagation()}>
                         <center>
                             <div style={{ "display": "flex" }}>
                                 <h5>Login</h5>
-                                <span onClick={() => this.toggle()}>x</span>
+                                <span onClick={this.toggle}>x</span>
                             </div>
                         </center>
                     </div>
