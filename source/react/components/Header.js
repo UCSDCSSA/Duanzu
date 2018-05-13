@@ -42,6 +42,10 @@ class Header extends React.Component {
 
                     </div>
                     <div style={navRightStyle}>
+                        <a href="/#/leasing/view">view</a>
+                        <a href="/#/">home</a>
+                        <a href="/#/searchpage">search</a>
+                        <a href="/#/publish">publish</a>
                         <Login/>
                     </div>
                 </nav>

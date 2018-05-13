@@ -10,14 +10,14 @@ import Header from './Header';
 import Axios from 'axios';
 
 class PopUpSample extends React.Component {
-    
+
     constructor () {
         super();
         this.state = {
             opened: false
         };
     }
-    
+
     toggle() {
         if (this.state.opened) {
             console.log("close");
@@ -28,9 +28,9 @@ class PopUpSample extends React.Component {
             this.setState({ opened: true });
         }
     }
-    
+
     render() {
-        
+
         var maskStyle = {
             "position": "fixed",
             "width": "100%",
@@ -41,13 +41,13 @@ class PopUpSample extends React.Component {
             "justifyContent": "center",
             "display": this.state.opened ? "flex" : "none"
         }
-        
+
         var loginStyle = {
             "width": "300px",
             "height": "300px",
             "backgroundColor": "white"
         }
-        
+
         return (
             <div>
                 <button onClick={() => this.toggle()}>Toggle Popup</button>
