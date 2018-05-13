@@ -21,6 +21,7 @@ import About from './About.js';
 import SearchPage from './SearchPage.js';
 import Display from './Display.js';
 import GoogleMapTest from './GoogleMapTest.js';
+import Sample from './PopUpSample.js';
 
 const Main = () => {
     return (<Switch>
@@ -35,6 +36,7 @@ const Main = () => {
         <Route exact path='/profile/change_password' component={ChangePassword}/>
         <Route exact path='/searchpage' component={SearchPage}/>
         <Route exact path='/map' component={GoogleMapTest}/>
+        <Route exact path='/sample' component={Sample}/>
         <Route path='*' component={NotFound}/>
     </Switch>);
 };
