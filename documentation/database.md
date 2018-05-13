@@ -26,7 +26,7 @@ All collection name, fields name follows naming format:
     "end_date": "<Date>",
     "complex_id": "<Community_ID: Id associated with each complex>",
     "apt_bedroom_amount": "<Integer: number of bedrooms>",
-    "apt_bathroom_amount": "<Integer: number of bedrooms>",
+    "apt_bathroom_amount": "<Integer: number of bathrooms>",
     "room_avail":[
         {
             "type": "living",
