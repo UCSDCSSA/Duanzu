@@ -52,9 +52,8 @@ All collection name, fields name follows naming format:
     "notice": "",
     "location":{
         "lng": "float",
-        "lat": "float",
+        "lat": "float"
     },
-
     "status": "0:published, 1:saved, 2:unavailable",
     "img_url": [
         "string url",
