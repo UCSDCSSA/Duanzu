@@ -6,19 +6,20 @@ body {
     margin: 0;
     padding: 0;
     background-color: rgba(245, 245, 245, 1);
-    
+
     align-items: center;
     justify-content: center;
 }
 
 .leasingCard {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    padding:0px;
 }
 
 /***************  home page   *******************/
 .home-page .image-container .carousel .carousel-item {
     height:100% !important;
-    width:100%
+    width:100%;
 }
 
 .home-page .image-container .carousel .search-input {

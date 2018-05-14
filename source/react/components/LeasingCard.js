@@ -52,7 +52,7 @@ class LeasingCard extends React.Component {
                }}>
 
 
-                <div className = "row" style = {{position:'absolute',bottom:'0px',marginTop:'0px'}}>
+                <div className = "row" style = {{position:'absolute',bottom:'0px',margin:'0px'}}>
                     <img src={imgName} style= {{height:'195px', width:'100%',marginBottom:'0px'}}/>
 
                     <h4 className = "col s12" style = {{

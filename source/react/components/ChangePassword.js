@@ -11,6 +11,7 @@ import {Input, Button, Card, Row, Col} from 'react-materialize';
 import Header from './Header';
 import LeasingCard from './LeasingCard';
 
+
 class ChangePassword extends React.Component {
     render() {
         return (
@@ -32,6 +33,7 @@ class ChangePassword extends React.Component {
                     </Card>
                 </Col>
             </Row>
+
             <div>This is a test on leasing card file</div>
             <LeasingCard houseImage = "/img/cv.jpg"
                          houseSex = "男女不限"
