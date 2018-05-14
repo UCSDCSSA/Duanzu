@@ -16,7 +16,6 @@ import Publish from './Publish.js';
 import ChangePassword from './ChangePassword.js';
 import ViewLeasing from './ViewLeasing.js';
 import ChangeProfile from './ChangeProfile.js';
-import Register from './Register.js';
 import About from './About.js';
 import SearchPage from './SearchPage.js';
 import Display from './Display.js';
@@ -27,7 +26,6 @@ const Main = () => {
     return (<Switch>
         <Route exact path='/' component={Home}/>
         <Route exact path='/login' component={Login}/>
-        <Route exact path='/register' component={Register}/>
         <Route exact path='/about' component={About}/>
         <Route exact path='/display' component={Display}/>
         <Route exact path='/publish' component={Publish}/>

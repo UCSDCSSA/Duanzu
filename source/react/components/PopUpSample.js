@@ -10,14 +10,15 @@ import Header from './Header';
 import Axios from 'axios';
 
 class PopUpSample extends React.Component {
-    
+
     constructor () {
         super();
+        this.toggle = this.toggle().bind(this);
         this.state = {
             opened: false
         };
     }
-    
+
     toggle() {
         if (this.state.opened) {
             console.log("close");
@@ -28,9 +29,9 @@ class PopUpSample extends React.Component {
             this.setState({ opened: true });
         }
     }
-    
+
     render() {
-        
+
         var maskStyle = {
             "position": "fixed",
             "width": "100%",
@@ -41,22 +42,22 @@ class PopUpSample extends React.Component {
             "justifyContent": "center",
             "display": this.state.opened ? "flex" : "none"
         }
-        
+
         var loginStyle = {
             "width": "300px",
             "height": "300px",
             "backgroundColor": "white"
         }
-        
+
         return (
             <div>
-                <button onClick={() => this.toggle()}>Toggle Popup</button>
-                <div style={maskStyle} onClick={() => this.toggle()}>
+                <button onClick={this.toggle}>Toggle Popup</button>
+                <div style={maskStyle} onClick={this.toggle}>
                     <div style={loginStyle} onClick={(e) => e.stopPropagation()}>
                         <center>
                             <div style={{ "display": "flex" }}>
                                 <h5>Login</h5>
-                                <span onClick={() => this.toggle()}>x</span>
+                                <span onClick={this.toggle}>x</span>
                             </div>
                         </center>
                     </div>

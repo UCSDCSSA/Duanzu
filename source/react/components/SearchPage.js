@@ -7,28 +7,21 @@
 import React from 'react';
 
 // Import UI Components
-import {
-    Input,
-    Button,
-    Card,
-    Row,
-    Col,
-    Icon
-} from 'react-materialize';
+import { Input, Button, Card, Row, Col, Icon } from 'react-materialize';
 import Header from './Header';
 import LeasingCard from './LeasingCard';
 import GoogleMapTest from './GoogleMapTest';
-//map
-import {compose, withProps} from "recompose"
-import {withScriptjs, withGoogleMap, GoogleMap, Marker} from "react-google-maps"
 
 class Tag extends React.Component {
+    
     constructor(props) {
         super(props);
+        
         this.state = {
             active: false
         };
     }
+<<<<<<< HEAD
 
     render() {
         return (<span style={this.state.active
@@ -51,66 +44,71 @@ class Tag extends React.Component {
                 </span>
             </span>
         </span>);
+=======
+    
+    getStyle() {
+        return {
+            "display": "inline-block",
+            "margin": "3px 5px",
+            "padding": "5px 10px",
+            "borderRadius": "2px",
+            "color": this.state.active ? "white" : "black",
+            "backgroundColor": this.state.active ? "#2a6b93" : "#DCDCDC",
+            "cursor": "pointer"
+        };
+>>>>>>> c32fee58b6338cce82a01649af07ee4c24cd514c
     }
-
+    
     click() {
         this.setState({
             active: !this.state.active
         });
     }
+    
+    render() {
+        return (
+            <span style={this.getStyle()} onClick={(e) => this.click(e)}>
+                <span>
+                    <Icon tiny="tiny">{this.props.icon}</Icon>
+                    <span>
+                        {this.props.text}
+                    </span>
+                </span>
+            </span>
+        );
+    }
 }
 
 class Tags extends React.Component {
-    render() {
-        // <Card style={cardStyle1}>
-        //    <a className="carousel-item" href="#one!">{cardGallery}</a>
-        // <a className="carousel-item" href="#two!"><Card style={cardStyle2}></Card></a>
-        // <a className="carousel-item" href="#three!"><Card style={cardStyle1}></Card></a>
-        // <a className="carousel-item" href="#four!"><Card style={cardStyle2}></Card></a>
-        // <a className="carousel-item" href="#five!"><Card style={cardStyle1}></Card></a>
-        var tags = [
-            {
-                "icon": "fitness_center",
-                "text": "健身房"
-            }, {
-                "icon": "local_parking",
-                "text": "车位"
-            }, {
-                "icon": "opacity",
-                "text": "水电"
-            }, {
-                "icon": "local_laundry_service",
-                "text": "洗衣机"
-            }, {
-                "icon": "sentiment_satisfied",
-                "text": "烘干机"
-            }, {
-                "icon": "sentiment_satisfied",
-                "text": "公共洗衣房"
-            }, {
-                "icon": "pool",
-                "text": "游泳池"
-            }, {
-                "icon": "pets",
-                "text": "宠物"
-            }, {
-                "icon": "tv",
-                "text": "电视"
-            }, {
-                "icon": "sentiment_satisfied",
-                "text": "空调"
-            }
-        ];
-        var tagElements = [];
-        for (var i = 0; i < tags.length; i++) {
-            tagElements.push(<Tag key={i} icon={tags[i].icon} text={tags[i].text}/>)
+    
+    constructor (props) {
+        super(props);
+        this.state = {
+            tags: [
+                { "icon": "fitness_center", "text": "健身房" },
+                { "icon": "local_parking", "text": "车位" },
+                { "icon": "opacity", "text": "水电" },
+                { "icon": "local_laundry_service", "text": "洗衣机" },
+                { "icon": "sentiment_satisfied", "text": "烘干机" },
+                { "icon": "sentiment_satisfied", "text": "公共洗衣房" },
+                { "icon": "pool", "text": "游泳池" },
+                { "icon": "pets", "text": "宠物" },
+                { "icon": "tv", "text": "电视" },
+                { "icon": "sentiment_satisfied", "text": "空调" }
+            ]
         }
-        return (<div style={{
-                marginLeft: '10px',
-                float: 'left'
-            }}>
-            {tagElements}
-        </div>);
+    }
+    
+    render() {
+        var tagElements = [];
+        for (var i = 0; i < this.state.tags.length; i++) {
+            tagElements.push(<Tag key={i} icon={this.state.tags[i].icon} text={this.state.tags[i].text}/>)
+        }
+        return (
+            <div style={{ "margin": "10px" }}>
+                {tagElements}
+            </div>
+        );
     }
 }
 

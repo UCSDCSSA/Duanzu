@@ -16,6 +16,7 @@
     "react-google-maps": "^9.4.5",
     "react-images-uploader": "^1.2.0-rc1",
     "react-materialize": "^1.0.17",
+    "react-modal": "^3.4.4",
     "react-router-dom": "^4.2.2",
     "react-scroll-to-component": "^1.0.2",
     "react-sticky-el": "^1.0.16",
