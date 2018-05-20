@@ -70,8 +70,9 @@ module.exports = {
           res.error(1, "room amount invalid");
       }
       else{
+        console.log(status);
         Leasing.updateOne({
-            "_id": req.body.id,
+            "_id": ObjectId(req.body._id),
         }, {
           $set: {
             "start_date": start_date,
@@ -88,12 +89,12 @@ module.exports = {
             "status": status,
             "img_url": img_url
           }
-        }, function (err) {
+        }, function (err, result) {
             if (err) {
                 res.error(200);
             }
             else {
-                res.success({});
+                res.success(result);
             }
         });
       }
@@ -105,7 +106,7 @@ module.exports = {
      */
     "change_status_leasing": function (req, res) {
       Leasing.updateOne({
-          "_id": req.body.id,
+          "_id": req.body._id,
       }, {
         $set: {
           "status" : req.body.status
