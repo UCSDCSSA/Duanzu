@@ -21,30 +21,6 @@ class Tag extends React.Component {
             active: false
         };
     }
-<<<<<<< HEAD
-
-    render() {
-        return (<span style={this.state.active
-                ? {
-                    "backgroundColor": "#2a6b93",
-                    "border": "1px solid",
-                    "borderColor": "#2a6b93",
-                    "color": "white"
-                }
-                : {
-                    "backgroundColor": "#DCDCDC"
-                }
-} onClick={(e) => this.click(e)}>
-            <span>
-                <Icon tiny={true}>{this.props.icon}</Icon>
-                <span style={{
-                        margin: '3px'
-                    }}>
-                    {this.props.text}
-                </span>
-            </span>
-        </span>);
-=======
     
     getStyle() {
         return {
@@ -56,7 +32,6 @@ class Tag extends React.Component {
             "backgroundColor": this.state.active ? "#2a6b93" : "#DCDCDC",
             "cursor": "pointer"
         };
->>>>>>> c32fee58b6338cce82a01649af07ee4c24cd514c
     }
     
     click() {
