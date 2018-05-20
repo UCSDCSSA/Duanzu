@@ -44,7 +44,7 @@ class Tag extends React.Component {
         return (
             <span style={this.getStyle()} onClick={(e) => this.click(e)}>
                 <span>
-                    <Icon tiny="tiny">{this.props.icon}</Icon>
+                    <Icon tiny={true}>{this.props.icon}</Icon>
                     <span>
                         {this.props.text}
                     </span>
