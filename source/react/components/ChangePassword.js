@@ -32,15 +32,8 @@ class ChangePassword extends React.Component {
                     </Card>
                 </Col>
             </Row>
-            <div>This is a test on leasing card file</div>
-            <LeasingCard houseImage = "/img/cv.jpg"
-                         houseSex = "男女不限"
-                         houseType = "2B2B"
-                         houseName = "Costa Verde"
-                         rent = "1000$"
-                         duration = "1月/3月"
-                         houseTitle = "CV village 2b/2b 男女不限" />
-          </div>
+          
+           </div>
         );
     }
 };

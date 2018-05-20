@@ -27,6 +27,7 @@ const Home = () => {
     }
 
 
+
     return (
         <div className="home-page">
         <Header/>
@@ -47,15 +48,14 @@ const Home = () => {
                                 <Input placeholder="请输入小区" id="user_input" type="text"/>
                             </div>
                                 <a className="waves-effect waves-light btn red">搜索</a>
-
                     </div>
                 </div>
             </div>
         </div>
-
         <div className="container">
+
             <div className="row">
-                <div style={{marginTop:'50px'}} className= "col l3 s12 m4" >
+            <div className= "col l3 s12 m4" >
                     <LeasingCard houseImage = "/img/towers.jpg"
                          houseSex = "只限女生"
                          houseType = "2B2B"
@@ -65,7 +65,7 @@ const Home = () => {
                          houseTitle = "SS2 CV主卧招租" />
                 </div>
 
-                <div style={{marginTop:'50px'}} className= "col l3 s12 m4" >
+                <div className= "col l3 s12 m4" >
                     <LeasingCard houseImage = "/img/cv.jpg"
                          houseSex = "男女不限"
                          houseType = "3B1B"
@@ -75,7 +75,7 @@ const Home = () => {
                          houseTitle = "暑假主卧招租 男女不限" />
                 </div>
 
-                <div style={{marginTop:'50px'}} className= "col l3 s12 m4" >
+                <div className= "col l3 s12 m4" >
                     <LeasingCard houseImage = "/img/international_garden.jpg"
                          houseSex = "只限男生"
                          houseType = "2B2B"
@@ -85,7 +85,7 @@ const Home = () => {
                          houseTitle = "ss1副卧招租" />
                 </div>
 
-                <div style={{marginTop:'50px'}} className= "col l3 s12 m4" >
+                <div className= "col l3 s12 m4" >
                     <LeasingCard houseImage = "/img/cv.jpg"
                          houseSex = "男女不限"
                          houseType = "2B2B"
@@ -95,7 +95,7 @@ const Home = () => {
                          houseTitle = "CV village 2b/2b 男女不限" />
                 </div>
 
-                <div style={{marginTop:'40px'}} className= "col l3 s12 m4" >
+                <div className= "col l3 s12 m4" >
                     <LeasingCard houseImage = "/img/cv.jpg"
                          houseSex = "男女不限"
                          houseType = "2B2B"
@@ -105,7 +105,7 @@ const Home = () => {
                          houseTitle = "CV village 2b/2b 男女不限" />
                 </div>
 
-                <div style={{marginTop:'40px'}} className= "col l3 s12 m4" >
+                <div className= "col l3 s12 m4" >
                     <LeasingCard houseImage = "/img/cv.jpg"
                          houseSex = "男女不限"
                          houseType = "2B2B"
@@ -115,7 +115,7 @@ const Home = () => {
                          houseTitle = "CV village 2b/2b 男女不限" />
                 </div>
 
-                <div style={{marginTop:'40px'}} className= "col l3 s12 m4" >
+                <div className= "col l3 s12 m4" >
                     <LeasingCard houseImage = "/img/cv.jpg"
                          houseSex = "男女不限"
                          houseType = "2B2B"
@@ -125,7 +125,7 @@ const Home = () => {
                          houseTitle = "CV village 2b/2b 男女不限" />
                 </div>
 
-                <div style={{marginTop:'40px'}} className= "col l3 s12 m4" >
+                <div className= "col l3 s12 m4" >
                     <LeasingCard houseImage = "/img/cv.jpg"
                          houseSex = "男女不限"
                          houseType = "2B2B"
