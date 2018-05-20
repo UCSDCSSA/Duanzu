@@ -28,8 +28,10 @@ class ViewLeasing extends React.Component {
             return next;
         });
     }
+
     render() {
 
+      var houseTitle = this.props.houseTitle;
       function buttonDisplay(like) {
           if(!like) {
               return(
@@ -77,7 +79,6 @@ class ViewLeasing extends React.Component {
         "paddingRight": "14px",
         "paddingBottom": "9px",
         "paddingTop": "9px",
-
     }
 
     var allIconName = [
@@ -124,7 +125,7 @@ class ViewLeasing extends React.Component {
                         <h6 style={label} className = "center">男/女</h6>
                     </Col>
                     <Col s={10}>
-                        <h4>CV Village</h4>
+                        <h4>houseTitle</h4>
                     </Col>
                 </Row>
 

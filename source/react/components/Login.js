@@ -47,7 +47,7 @@ class Login extends React.Component {
             "height": "100%",
             "left": "0",
             "top": "0",
-            "backgroundColor": "rgb(0,0,0,0.3)",
+            "backgroundColor": "rgba(0,0,0,0.5)",
             "alignItems": "center",
             "justifyContent": "center",
             "display": this.state.opened ? "flex" : "none",
@@ -81,7 +81,7 @@ class Login extends React.Component {
         }
 
         function modalDisplay(modalIsOpen) {
-            if(modalIsOpen) {
+            if (modalIsOpen) {
                 return(
                     <div>
                     </div>
@@ -91,39 +91,39 @@ class Login extends React.Component {
 
         return (
             <div >
-            <a style={buttonStyle} onClick={()=> this.toggle()}>Login</a>
-             <div style={maskStyle} onClick={()=> this.toggle()}>
-                <div style={loginStyle} onClick={(e) => e.stopPropagation()} >
-                    <center>
-                        <Card>
-                            <Row >
-                                <Col style={{width:'50%'}}>
-                                    <center>
-                                        <a style={buttonStyle} onClick={ () => {
-                                            this.setState( {
-                                                    login: true
-                                            });
-                                        } }>
-                                            <h5>登录</h5>
-                                        </a>
-                                    </center>
-                                </Col>
+                <a style={buttonStyle} onClick={()=> this.toggle()}>登陆</a>
+                <div style={maskStyle} onClick={()=> this.toggle()}>
+                    <div style={loginStyle} onClick={(e) => e.stopPropagation()} >
+                        <center>
+                            <Card>
+                                <Row >
+                                    <Col style={{width:'50%'}}>
+                                        <center>
+                                            <a style={buttonStyle} onClick={ () => {
+                                                this.setState( {
+                                                        login: true
+                                                });
+                                            } }>
+                                                <h5>登录</h5>
+                                            </a>
+                                        </center>
+                                    </Col>
 
-                                <Col style={{width:'50%'}}>
-                                    <center>
-                                        <a style={buttonStyle} onClick={ () => {
-                                            this.setState( {
-                                                    login: false
-                                            });
-                                        } }>
-                                            <h5>注册</h5>
-                                        </a>
-                                    </center>
-                                </Col>
-                            </Row>
-                            <Row>
-                                { loginDisplay(this.state.login) }
-                            </Row>
+                                    <Col style={{width:'50%'}}>
+                                        <center>
+                                            <a style={buttonStyle} onClick={ () => {
+                                                this.setState( {
+                                                        login: false
+                                                });
+                                            } }>
+                                                <h5>注册</h5>
+                                            </a>
+                                        </center>
+                                    </Col>
+                                </Row>
+                                <Row>
+                                    { loginDisplay(this.state.login) }
+                                </Row>
                             </Card>
                         </center>
                     </div>

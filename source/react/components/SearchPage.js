@@ -13,15 +13,15 @@ import LeasingCard from './LeasingCard';
 import GoogleMapTest from './GoogleMapTest';
 
 class Tag extends React.Component {
-    
+
     constructor(props) {
         super(props);
-        
+
         this.state = {
             active: false
         };
     }
-    
+
     getStyle() {
         return {
             "display": "inline-block",
@@ -33,18 +33,18 @@ class Tag extends React.Component {
             "cursor": "pointer"
         };
     }
-    
+
     click() {
         this.setState({
             active: !this.state.active
         });
     }
-    
+
     render() {
         return (
             <span style={this.getStyle()} onClick={(e) => this.click(e)}>
                 <span>
-                    <Icon tiny="tiny">{this.props.icon}</Icon>
+                    <Icon tiny={true}>{this.props.icon}</Icon>
                     <span>
                         {this.props.text}
                     </span>
@@ -55,7 +55,7 @@ class Tag extends React.Component {
 }
 
 class Tags extends React.Component {
-    
+
     constructor (props) {
         super(props);
         this.state = {
@@ -73,7 +73,7 @@ class Tags extends React.Component {
             ]
         }
     }
-    
+
     render() {
         var tagElements = [];
         for (var i = 0; i < this.state.tags.length; i++) {
@@ -97,8 +97,9 @@ class RowItem extends React.Component{
                  houseSex = "只限女生"
                  houseType = "2B2B"
                  houseName = "Towers"
-                 rent = "1000$"
-                 duration = "8-9月"
+                 rent = "1000"
+                 startDate="7"
+                 endDate="8"
                  houseTitle = "SS2 CV主卧招租" />
         </div>
         <div style={{marginTop:'20px'}} className= "col l4 s12 m4 leasing-col">
@@ -106,8 +107,9 @@ class RowItem extends React.Component{
                  houseSex = "只限女生"
                  houseType = "2B2B"
                  houseName = "Towers"
-                 rent = "1000$"
-                 duration = "8-9月"
+                 rent = "1000"
+                 startDate="7"
+                 endDate="8"
                  houseTitle = "SS2 CV主卧招租" />
         </div>
         <div style={{marginTop:'20px'}} className= "col l4 s12 m4 leasing-col">
@@ -115,14 +117,14 @@ class RowItem extends React.Component{
                  houseSex = "只限女生"
                  houseType = "2B2B"
                  houseName = "Towers"
-                 rent = "1000$"
-                 duration = "8-9月"
+                 rent = "1000"
+                 startDate="7"
+                 endDate="8"
                  houseTitle = "SS2 CV主卧招租" />
         </div>
       </div>
     );
   }
-
 }
 
 class SearchPage extends React.Component {
@@ -135,8 +137,8 @@ class SearchPage extends React.Component {
 
       <Header/>
 
-      <div className="row" style={{height: 'calc(100% - 60px)'}}>
-        <div className="col l7 s12">
+        <div className="row" style={{height: 'calc(100% - 60px)'}}>
+            <div className="col l7 s12">
             <div className="search-bar" >
               <div className="search-bar-top">
 
@@ -201,183 +203,20 @@ class SearchPage extends React.Component {
             </div>
 
             <Tags />
-        </div>
+            </div>
 
             <div id="profile" style={{overflowY: "scroll", maxHeight: "calc(100% - 246px)",  width: "58.33333%", paddingRight: 0, position: "absolute" }}>
-              <RowItem />
-              <RowItem />
-              <RowItem />
-
-              <div className="row" style={{margin:'auto'}}>
-              <div style={{marginTop:'20px'}} className= "col l4 s12 m4 leasing-col">
-                  <LeasingCard houseImage = "/img/towers.jpg"
-                       houseSex = "只限女生"
-                       houseType = "2B2B"
-                       houseName = "Towers"
-                       rent = "1000$"
-                       duration = "8-9月"
-                       houseTitle = "SS2 CV主卧招租" />
-              </div>
-
-              <div style={{marginTop:'20px'}} className= "col l4 s12 m4 leasing-col" >
-                  <LeasingCard houseImage = "/img/towers.jpg"
-                       houseSex = "只限女生"
-                       houseType = "2B2B"
-                       houseName = "Towers"
-                       rent = "1000$"
-                       duration = "8-9月"
-                       houseTitle = "SS2 CV主卧招租" />
-              </div>
-
-              <div style={{marginTop:'20px'}} className= "col l4 s12 m4 leasing-col" >
-                  <LeasingCard houseImage = "/img/towers.jpg"
-                       houseSex = "只限女生"
-                       houseType = "2B2B"
-                       houseName = "Towers"
-                       rent = "1000$"
-                       duration = "8-9月"
-                       houseTitle = "SS2 CV主卧招租" />
-              </div>
-
-                <div className= "col l4 s12 m6 leasing-col" >
-                  <div className="no-margin">
-                    <LeasingCard houseImage = "/img/cv.jpg"
-                    houseSex = "男女不限"
-                    houseType = "2B2B"
-                    houseName = "Costa Verde"
-                    rent = "1000$"
-                    duration = "1月/3月"
-                    houseTitle = "CV village 2b/2b 男女不限" />
-                  </div>
-                </div>
-                <div className = "col l4 s12 m6 leasing-col" >
-                    <div className="no-margin">
-                      <LeasingCard houseImage = "/img/cv.jpg"
-                                houseSex = "男女不限"
-                                houseType = "2B2B"
-                                houseName = "Costa Verde"
-                                rent = "1000$"
-                                duration = "1月/3月"
-                                houseTitle = "CV village 2b/2b 男女不限" />
-                    </div>
-                </div>
-                <div className= "col l4 s12 m6 leasing-col" >
-                  <div className="no-margin">
-                    <LeasingCard houseImage = "/img/cv.jpg"
-                                             houseSex = "男女不限"
-                                             houseType = "2B2B"
-                                             houseName = "Costa Verde"
-                                             rent = "1000$"
-                                             duration = "1月/3月"
-                                             houseTitle = "CV village 2b/2b 男女不限" />
-                  </div>
-                </div>
-                <div style={{marginTop:'15px'}} className = "col l4 s12 m6 leasing-col" >
-                  <div className="no-margin">
-                    <LeasingCard houseImage = "/img/cv.jpg"
-                                houseSex = "男女不限"
-                                houseType = "2B2B"
-                                houseName = "Costa Verde"
-                                rent = "1000$"
-                                duration = "1月/3月"
-                                houseTitle = "CV village 2b/2b 男女不限" />
-                  </div>
-                </div>
-
-                <div style={{marginTop:'15px'}} className = "col l4 s12 m6 leasing-col" >
-                  <div className="no-margin">
-                    <LeasingCard houseImage = "/img/cv.jpg"
-                                houseSex = "男女不限"
-                                houseType = "2B2B"
-                                houseName = "Costa Verde"
-                                rent = "1000$"
-                                duration = "1月/3月"
-                                houseTitle = "CV village 2b/2b 男女不限" />
-                  </div>
-                </div>
-
-                <div style={{marginTop:'15px'}} className = "col l4 s12 m6 leasing-col" >
-                  <div className="no-margin">
-                    <LeasingCard houseImage = "/img/cv.jpg"
-                                houseSex = "男女不限"
-                                houseType = "2B2B"
-                                houseName = "Costa Verde"
-                                rent = "1000$"
-                                duration = "1月/3月"
-                                houseTitle = "CV village 2b/2b 男女不限" />
-                  </div>
-                </div>
-
-                <div style={{marginTop:'15px'}} className = "col l4 s12 m6 leasing-col" >
-                  <div className="no-margin">
-                    <LeasingCard houseImage = "/img/cv.jpg"
-                                houseSex = "男女不限"
-                                houseType = "2B2B"
-                                houseName = "Costa Verde"
-                                rent = "1000$"
-                                duration = "1月/3月"
-                                houseTitle = "CV village 2b/2b 男女不限" />
-                  </div>
-                </div>
-
-                <div style={{marginTop:'15px'}} className = "col l4 s12 m6 leasing-col" >
-                  <div className="no-margin">
-                    <LeasingCard houseImage = "/img/cv.jpg"
-                                houseSex = "男女不限"
-                                houseType = "2B2B"
-                                houseName = "Costa Verde"
-                                rent = "1000$"
-                                duration = "1月/3月"
-                                houseTitle = "CV village 2b/2b 男女不限" />
-                  </div>
-                </div>
-
-                <div style={{marginTop:'15px'}} className = "col l4 s12 m6 leasing-col" >
-                  <div className="no-margin">
-                    <LeasingCard houseImage = "/img/cv.jpg"
-                                houseSex = "男女不限"
-                                houseType = "2B2B"
-                                houseName = "Costa Verde"
-                                rent = "1000$"
-                                duration = "1月/3月"
-                                houseTitle = "CV village 2b/2b 男女不限" />
-                  </div>
-                </div>
-
-                <div style={{marginTop:'15px'}} className = "col l4 s12 m6 leasing-col" >
-                  <div className="no-margin">
-                    <LeasingCard houseImage = "/img/cv.jpg"
-                                houseSex = "男女不限"
-                                houseType = "2B2B"
-                                houseName = "Costa Verde"
-                                rent = "1000$"
-                                duration = "1月/3月"
-                                houseTitle = "CV village 2b/2b 男女不限" />
-                  </div>
-                </div>
-
-                <div style={{marginTop:'15px'}} className = "col l4 s12 m6 leasing-col"  >
-                  <div className="no-margin">
-                    <LeasingCard houseImage = "/img/cv.jpg"
-                                houseSex = "男女不限"
-                                houseType = "2B2B"
-                                houseName = "Costa Verde"
-                                rent = "1000$"
-                                duration = "1月/3月"
-                                houseTitle = "CV village 2b/2b 男女不限" />
-                  </div>
-                </div>
-              </div>
+                <RowItem />
+                <RowItem />
+                <RowItem />
             </div>
-          </div>
+            </div>
 
-          <div className="col l5" style = {{height:'calc(100%)'}}>
-            <GoogleMapTest />
-          </div>
-       </div>
-    </div>
-
-
+            <div className="col l5" style = {{height:'calc(100%)'}}>
+                <GoogleMapTest />
+            </div>
+        </div>
+      </div>
     )
   }
 

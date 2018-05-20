@@ -29,6 +29,8 @@ class LeasingCard extends React.Component {
         var imgName = this.props.houseImage;
         var houseName = this.props.houseName;
         var gender = this.props.houseSex;
+        var startDate = this.props.startDate;
+        var endDate = this.props.endDate;
 
         var genderColor;
 
@@ -44,75 +46,74 @@ class LeasingCard extends React.Component {
         }
 
         return (
+            <a href = "/#/leasing/view">
             <div className = "leasingCard" style={{
                 overflow: 'hidden',
-                height: '290px',
+                height: '270px',
                 width: '100%',
                 position: 'relative',
                }}>
 
 
-                <div className = "row" style = {{position:'absolute',bottom:'0px',margin:'0px'}}>
-                    <img src={imgName} style= {{height:'195px', width:'100%',marginBottom:'0px'}}/>
+                <div className = "row" style = {{position:'absolute',bottom:'0px',marginLeft:'-5px',marginBottom:'5px'}}>
+                    <img src={imgName} style= {{height:'180px', width:'100%',marginBottom:'0px'}}/>
 
                     <h4 className = "col s12" style = {{
                         marginTop: '0px',
                         marginBottom:'0px',
                         color:'black',
-                        marginLeft:'5px',
                         fontSize:'14px'}}>
                         {houseName}
                     </h4>
 
 
                     <div className="col s12" style= {{
-                            marginTop:'2px',
+                            marginTop:'-2px',
                             color:'black',
                             fontSize:'18px',
-                            marginLeft:'5px',
                             fontWeight:'bold' }}>
                         {this.props.houseTitle}
                     </div>
 
                     <div className = "col s12" style = {{
-                            //backgroundColor: genderColor,
-                            //width:'27%',
-                            marginLeft:'5px',
-                            marginTop:'5px',
+                            marginTop:'4px',
                             fontSize:'14px',
                             color:'white' }}>
-                        <div style={{backgroundColor: genderColor, width:'25%',height:'20px', marginLeft:'0px'}}>
+                        <div style={{backgroundColor: genderColor, width:'25%',height:'20px'}}>
                         {gender}
                         </div>
                     </div>
 
-                    <div className = "detailInfo" style={{width:'100%',marginTop:'80px',position:'relative',marginLeft:'5px'}}>
+                    <div className = "detailInfo" style={{width:'100%',marginTop:'80px',position:'relative'}}>
                         <div className = "col s4" style = {{
-                                marginTop: '-10px',
+                                marginTop: '-13px',
                                 color:'black',
                                 fontSize:'14px'
                             }}>
 
-                            {this.props.rent}
+                            ${this.props.rent}
                         </div>
 
                         <div className = "col s4" style = {{
-                                marginTop: '-10px',
+                                marginTop: '-13px',
                                 color:'black',
-                                fontSize:'14px' }}>
-                            {this.props.duration}
+                                fontSize:'14px',
+                                marginLeft:'0px'}}>
+                            {startDate}月-{endDate}月
                         </div>
 
                         <div className = "col s4" style = {{
                             color:'black',
-                            marginTop: '-10px',
-                            fontSize:'14px' }}>
+                            marginTop: '-13px',
+                            fontSize:'14px',
+                            marginLeft:'0px' }}>
                             {this.props.houseType}
                         </div>
                     </div>
 
                 </div>
             </div>
+            </a>
         );
     }
 }
