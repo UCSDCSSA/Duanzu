@@ -29,7 +29,7 @@ class Publish extends React.Component {
         };
 
         var inputLine = {
-            'width': '200px'
+            'width': '250px'
         };
 
         var photoButton = {
@@ -41,7 +41,7 @@ class Publish extends React.Component {
 
         return (<div>
             <Header/>
-            <div>
+            <div style={{marginLeft:'5%', marginRight:'5%'}}>
                 <Row>
                 <Col s={4}>
                 <Sticky>
@@ -50,7 +50,7 @@ class Publish extends React.Component {
                             个人信息
                         </h4>
                         <Row>
-
+                            <Col s={1}></Col>
                             <Col s={10}>
                             <Input label="姓名" validate="validate" style={inputLine}>
                                 <Icon>account_circle</Icon>
@@ -194,7 +194,7 @@ class Publish extends React.Component {
                                     </Row>
                                 </div>
                             </div>
-
+                            <br/>
                         {/**<div style={{marginLeft: '20px'}}>
                                 <Row>
                                     <i class="small material-icons" style={{float: 'left', marginRight: '15px'}}>insert_photo</i>
@@ -216,7 +216,7 @@ class Publish extends React.Component {
                                 </div>
                                 </Row>
                             </div>**/}
-                            <div style={{marginLeft: '20px'}}>
+                            <div style={{marginLeft: '2%'}}>
                               <Row>
                                   <i class="small material-icons" style={{float: 'left', marginRight: '15px'}}>insert_photo</i>
                                   <h5>添加照片</h5>

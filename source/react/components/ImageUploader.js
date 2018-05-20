@@ -15,7 +15,7 @@ import Header from './Header';
 class ImageUploader extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {file: '',imagePreviewUrl: ''};
+    this.state = {file: [],imagePreviewUrl: ''};
   }
 
   _handleSubmit(e) {
@@ -27,21 +27,26 @@ class ImageUploader extends React.Component {
   _handleImageChange(e) {
     e.preventDefault();
 
-    let reader = new FileReader();
-    let file = e.target.files[0];
 
-    reader.onloadend = () => {
-      this.setState({
-        file: file,
-        imagePreviewUrl: reader.result
-      });
+    let files = e.target.files;
+    var file = new Array();
+    for (var i = 0; i < files.length; i++){
+      file.push(files[i]);
+      let reader = new FileReader();
+      reader.onloadend = () => {
+        this.setState({
+          file: file,
+          imagePreviewUrl: reader.result
+        });
+      }
+      reader.readAsDataURL(file[i]);
+      console.log(file[i]);
     }
-
-    reader.readAsDataURL(file)
   }
 
   render() {
     let {imagePreviewUrl} = this.state;
+    console.log(this.state);
     let $imagePreview = null;
     if (imagePreviewUrl) {
       $imagePreview = (<img src={imagePreviewUrl}  class="imgPreview"/>);
@@ -61,7 +66,6 @@ class ImageUploader extends React.Component {
             <input className="fileInput" type="file"
               onChange={(e)=>this._handleImageChange(e)} multiple/>
               <div class="file-input-content">
-
                     <div>
                       {$imagePreview}
                     </div>
