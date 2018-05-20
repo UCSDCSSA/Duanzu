@@ -10,6 +10,8 @@ import Header from './Header';
 import LeasingCard from './LeasingCard';
 
 class RowItem extends React.Component{
+
+
   render(){
     return (
       <div className = "row" style={{marginTop:'20px'}}>
@@ -61,55 +63,68 @@ class RowItem extends React.Component{
   }
 }
 
-const Home = () => {
+class Home extends React.Component {
 
-    $(document).ready(function(){
-        $('.carousel').carousel({
-            fullWidth: true,
-            numVisible:1,
-            duration:250,
-        });
-    });
+    constructor (props) {
+        super(props);
 
-    autoplay()
-    function autoplay() {
-        $('.carousel').carousel('next');
-        setTimeout(autoplay, 4500);
+        this.state = {
+            interval: undefined
+        };
     }
+    
+    render(){
+        return (
 
+            <div className="home-page">
 
+            <Header/>
 
-    return (
+            <div className="image-container" style={{width:"100%", height:"600px"}}>
+                <div className= "col l12 m12 s12">
 
-        <div className="home-page">
+                    <div className="carousel">
+                        <a className="carousel-item"><img src="/img/cover_image1.jpg" style={{height:'600px', width:'100%',filter:'brightness(70%)'}}/></a>
+                        <a className="carousel-item"><img src="/img/cover_image2.jpg" style={{height:'600px', width:'100%',filter:'brightness(70%)'}}/></a>
+                        <a className="carousel-item"><img src="/img/cover_image3.jpg" style={{height:'600px', width:'100%',filter:'brightness(70%)'}}/></a>
+                        <a className="carousel-item"><img src="/img/cover_image4.jpg" style={{height:'600px', width:'100%',filter:'brightness(70%)'}}/></a>
 
-        <Header/>
-
-        <div className="image-container" style={{width:"100%", height:"600px"}}>
-            <div className= "col l12 m12 s12">
-
-                <div className="carousel">
-                    <a className="carousel-item"><img src="/img/cover_image1.jpg" style={{height:'600px', width:'100%',filter:'brightness(70%)'}}/></a>
-                    <a className="carousel-item"><img src="/img/cover_image2.jpg" style={{height:'600px', width:'100%',filter:'brightness(70%)'}}/></a>
-                    <a className="carousel-item"><img src="/img/cover_image3.jpg" style={{height:'600px', width:'100%',filter:'brightness(70%)'}}/></a>
-                    <a className="carousel-item"><img src="/img/cover_image4.jpg" style={{height:'600px', width:'100%',filter:'brightness(70%)'}}/></a>
-
-                    <div className = "search-input col l10">
-                            <Icon className="medium material-icons grey-text lighten-1"> search </Icon>
-                            <div className="user-input" style={{width:'60%',display:'inline-flex', height:'65px'}}>
-                                <Input placeholder="请输入小区" id="user_input" type="text"/>
-                            </div>
-                                <a className="waves-effect waves-light btn red">搜索</a>
+                        <div className = "search-input col l10">
+                                <Icon className="medium material-icons grey-text lighten-1"> search </Icon>
+                                <div className="user-input" style={{width:'60%',display:'inline-flex', height:'65px'}}>
+                                    <Input placeholder="请输入小区" id="user_input" type="text"/>
+                                </div>
+                                    <a className="waves-effect waves-light btn red">搜索</a>
+                        </div>
                     </div>
                 </div>
             </div>
+            <div className="container">
+                <RowItem />
+                <RowItem />
+            </div>
         </div>
-        <div className="container">
-            <RowItem />
-            <RowItem />
-        </div>
-    </div>
-    );
+        );
+    }
+
+    componentDidMount() {
+        $('.carousel').carousel({
+            fullWidth: true,
+            numVisible: 1,
+            duration: 250,
+        });
+
+        if (this.state != null && !this.state.interval) {
+
+            var i = setInterval(function () {
+                $('.carousel').carousel('next');
+            }, 4500);
+
+            this.setState({
+                interval: i
+            });
+        }
+    }
 };
 
 export default Home;
