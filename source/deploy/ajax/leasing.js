@@ -51,6 +51,46 @@ module.exports = {
             });
         }
     },
+    "get_one": function(req, res) {
+        var id = req.body["id"];
+        if (req.body["id"])
+        {
+            Leasing.aggregate([
+                {
+                    $match: {
+                        "_id": ObjectId(id)
+                    }
+                },
+                {
+                    $lookup: {
+                        from:"complex",
+                        localField:"complex_id",
+                        foreignField:"_id",
+                        as:"complex"
+                    }
+                }
+            ]).toArray(function (err, result) {
+                if (err)
+                {
+                    res.error(2, err);
+                }
+                else
+                {
+                    if (result == 0){
+                        res.error(3, "Leasing not found");
+                    }
+                    else {
+                        res.success(result);
+                    }
+                }
+
+            });
+        }
+        else
+        {
+            res.error(1, "No id");
+        }
+    },
     removeAllLeasing: function (req, res) {
         if (Leasing.drop()){
             res.success("drop success");

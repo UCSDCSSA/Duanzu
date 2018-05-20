@@ -171,6 +171,7 @@ module.exports = {
             res.error(4, "No password");
         }
     },
+    // disable
     removeAllUsers: function (req, res) {
         if (User.drop()){
             res.success("drop success");
