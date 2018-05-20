@@ -52,9 +52,11 @@ module.exports = {
         }
     },
 
+    /**
+     * req.body.id,
+     * req.body.status
+     */
     "change_status_leasing": function (req, res) {
-      //Leasing.find({ "room_avail.price" : {"$gte" : 200, "$lte": 500}});
-      // var room_ID = Leasing.find({"_id": req.body._id});
       Leasing.updateOne({
           "_id": req.body.id,
       }, {
