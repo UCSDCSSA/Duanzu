@@ -7,7 +7,7 @@ module.exports = {
      * req.body.username,
      * req.body.password
      */
-    add: function (req, res) {
+    "add_one": function (req, res) {
         var user_id = req.body.user_id;
         var start_date = req.body.start_date;
         var end_date = req.body.end_date;
@@ -51,7 +51,27 @@ module.exports = {
             });
         }
     },
-    removeAllLeasing: function (req, res) {
+
+    "change_status_leasing": function (req, res) {
+      //Leasing.find({ "room_avail.price" : {"$gte" : 200, "$lte": 500}});
+      // var room_ID = Leasing.find({"_id": req.body._id});
+      Leasing.updateOne({
+          "_id": req.body.id,
+      }, {
+        $set: {
+          "status" : req.body.status
+        }
+      }, function (err) {
+          if (err) {
+              res.error(200);
+          }
+          else {
+              res.success({});
+          }
+      });
+    },
+
+    "remove_all_leasing": function (req, res) {
         if (Leasing.drop()){
             res.success("drop success");
         }
