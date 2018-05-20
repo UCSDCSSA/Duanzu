@@ -18,7 +18,7 @@ module.exports = {
      * req.body.username,
      * req.body.password
      */
-    login: function (req, res) {
+    "login": function (req, res) {
         User.find({
             "username":req.body.username
         }).toArray(function (err, result) {
@@ -47,7 +47,7 @@ module.exports = {
             }
         });
     },
-    changePassword: function(req, res) {
+    "change_password": function(req, res) {
         var currentPassword = req.body["password"];
         var newPassword = req.body["new_password"];
         var confirmPassword = req.body["confirm_password"];
@@ -111,7 +111,7 @@ module.exports = {
             res.error(7, "No confirm password");
         }
     },
-    register: function (req, res) {
+    "register": function (req, res) {
         var username = req.body["username"];
         var email = req.body["email"];
         var password = req.body["password"];
@@ -171,8 +171,7 @@ module.exports = {
             res.error(4, "No password");
         }
     },
-    // disable
-    removeAllUsers: function (req, res) {
+    "remove_all_users": function (req, res) {
         if (User.drop()){
             res.success("drop success");
         }

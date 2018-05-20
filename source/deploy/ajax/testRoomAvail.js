@@ -7,7 +7,7 @@ module.exports = {
      * req.body.username,
      * req.body.password
      */
-    test: function (req, res) {
+    "test": function (req, res) {
         Leasing.find({
             "user_id": "testid"
         }).toArray(function (err, result) {
