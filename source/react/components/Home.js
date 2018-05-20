@@ -9,6 +9,57 @@ import {Row, Col, Card, Input, Icon, Button, Carousel} from 'react-materialize';
 import Header from './Header';
 import LeasingCard from './LeasingCard';
 
+class RowItem extends React.Component{
+  render(){
+    return (
+      <div className = "row" style={{marginTop:'20px'}}>
+        <div className= "col l3 s12 m4" >
+              <LeasingCard houseImage = "/img/towers.jpg"
+                   houseSex = "只限女生"
+                   houseType = "2B2B"
+                   houseName = "Towers"
+                   rent = "1000"
+                   startDate="1"
+                   endDate="3"
+                   houseTitle = "SS2 CV主卧招租" />
+          </div>
+
+          <div className= "col l3 s12 m4" >
+              <LeasingCard houseImage = "/img/cv.jpg"
+                   houseSex = "男女不限"
+                   houseType = "3B1B"
+                   houseName = "Costa Verde"
+                   rent = "1000"
+                   startDate="1"
+                   endDate="3"
+                   houseTitle = "暑假主卧招租 男女不限" />
+          </div>
+
+          <div className= "col l3 s12 m4" >
+              <LeasingCard houseImage = "/img/international_garden.jpg"
+                   houseSex = "只限男生"
+                   houseType = "2B2B"
+                   houseName = "International Garden"
+                   rent = "1000"
+                   startDate="1"
+                   endDate="3"
+                   houseTitle = "ss1副卧招租" />
+          </div>
+
+          <div className= "col l3 s12 m4" >
+              <LeasingCard houseImage = "/img/cv.jpg"
+                   houseSex = "男女不限"
+                   houseType = "2B2B"
+                   houseName = "Costa Verde"
+                   rent = "1000"
+                   startDate="1"
+                   endDate="3"
+                   houseTitle = "CV village 2b/2b 男女不限" />
+          </div>
+      </div>
+    );
+  }
+}
 
 const Home = () => {
 
@@ -29,9 +80,10 @@ const Home = () => {
 
 
     return (
-        <div className="home-page">
-        <Header/>
 
+        <div className="home-page">
+
+        <Header/>
 
         <div className="image-container" style={{width:"100%", height:"600px"}}>
             <div className= "col l12 m12 s12">
@@ -53,88 +105,8 @@ const Home = () => {
             </div>
         </div>
         <div className="container">
-
-            <div className="row">
-            <div className= "col l3 s12 m4" >
-                    <LeasingCard houseImage = "/img/towers.jpg"
-                         houseSex = "只限女生"
-                         houseType = "2B2B"
-                         houseName = "Towers"
-                         rent = "1000$"
-                         duration = "8-9月"
-                         houseTitle = "SS2 CV主卧招租" />
-                </div>
-
-                <div className= "col l3 s12 m4" >
-                    <LeasingCard houseImage = "/img/cv.jpg"
-                         houseSex = "男女不限"
-                         houseType = "3B1B"
-                         houseName = "Costa Verde"
-                         rent = "1000$"
-                         duration = "7-9月"
-                         houseTitle = "暑假主卧招租 男女不限" />
-                </div>
-
-                <div className= "col l3 s12 m4" >
-                    <LeasingCard houseImage = "/img/international_garden.jpg"
-                         houseSex = "只限男生"
-                         houseType = "2B2B"
-                         houseName = "International Garden"
-                         rent = "1000$"
-                         duration = "6-7月"
-                         houseTitle = "ss1副卧招租" />
-                </div>
-
-                <div className= "col l3 s12 m4" >
-                    <LeasingCard houseImage = "/img/cv.jpg"
-                         houseSex = "男女不限"
-                         houseType = "2B2B"
-                         houseName = "Costa Verde"
-                         rent = "1000$"
-                         duration = "1月/3月"
-                         houseTitle = "CV village 2b/2b 男女不限" />
-                </div>
-
-                <div className= "col l3 s12 m4" >
-                    <LeasingCard houseImage = "/img/cv.jpg"
-                         houseSex = "男女不限"
-                         houseType = "2B2B"
-                         houseName = "Costa Verde"
-                         rent = "1000$"
-                         duration = "1月/3月"
-                         houseTitle = "CV village 2b/2b 男女不限" />
-                </div>
-
-                <div className= "col l3 s12 m4" >
-                    <LeasingCard houseImage = "/img/cv.jpg"
-                         houseSex = "男女不限"
-                         houseType = "2B2B"
-                         houseName = "Costa Verde"
-                         rent = "1000$"
-                         duration = "1月/3月"
-                         houseTitle = "CV village 2b/2b 男女不限" />
-                </div>
-
-                <div className= "col l3 s12 m4" >
-                    <LeasingCard houseImage = "/img/cv.jpg"
-                         houseSex = "男女不限"
-                         houseType = "2B2B"
-                         houseName = "Costa Verde"
-                         rent = "1000$"
-                         duration = "1月/3月"
-                         houseTitle = "CV village 2b/2b 男女不限" />
-                </div>
-
-                <div className= "col l3 s12 m4" >
-                    <LeasingCard houseImage = "/img/cv.jpg"
-                         houseSex = "男女不限"
-                         houseType = "2B2B"
-                         houseName = "Costa Verde"
-                         rent = "1000$"
-                         duration = "1月/3月"
-                         houseTitle = "CV village 2b/2b 男女不限" />
-                </div>
-            </div>
+            <RowItem />
+            <RowItem />
         </div>
     </div>
     );
