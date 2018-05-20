@@ -16,17 +16,16 @@ import Publish from './Publish.js';
 import ChangePassword from './ChangePassword.js';
 import ViewLeasing from './ViewLeasing.js';
 import ChangeProfile from './ChangeProfile.js';
-import Register from './Register.js';
 import About from './About.js';
 import SearchPage from './SearchPage.js';
 import Display from './Display.js';
 import GoogleMapTest from './GoogleMapTest.js';
+import Sample from './PopUpSample.js';
 
 const Main = () => {
     return (<Switch>
         <Route exact path='/' component={Home}/>
         <Route exact path='/login' component={Login}/>
-        <Route exact path='/register' component={Register}/>
         <Route exact path='/about' component={About}/>
         <Route exact path='/display' component={Display}/>
         <Route exact path='/publish' component={Publish}/>
@@ -35,6 +34,7 @@ const Main = () => {
         <Route exact path='/profile/change_password' component={ChangePassword}/>
         <Route exact path='/searchpage' component={SearchPage}/>
         <Route exact path='/map' component={GoogleMapTest}/>
+        <Route exact path='/sample' component={Sample}/>
         <Route path='*' component={NotFound}/>
     </Switch>);
 };
