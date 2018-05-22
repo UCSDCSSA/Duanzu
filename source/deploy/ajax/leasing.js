@@ -7,11 +7,7 @@ module.exports = {
      * req.body.username,
      * req.body.password
      */
-<<<<<<< HEAD
-    addOne: function (req, res) {
-=======
     "add_one": function (req, res) {
->>>>>>> 0f3d2d1034255f91b75dde2bfe23d8234982eabf
         var user_id = req.body.user_id;
         var start_date = req.body.start_date;
         var end_date = req.body.end_date;
@@ -55,16 +51,6 @@ module.exports = {
             });
         }
     },
-<<<<<<< HEAD
-    findLeasing: function (req, res) {
-        var criteria = {};
-
-        if (req.body.user_id) {
-            criteria["user_id"] = req.body.user_id;
-        }
-    },
-    removeAllLeasing: function (req, res) {
-=======
     "get_one": function(req, res) {
         var id = req.body["id"];
         if (req.body["id"])
@@ -173,7 +159,6 @@ module.exports = {
       });
     },
     "remove_all_leasing": function (req, res) {
->>>>>>> 0f3d2d1034255f91b75dde2bfe23d8234982eabf
         if (Leasing.drop()){
             res.success("drop success");
         }
