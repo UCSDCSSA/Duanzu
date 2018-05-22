@@ -7,7 +7,7 @@ module.exports = {
      * req.body.username,
      * req.body.password
      */
-    add: function (req, res) {
+    addOne: function (req, res) {
         var user_id = req.body.user_id;
         var start_date = req.body.start_date;
         var end_date = req.body.end_date;
@@ -49,6 +49,13 @@ module.exports = {
                     res.success(response.ops[0]);
                 }
             });
+        }
+    },
+    findLeasing: function (req, res) {
+        var criteria = {};
+
+        if (req.body.user_id) {
+            criteria["user_id"] = req.body.user_id;
         }
     },
     removeAllLeasing: function (req, res) {
