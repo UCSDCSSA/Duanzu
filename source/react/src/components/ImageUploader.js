@@ -11,6 +11,7 @@ import {
     Icon
 } from 'react-materialize';
 import Header from './Header';
+import './styles/image-uploader.scss';
 
 class ImageUploader extends React.Component {
   constructor(props) {

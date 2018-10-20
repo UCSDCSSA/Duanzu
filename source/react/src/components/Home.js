@@ -7,7 +7,8 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import {Row, Col, Card, Input, Icon, Button, Carousel} from 'react-materialize';
 import Header from './Header';
-import LeasingCard from './LeasingCard';
+import LeasingCard from '~/components/LeasingCard';
+import './styles/home.scss';
 
 class RowItem extends React.Component{
 
@@ -72,7 +73,7 @@ class Home extends React.Component {
             interval: undefined
         };
     }
-    
+
     render(){
         return (
 

@@ -1,3 +1,5 @@
+// @flow
+
 /**
  * @author: Tianyang Lu Xuran Liu
  * @date: 2017/11/11
