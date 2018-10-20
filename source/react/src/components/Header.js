@@ -13,7 +13,7 @@ class Header extends React.Component {
             opened: false
         };
     }
-    
+
     toggle() {
         if(this.state.opened) {
             console.log("close");
@@ -25,7 +25,7 @@ class Header extends React.Component {
     }
 
     render() {
-        
+
         function loginDisplay(login) {
             if(!login) {
                 return(
@@ -51,7 +51,7 @@ class Header extends React.Component {
                 );
             }
         }
-        
+
         var navStyle = {
             width: "100%",
             height: "60px",
@@ -70,7 +70,7 @@ class Header extends React.Component {
             flexFlow: "row-reverse",
             display: "flex"
         };
-        
+
         var navRightItemStyle = {
             "lineHeight": "60px",
             "padding": "0 15px"
@@ -80,7 +80,7 @@ class Header extends React.Component {
             "color": "black",
             "cursor": "pointer"
         };
-        
+
         var loginStyle= {
             "width": "50%",
             "height": "60%",
@@ -99,17 +99,17 @@ class Header extends React.Component {
             "display": this.state.opened ? "flex" : "none",
             "zIndex": "1"
         }
-        
+
         return (
             <div>
                 <nav style={navStyle}>
                     <div style={navLeftStyle}>
-                        <a style={navRightItemStyle} href="/#/">UCSD CSSA 短租平台</a>
+                        <a style={navRightItemStyle} href="/">UCSD CSSA 短租平台</a>
                     </div>
                     <div style={navRightStyle}>
                         <a style={navRightItemStyle} onClick={()=> this.toggle()}>登陆</a>
-                        <a style={navRightItemStyle} href="/#/searchpage">搜索房源</a>
-                        <a style={navRightItemStyle} href="/#/publish">发布房源</a>
+                        <a style={navRightItemStyle} href="/searchpage">搜索房源</a>
+                        <a style={navRightItemStyle} href="/publish">发布房源</a>
                     </div>
                 </nav>
                 <div style={maskStyle} onClick={()=> this.toggle()}>

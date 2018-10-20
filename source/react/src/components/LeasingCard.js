@@ -46,7 +46,7 @@ class LeasingCard extends React.Component {
         }
 
         return (
-            <a href = "/#/leasing/view">
+            <a href = "/leasing">
             <div className = "leasingCard" style={{
                 overflow: 'hidden',
                 height: '270px',

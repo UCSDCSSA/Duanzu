@@ -1,0 +1,49 @@
+.home-page .image-container .carousel .carousel-item {
+    height:100% !important;
+    width:100%;
+}
+
+.home-page .image-container .carousel .search-input {
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+    margin-left: 10rem;
+    margin-right: 10rem;
+    margin-top: 15rem;
+    border-color: black;
+    background-color: rgba(255,255,255,1);
+    position: absolute;
+    width: 80%;
+}
+
+.home-page .material-icons {
+    vertical-align: middle;
+    display: inline-flex;
+    top: 0.8rem;
+    width: 70px;
+
+}
+
+.home-page .btn{
+    position: absolute;
+    right: 0.5rem;
+    top: 1.2rem;
+    color: rgba(255,255,255,1);
+    font-size: 18px;
+}
+
+.home-page .container{
+    margin: auto;
+    width: 80%;
+}
+
+
+/* label focus color */
+ .home-page .image-container .carousel .search-input .user-input input:focus + label {
+   color: rgba(255, 255, 255, 0) !important;
+ }
+
+ /* label underline focus color */
+ .home-page .image-container .carousel .search-input .user-input input {
+   border-bottom: 1px solid rgba(255, 255, 255, 0) !important;
+   box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0) !important;
+   font-size: 19px;
+ }
