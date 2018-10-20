@@ -11,7 +11,7 @@ import { Input, Button, Card, Row, Col, Icon } from 'react-materialize';
 import Header from './Header';
 import LeasingCard from './LeasingCard';
 import GoogleMapTest from './GoogleMapTest';
-import '~/components/styles/search-page.scss';
+import './styles/search-page.scss';
 
 class Tag extends React.Component {
 
