@@ -1,7 +1,7 @@
 {
-  "name": "FILL-IN-NAME-HERE",
+  "name": "ucsdcssa-duanzu",
   "version": "0.0.0",
-  "description": "",
+  "description": "UCSD CSSA Short Leasing Platform",
   "main": "src/server.js",
   "scripts": {
     "dev": "webpack-dev-server --config src/config/webpack.dev.config.js --watch --mode development",
@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+<FILL-IN-HERE>"
+    "url": "https://github.com/UCSDCSSA/Duanzu.git"
   },
-  "author": "",
+  "author": "UCSD CSSA Tech Department",
   "license": "ISC",
   "bugs": {
-    "url": "<FILL-IN-HERE>"
+    "url": "Still in development"
   },
-  "homepage": "<FILL-IN-HERE>",
+  "homepage": "ucsdcssa.org",
   "devDependencies": {
     "@babel/core": "^7.0.0",
     "@babel/preset-env": "^7.0.0-beta.33",
