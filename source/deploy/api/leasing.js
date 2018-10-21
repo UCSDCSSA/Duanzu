@@ -51,7 +51,46 @@ module.exports = {
             });
         }
     },
+    "get_one": function(req, res) {
+        var id = req.body["id"];
+        if (req.body["id"])
+        {
+            Leasing.aggregate([
+                {
+                    $match: {
+                        "_id": ObjectId(id)
+                    }
+                },
+                {
+                    $lookup: {
+                        from:"complex",
+                        localField:"complex_id",
+                        foreignField:"_id",
+                        as:"complex"
+                    }
+                }
+            ]).toArray(function (err, result) {
+                if (err)
+                {
+                    res.error(2, err);
+                }
+                else
+                {
+                    if (result == 0){
+                        res.error(3, "Leasing not found");
+                    }
+                    else {
+                        res.success(result);
+                    }
+                }
 
+            });
+        }
+        else
+        {
+            res.error(1, "No id");
+        }
+    },
     "update_one": function (req, res) {
       var start_date = req.body.start_date;
       var end_date = req.body.end_date;
@@ -70,8 +109,9 @@ module.exports = {
           res.error(1, "room amount invalid");
       }
       else{
+        console.log(status);
         Leasing.updateOne({
-            "_id": req.body.id,
+            "_id": ObjectId(req.body._id),
         }, {
           $set: {
             "start_date": start_date,
@@ -88,24 +128,23 @@ module.exports = {
             "status": status,
             "img_url": img_url
           }
-        }, function (err) {
+        }, function (err, result) {
             if (err) {
                 res.error(200);
             }
             else {
-                res.success({});
+                res.success(result);
             }
         });
       }
     },
-
     /**
      * req.body.id,
      * req.body.status
      */
     "change_status_leasing": function (req, res) {
       Leasing.updateOne({
-          "_id": req.body.id,
+          "_id": req.body._id,
       }, {
         $set: {
           "status" : req.body.status
@@ -119,7 +158,6 @@ module.exports = {
           }
       });
     },
-
     "remove_all_leasing": function (req, res) {
         if (Leasing.drop()){
             res.success("drop success");
