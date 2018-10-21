@@ -1,4 +1,4 @@
 {
-    "connection_str": "mongodb://admin:admin@test-shard-00-00-cgxsm.mongodb.net:27017,test-shard-00-01-cgxsm.mongodb.net:27017,test-shard-00-02-cgxsm.mongodb.net:27017/test?ssl=true&replicaSet=test-shard-0&authSource=admin",
+    "connection_str": "mongodb://admin:DE54mdvb5p9swfi9@test-shard-00-00-cgxsm.mongodb.net:27017,test-shard-00-01-cgxsm.mongodb.net:27017,test-shard-00-02-cgxsm.mongodb.net:27017/test?ssl=true&replicaSet=test-shard-0&authSource=admin",
     "database": "cssa"
 }
