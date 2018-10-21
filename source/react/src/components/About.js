@@ -2,7 +2,7 @@
  * @author: Yiyang Yin
  * @date: 2017/11/12
  */
-
+// @flow
 import React from 'react';
 import {Link} from 'react-router-dom';
 import {Row, Col} from 'react-materialize'
@@ -11,14 +11,14 @@ import Header from './Header';
 import Axios from 'axios';
 
 class DeveloperCard extends React.Component {
-    
+
     componentDidMount() {
         $(".card-image").each(function() {
             var width = $(this).width();
             $(this).height(width);
         })
     }
-    
+
     render() {
         return (<div className="col s3">
             <div className="card" style={{ "height": "150px", "width": "150px", "marginTop": "20px" }}>
@@ -32,14 +32,14 @@ class DeveloperCard extends React.Component {
 }
 
 class About extends React.Component {
-    
+
     constructor () {
         super();
         this.state = {
             members: []
         }
     }
-    
+
     componentDidMount() {
         Axios.get("http://localhost:21023/ajax/about?action=get_members").then((res) => {
             this.setState({
@@ -47,16 +47,14 @@ class About extends React.Component {
             });
         });
     }
-    
+
     render() {
 
         //load all developer's data to array
         var allDeveloperElement = [];
         for (var i = 0; i < this.state.members.length; i++) {
             allDeveloperElement.push(
-                <DeveloperCard
-                    developerId={i}
-                    developerName={this.state.members[i].name} />
+                <DeveloperCard developerId={i} developerName={this.state.members[i].name} />
             )
         }
 

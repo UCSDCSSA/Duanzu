@@ -1,3 +1,4 @@
+// @flow
 /**
  * @author: Liby Lee
  * @date: 2017/11/12

@@ -1,0 +1,51 @@
+
+.file-input {
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+    border: 3px dashed rgba(120, 120, 120, 1);
+}
+
+.file-input input {
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
+
+.file-input .file-input-content {
+    margin-top: -120px;
+    width: 100%;
+    height: 100%;
+}
+
+.upload-file-camera {
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: rgba(120, 120, 120, 1);
+}
+
+.upload-file-camera i {
+    font-size: 34px;
+}
+
+.upload-file-camera p {
+    font-size: 20px;
+    margin: 0;
+    margin-top: 5px;
+    text-align: center;
+}
+
+.imgPreview {  display: block;
+  max-width:100%;
+  max-height:100%;
+  width: auto;
+  height: auto;
+}
+
+.container-publish {
+  margin-left: 5%;
+  margin-right: 5%;
+}

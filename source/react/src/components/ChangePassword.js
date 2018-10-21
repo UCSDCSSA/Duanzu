@@ -1,3 +1,5 @@
+// @flow
+
 /**
  * @author: Tianyang Lu Xuran Liu
  * @date: 2017/11/11
@@ -10,6 +12,7 @@ import React from 'react';
 import {Input, Button, Card, Row, Col} from 'react-materialize';
 import Header from './Header';
 import LeasingCard from './LeasingCard';
+
 
 class ChangePassword extends React.Component {
     render() {
@@ -32,15 +35,7 @@ class ChangePassword extends React.Component {
                     </Card>
                 </Col>
             </Row>
-            <div>This is a test on leasing card file</div>
-            <LeasingCard houseImage = "/img/cv.jpg"
-                         houseSex = "男女不限"
-                         houseType = "2B2B"
-                         houseName = "Costa Verde"
-                         rent = "1000$"
-                         duration = "1月/3月"
-                         houseTitle = "CV village 2b/2b 男女不限" />
-          </div>
+           </div>
         );
     }
 };

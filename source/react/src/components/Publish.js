@@ -16,6 +16,7 @@ import {
     Icon
 } from 'react-materialize';
 import Header from './Header';
+import ImageUploader from './ImageUploader'
 
 class Publish extends React.Component {
 
@@ -29,7 +30,7 @@ class Publish extends React.Component {
         };
 
         var inputLine = {
-            'width': '200px'
+            'width': '250px'
         };
 
         var photoButton = {
@@ -41,7 +42,7 @@ class Publish extends React.Component {
 
         return (<div>
             <Header/>
-            <div className="container">
+            <div style={{marginLeft:'5%', marginRight:'5%'}}>
                 <Row>
                 <Col s={4}>
                 <Sticky>
@@ -50,7 +51,7 @@ class Publish extends React.Component {
                             个人信息
                         </h4>
                         <Row>
-
+                            <Col s={1}></Col>
                             <Col s={10}>
                             <Input label="姓名" validate="validate" style={inputLine}>
                                 <Icon>account_circle</Icon>
@@ -131,7 +132,7 @@ class Publish extends React.Component {
                                      <label for="icon_prefix2">注意事项</label>
                                 </div>
                             </Row>
-                            {/**<div style={{marginLeft: '10px'}}>
+                            <div style={{marginLeft: '10px'}}>
                                 <Row>
                                     <i class="small material-icons" style={{float: 'left', marginRight: '15px'}}>event_available</i>
                                     <h5>可用设施（室内&周边）</h5>
@@ -193,9 +194,9 @@ class Publish extends React.Component {
                                         </Input>
                                     </Row>
                                 </div>
-                            </div>**/}
-
-                    {/**         <div style={{marginLeft: '20px'}}>
+                            </div>
+                            <br/>
+                        {/**<div style={{marginLeft: '20px'}}>
                                 <Row>
                                     <i class="small material-icons" style={{float: 'left', marginRight: '15px'}}>insert_photo</i>
                                     <p style={{fontSize: '20px'}}>添加照片</p>
@@ -215,9 +216,16 @@ class Publish extends React.Component {
                                   </div>
                                 </div>
                                 </Row>
-                            </div> **/}
+                            </div>**/}
+                            <div style={{marginLeft: '2%'}}>
+                              <Row>
+                                  <i class="small material-icons" style={{float: 'left', marginRight: '15px'}}>insert_photo</i>
+                                  <h5>添加照片</h5>
+                              </Row>
+                              <ImageUploader />
+                            </div>
 
-                      {/**     <Row>
+                          {/**<Row>
                               <div className="file-field input-field col s8">
                                 <div className="btn-large grey" style={photoButton}>
                                 <p style={{fontSize: '20px'}}>
@@ -230,7 +238,7 @@ class Publish extends React.Component {
                                   <input class="file-path validate" type="text"/>
                                 </div>
                               </div>
-                            </Row>  **/}
+                            </Row>**/}
 
                         </Card>
                         <Row>

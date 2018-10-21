@@ -1,0 +1,59 @@
+.search-page .material-icons.prefix {
+    font-size: 20px;
+    width : 1px;
+    padding: 3px;
+}
+
+#apartmentName {
+  height: 20px;
+}
+
+.search-page .search-bar{
+  width: 100%;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+  height: 160px;
+  margin-right: 0.75rem;
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+  position: relative;
+
+}
+
+.search-page .search-bar-top{
+  border-bottom: 1.5px dashed;
+  border-color: black;
+  display: flex;
+
+}
+
+.search-page .search-bar-bottom{
+  position: absolute;
+  top: 80px;
+}
+
+
+.search-page  #apartmentName{
+  width : 92%;
+  margin-left: 5px;
+}
+
+.search-page .search-bar .search-bar-top .search_separated_div{
+
+    border-right-color: #DCDCDC;
+
+}
+
+.search-page .search-bar .search-bar-top .search_icon{
+    float: left;
+    margin-top: 20px;
+}
+
+.stickBar{
+    z-index: 1;
+    background-color: white;
+}
+
+.search-page .row .leasing-col {
+  padding: 0 !important;
+  padding-right: 20px !important;
+}
