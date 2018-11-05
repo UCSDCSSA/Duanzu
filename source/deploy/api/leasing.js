@@ -3,10 +3,37 @@ const ObjectId = require("mongodb").ObjectId;
 const Leasing = Mongo.db.collection("leasing");
 
 module.exports = {
+    "insert": function(
+        user_id, complex_id, apt_bedroom_amount, apt_bathroom_amount, callback, error
+    ) {
+        if(Leasing.findOne({
+            // find if exist
+        }))
+        else if(apt_bedroom_amount < 0 || apt_bathroom_amount < 0) {
+            error(new Error("room amount invalid");
+        }
+        else{
+            Leasing.insertOne({
+                "user_id": user_id,
+                "complex_id": complex_id,
+                "apt_bedroom_amount": apt_bedroom_amount,
+                "apt_bathroom_amount": apt_bathroom_amount,
+            }, function (err, res) {
+                if (err) {
+                    error(new Error("Error adding new house "+ user_id + ": " err);
+                }
+                else {
+                    callback(res["insertedId"]);
+                }
+            });
+        }
+    },
+
     /**
      * req.body.username,
      * req.body.password
      */
+    /*
     "add_one": function (req, res) {
         var user_id = req.body.user_id;
         var start_date = req.body.start_date;
@@ -50,7 +77,7 @@ module.exports = {
                 }
             });
         }
-    },
+    },*/
     "get_one": function(req, res) {
         var id = req.body["id"];
         if (req.body["id"])
